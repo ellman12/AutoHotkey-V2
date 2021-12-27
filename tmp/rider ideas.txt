@@ -1,7 +1,6 @@
 copy up/down
 add cursor up/down
 move line up/down
-rename stuff (F2) for sure
 alt shift f to format
 run. Debug. Stop
 delete line
