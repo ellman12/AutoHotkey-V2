@@ -3,3 +3,5 @@ more shit in a Run kinda thing. Less random hotkeys for stuff that should be in 
 rename file thing in Windows
 
 clean up AC and remove * for a lot of them
+make dedicated sections for like acronyms and stuff
+improve like all the GUIs. In AC gui make btn to open AC.ahk in VSCode.
