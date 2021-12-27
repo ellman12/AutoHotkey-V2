@@ -1,6 +1,11 @@
+"header files" folder for like gui init and stuff
+everything should be its own module that can easily be imported anywhere else
+
+find better hotkey for file explorer instead of ^F5
 ^Space should be on a better hotkey
 more shit in a Run kinda thing. Less random hotkeys for stuff that should be in Run like ^+g
 rename file thing in Windows
+remove alt up/down cuz it's annoying
 
 clean up AC and remove * for a lot of them
 make dedicated sections for like acronyms and stuff
