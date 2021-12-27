@@ -1,1 +1,5 @@
 ^Space should be on a better hotkey
+more shit in a Run kinda thing. Less random hotkeys for stuff that should be in Run like ^+g
+rename file thing in Windows
+
+clean up AC and remove * for a lot of them

@@ -1,0 +1,38 @@
+copy up/down
+add cursor up/down
+move line up/down
+rename stuff (F2) for sure
+alt shift f to format
+run. Debug. Stop
+delete line
+clear line
+
+search (folder):
+everywhere ^+a
+files ^p
+symbols ^t
+ctrl shift p = actions
+
+selection????:
+ctrl d and ctrl u
+ctrl left/right
+shift left/right
+ctrl shift l/r
+
+toggle breakpoint (F9)
+
+a folder for like all the debugging stuff:
+✓ show exec path alt F10
+✓ skip to cursor ^!+F9
+✓ step over F10
+✓ force step over? Alt shift F8
+✓ step into F11
+✓ smart step into shift F7
+✓ resume program (continue) needs a hotkey in rider
+✓ pause program needs a hotkey
+✓ step out shift F11
+✓ run to cursor alt F9
+✓ " " non-stop ^+F9
+✓ toggle breakpoint (F9)
+
+bookmark stuff (folder)
