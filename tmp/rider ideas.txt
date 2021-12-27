@@ -34,4 +34,8 @@ a folder for like all the debugging stuff:
 ✓ " " non-stop ^+F9
 ✓ toggle breakpoint (F9)
 
-bookmark stuff (folder)
+bookmark stuff
+
+text:
+priv stat
+" " void
