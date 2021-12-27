@@ -1,6 +1,8 @@
 "header files" folder for like gui init and stuff
 everything should be its own module that can easily be imported anywhere else
 
+AppSwitcher should support Rider and VS2019 like VSCode. All function keys should have ability to either do their default thing or be remapped to something more useful
+
 find better hotkey for file explorer instead of ^F5
 ^Space should be on a better hotkey
 more shit in a Run kinda thing. Less random hotkeys for stuff that should be in Run like ^+g
