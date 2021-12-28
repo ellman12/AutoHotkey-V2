@@ -11,4 +11,5 @@ remove alt up/down cuz it's annoying
 
 clean up AC and remove * for a lot of them
 make dedicated sections for like acronyms and stuff
+remove some stupid annoying crap like maybe the it's and itss thing
 improve like all the GUIs. In AC gui make btn to open AC.ahk in VSCode.

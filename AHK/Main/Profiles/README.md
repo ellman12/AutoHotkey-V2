@@ -1,0 +1,1 @@
+Profiles are for my mouse (and keyboard if I still want that but most likely not). Depending on the current profile, each button will do something different.

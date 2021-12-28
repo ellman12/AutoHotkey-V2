@@ -1,0 +1,1 @@
+Miscellaneous things that are occasionally useful live here. These are not a part of Main and do not require anything from Main
