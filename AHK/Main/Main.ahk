@@ -17,7 +17,7 @@ DetectHiddenWindows, Off
 #SingleInstance force
 
 ;https://diymediahome.org/wp-content/uploads/shell32_icons.jpg
-Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
+; Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
 ;------------------------AUTO-EXECUTE------------------------
 ;------------MODULE INITIALIZATION FILES------------
@@ -31,7 +31,7 @@ Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 ; #Include, ...
 
 ;------------MAIN COMPONENTS------------
-; #Include, ...
+#Include, %A_ScriptDir%/FnKeys.ahk
 
 ;------------------------MISC HOTKEYS------------------------
 ;These are completely global and will work no matter the context
@@ -82,10 +82,10 @@ WinSet, AlwaysOnTop, Toggle, A
 WinGet, onTop, ExStyle, A
 if (onTop & 0x8) { ; 0x8 is WS_EX_TOPMOST.
 	message := activeWindowTitle . " is AlwaysOnTop"
-	Tippy(message, 1000)
+	; Tippy(message, 1000) ;TODO
 } else {
 	message := activeWindowTitle . " is no longer on top"
-	Tippy(message, 1000)
+	; Tippy(message, 1000) ;TODO
 }
 return
 
