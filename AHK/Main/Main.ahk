@@ -33,7 +33,7 @@ DetectHiddenWindows, Off
 #Include, %A_ScriptDir%/Functions/BooleanToggle.ahk
 #Include, %A_ScriptDir%/Functions/InArray.ahk
 #Include, %A_ScriptDir%/Functions/Tippy.ahk
-#Include, %A_ScriptDir%/Functions/toggleGUI.ahk
+#Include, %A_ScriptDir%/Functions/ToggleGUI.ahk
 
 #Include, %A_ScriptDir%/FnKeys.ahk
 
