@@ -88,6 +88,8 @@ showOrHideWindowsFx(ByRef windowGroupArray, ByRef fxShowHideToggle) {
 
 nextWindowFx(ByRef windowGroupArray, ByRef currentWin) {
     removeNonexistentWindows(windowGroupArray)
+    
+    WinGet, activeWindowID, ID, A
 
     ;Checks if there's 2 windows in the array. If so, acts like !Tab.
     if (windowGroupArray.MaxIndex() = 2)

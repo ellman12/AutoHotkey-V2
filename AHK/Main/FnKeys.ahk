@@ -8,8 +8,8 @@ F2Mode := "Default"
 F3Mode := "Default"
 F4Mode := "Default"
 F5Mode := "Default"
-F6Mode := "Default"
-F7Mode := "Default"
+F6Mode := "WinSwitcher"
+F7Mode := "WinHider"
 F8Mode := "Default"
 F9Mode := "Default"
 F10Mode := "Default"
@@ -29,11 +29,11 @@ Actions:
 *Tabs: run program if needed. Activate that window and go through tabs forwards
 *TabsReverse: same thing but reverse tab order
 *Wins: run program or switch between windows
-WinGroup: group windows together for switching between them
+WinSwitcher: group windows together for switching between them
 WinHider: group windows together for showing/hiding them
 Default behavior is to just send the key like normal: Send the actual key. E.g., if Default specified for F5, send F5 and not anything else
 */
-fxKeyPress(keyName, action, windowGroup)
+fxKeyPress(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 {
 	switch (action)
 	{
@@ -57,7 +57,8 @@ fxKeyPress(keyName, action, windowGroup)
 		case "VSTabsReverse":activateOrSwitchTabs("devenv.exe", "devenv.exe", true)
 		case "VSWins":switchBetweenWindows("devenv.exe", "devenv.exe", "vsWins")
 
-		;Custom Window Groups
+		case "WinSwitcher":nextWindowFx(windowGroupArray, currentWin)
+		case "WinHider":showOrHideWindowsFx(windowGroupArray, fxShowHideToggle)
 
 		Default: ;Need to move modifiers outside the {} or else Send won't work :/
 			ogHotkey := A_ThisHotkey
@@ -127,42 +128,50 @@ switchBetweenWindows(exeName, exePath, groupName) {
 	}
 }
 
+;If this Fx is in Window Switcher or Hider mode, add window to array. Else, fire like normal.
+ctrlFxPress(Fx, fxMode, windowGroupArray) {
+	if (fxMode == "WinSwitcher" or fxMode == "WinHider")
+		addWindowFx(windowGroupArray)
+	else
+		Send, ^{%Fx%}
+}
+
 ;TODO
-$F1::fxKeyPress("F1", F1Mode, "todo lmao")
-$F2::fxKeyPress("F2", F2Mode, "todo lmao")
-$F3::fxKeyPress("F3", F3Mode, "todo lmao")
-$F4::fxKeyPress("F4", F4Mode, "todo lmao")
-$F5::fxKeyPress("F5", F5Mode, "todo lmao")
-$F6::fxKeyPress("F6", F6Mode, "todo lmao")
-$F7::fxKeyPress("F7", F7Mode, "todo lmao")
-$F8::fxKeyPress("F8", F8Mode, "todo lmao")
-$F9::fxKeyPress("F9", F9Mode, "todo lmao")
-$F10::fxKeyPress("F10", F10Mode, "todo lmao")
-$F11::fxKeyPress("F11", F11Mode, "todo lmao")
-$F12::fxKeyPress("F12", F12Mode, "todo lmao")
+$F1::fxKeyPress(F1Mode, windowGroupF1, currentWinF1, F1VisToggle)
+$F2::fxKeyPress(F2Mode, windowGroupF2, currentWinF2, F2VisToggle)
+$F3::fxKeyPress(F3Mode, windowGroupF3, currentWinF3, F3VisToggle)
+$F4::fxKeyPress(F4Mode, windowGroupF4, currentWinF4, F4VisToggle)
+$F5::fxKeyPress(F5Mode, windowGroupF5, currentWinF5, F5VisToggle)
+$F6::fxKeyPress(F6Mode, windowGroupF6, currentWinF6, F6VisToggle)
+$F7::fxKeyPress(F7Mode, windowGroupF7, currentWinF7, F7VisToggle)
+$F8::fxKeyPress(F8Mode, windowGroupF8, currentWinF8, F8VisToggle)
+$F9::fxKeyPress(F9Mode, windowGroupF9, currentWinF9, F9VisToggle)
+$F10::fxKeyPress(F10Mode, windowGroupF10, currentWinF10, F10VisToggle)
+$F11::fxKeyPress(F11Mode, windowGroupF11, currentWinF11, F11VisToggle)
+$F12::fxKeyPress(F12Mode, windowGroupF12, currentWinF12, F12VisToggle)
 
-$^F1::fxKeyPress("F1", F1Mode, "todo lmao")
-$^F2::fxKeyPress("F2", F2Mode, "todo lmao")
-$^F3::fxKeyPress("F3", F3Mode, "todo lmao")
-$^F4::fxKeyPress("F4", F4Mode, "todo lmao")
-$^F5::fxKeyPress("F5", F5Mode, "todo lmao")
-$^F6::fxKeyPress("F6", F6Mode, "todo lmao")
-$^F7::fxKeyPress("F7", F7Mode, "todo lmao")
-$^F8::fxKeyPress("F8", F8Mode, "todo lmao")
-$^F9::fxKeyPress("F9", F9Mode, "todo lmao")
-$^F10::fxKeyPress("F10", F10Mode, "todo lmao")
-$^F11::fxKeyPress("F11", F11Mode, "todo lmao")
-$^F12::fxKeyPress("F12", F12Mode, "todo lmao")
+$^F1::ctrlFxPress("F1", F1Mode, windowGroupF1)
+$^F2::ctrlFxPress("F2", F2Mode, windowGroupF2)
+$^F3::ctrlFxPress("F3", F3Mode, windowGroupF3)
+$^F4::ctrlFxPress("F4", F4Mode, windowGroupF4)
+$^F5::ctrlFxPress("F5", F5Mode, windowGroupF5)
+$^F6::ctrlFxPress("F6", F6Mode, windowGroupF6)
+$^F7::ctrlFxPress("F7", F7Mode, windowGroupF7)
+$^F8::ctrlFxPress("F8", F8Mode, windowGroupF8)
+$^F9::ctrlFxPress("F9", F9Mode, windowGroupF9)
+$^F10::ctrlFxPress("F10", F10Mode, windowGroupF10)
+$^F11::ctrlFxPress("F11", F11Mode, windowGroupF11)
+$^F12::ctrlFxPress("F12", F12Mode, windowGroupF12)
 
-$+F1::fxKeyPress("F1", F1Mode, "todo lmao")
-$+F2::fxKeyPress("F2", F2Mode, "todo lmao")
-$+F3::fxKeyPress("F3", F3Mode, "todo lmao")
-$+F4::fxKeyPress("F4", F4Mode, "todo lmao")
-$+F5::fxKeyPress("F5", F5Mode, "todo lmao")
-$+F6::fxKeyPress("F6", F6Mode, "todo lmao")
-$+F7::fxKeyPress("F7", F7Mode, "todo lmao")
-$+F8::fxKeyPress("F8", F8Mode, "todo lmao")
-$+F9::fxKeyPress("F9", F9Mode, "todo lmao")
-$+F10::fxKeyPress("F10", F10Mode, "todo lmao")
-$+F11::fxKeyPress("F11", F11Mode, "todo lmao")
-$+F12::fxKeyPress("F12", F12Mode, "todo lmao")
+; $+F1::fxKeyPress(F1Mode, windowGroupF1, currentWinF1)
+; $+F2::fxKeyPress(F2Mode, windowGroupF2, currentWinF2)
+; $+F3::fxKeyPress(F3Mode, windowGroupF3, currentWinF3)
+; $+F4::fxKeyPress(F4Mode, windowGroupF4, currentWinF4)
+; $+F5::fxKeyPress(F5Mode, windowGroupF5, currentWinF5)
+; $+F6::fxKeyPress(F6Mode, windowGroupF6, currentWinF6)
+; $+F7::fxKeyPress(F7Mode, windowGroupF7, currentWinF7)
+; $+F8::fxKeyPress(F8Mode, windowGroupF8, currentWinF8)
+; $+F9::fxKeyPress(F9Mode, windowGroupF9, currentWinF9)
+; $+F10::fxKeyPress(F10Mode, windowGroupF10, currentWinF10)
+; $+F11::fxKeyPress(F11Mode, windowGroupF11, currentWinF11)
+; $+F12::fxKeyPress(F12Mode, windowGroupF12, currentWinF12)
