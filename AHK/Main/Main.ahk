@@ -1,6 +1,5 @@
 ;Grouping everything I use the most into 1 file.
 #NoEnv
-#UseHook
 #MaxHotkeysPerInterval 999999999999999999999999999999999
 #HotkeyInterval 99999999999999999999999999999999999
 #KeyHistory 0
@@ -31,6 +30,11 @@ DetectHiddenWindows, Off
 ; #Include, ...
 
 ;------------MAIN COMPONENTS------------
+#Include, %A_ScriptDir%/Functions/BooleanToggle.ahk
+#Include, %A_ScriptDir%/Functions/InArray.ahk
+#Include, %A_ScriptDir%/Functions/Tippy.ahk
+#Include, %A_ScriptDir%/Functions/toggleGUI.ahk
+
 #Include, %A_ScriptDir%/FnKeys.ahk
 
 ;------------------------MISC HOTKEYS------------------------
