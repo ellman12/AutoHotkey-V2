@@ -12,6 +12,7 @@ Actions:
 *Tabs: run program if needed. Activate that window and go through tabs forwards
 *TabsReverse: same thing but reverse tab order
 *Wins: run program or switch between windows
+Default behavior is to just send the key like normal: Send the actual key. E.g., if Default specified for F5, send F5 and not anything else
 */
 fxKeyPress(keyName, action, windowGroup)
 {
@@ -32,10 +33,26 @@ fxKeyPress(keyName, action, windowGroup)
 		case "VSCodeTabs":activateOrSwitchTabs("Code.exe", "Code.exe", false)
 		case "VSCodeTabsReverse":activateOrSwitchTabs("Code.exe", "Code.exe", true)
 		case "VSCodeWins":switchBetweenWindows("Code.exe", "Code.exe", "vscodeWins")
-		
+
 		case "VSTabs":activateOrSwitchTabs("devenv.exe", "devenv.exe", false)
 		case "VSTabsReverse":activateOrSwitchTabs("devenv.exe", "devenv.exe", true)
 		case "VSWins":switchBetweenWindows("devenv.exe", "devenv.exe", "vsWins")
+
+		Default: ;Need to move modifiers outside the {} or else Send won't work :/
+			ogHotkey := A_ThisHotkey
+			if (InStr(ogHotkey, "$")) ogHotkey := StrReplace(ogHotkey, "$")
+			
+			modifiersList := ["#", "!", "^", "+"]
+			for k, v in modifiersList {
+				if (InStr(ogHotkey, v)) {
+					ogHotkey := StrReplace(ogHotkey, v)
+					modifiers .= v
+				}
+			}
+			
+			newHotkey := modifiers . "{" . ogHotkey . "}"
+			Send, %newHotkey%
+		return
 	}
 }
 
@@ -57,8 +74,14 @@ activateOrSwitchTabs(exeName, exePath, reverse) {
 			Send ^{PgUp}
 		else
 			Send ^{PgDn}
-	else
-		WinActivate %fullExe%
+	else {
+		; WinActivate %fullExe% ;TODO??????????
+        WinActivatebottom ahk_exe firefox.exe
+        ;sometimes winactivate is not enough. the window is brought to the foreground, but not put into FOCUS.
+        ;the below code should fix that.
+        WinGet, hWnd, ID, ahk_exe firefox.exe
+        DllCall("SetForegroundWindow", UInt, hWnd)
+	}
 }
 
 /*
@@ -84,8 +107,41 @@ switchBetweenWindows(exeName, exePath, groupName) {
 }
 
 ;TODO
-F1::fxKeyPress("F1", "FirefoxTabs", "F1")
-F2::fxKeyPress("F2", "FirefoxWins", "F2")
-F3::fxKeyPress("F3", "RiderTabs", "F3")
-+F3::fxKeyPress("F3", "RiderTabsReverse", "F3")
-F4::fxKeyPress("F4", "RiderWins", "F4")
+$F1::fxKeyPress("F1", "Default", "todo lmao")
+$F2::fxKeyPress("F2", "Default", "todo lmao")
+$F3::fxKeyPress("F3", "Default", "todo lmao")
+$F4::fxKeyPress("F4", "Default", "todo lmao")
+$F5::fxKeyPress("F5", "Default", "todo lmao")
+$F6::fxKeyPress("F6", "Default", "todo lmao")
+$F7::fxKeyPress("F7", "Default", "todo lmao")
+$F8::fxKeyPress("F8", "Default", "todo lmao")
+$F9::fxKeyPress("F9", "Default", "todo lmao")
+$F10::fxKeyPress("F10", "Default", "todo lmao")
+$F11::fxKeyPress("F11", "Default", "todo lmao")
+$F12::fxKeyPress("F12", "Default", "todo lmao")
+
+$^F1::fxKeyPress("F1", "Default", "todo lmao")
+$^F2::fxKeyPress("F2", "Default", "todo lmao")
+$^F3::fxKeyPress("F3", "Default", "todo lmao")
+$^F4::fxKeyPress("F4", "Default", "todo lmao")
+$^F5::fxKeyPress("F5", "Default", "todo lmao")
+$^F6::fxKeyPress("F6", "Default", "todo lmao")
+$^F7::fxKeyPress("F7", "Default", "todo lmao")
+$^F8::fxKeyPress("F8", "Default", "todo lmao")
+$^F9::fxKeyPress("F9", "Default", "todo lmao")
+$^F10::fxKeyPress("F10", "Default", "todo lmao")
+$^F11::fxKeyPress("F11", "Default", "todo lmao")
+$^F12::fxKeyPress("F12", "Default", "todo lmao")
+
+$+F1::fxKeyPress("F1", "Default", "todo lmao")
+$+F2::fxKeyPress("F2", "Default", "todo lmao")
+$+F3::fxKeyPress("F3", "Default", "todo lmao")
+$+F4::fxKeyPress("F4", "Default", "todo lmao")
+$+F5::fxKeyPress("F5", "Default", "todo lmao")
+$+F6::fxKeyPress("F6", "Default", "todo lmao")
+$+F7::fxKeyPress("F7", "Default", "todo lmao")
+$+F8::fxKeyPress("F8", "Default", "todo lmao")
+$+F9::fxKeyPress("F9", "Default", "todo lmao")
+$+F10::fxKeyPress("F10", "Default", "todo lmao")
+$+F11::fxKeyPress("F11", "Default", "todo lmao")
+$+F12::fxKeyPress("F12", "Default", "todo lmao")
