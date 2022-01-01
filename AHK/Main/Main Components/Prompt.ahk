@@ -66,7 +66,7 @@
 
 /*
 Used for mass downloading music tracks from this website: https://downloads.khinsider.com/
-These coordinates only work with Asus monitor at home.
+These coordinates only work with big 1080p Asus monitor.
 Here's how to use it:
 1. Use the Snap Links extension to open several tabs at once
 2. Test and make sure the screen coordinates are all correct (test a single track at a time)
@@ -89,3 +89,7 @@ Here's how to use it:
 ; 	Sleep 900
 ; }
 ; return
+
+;if active win = whatever
+;up = inc index 
+;down = dec index

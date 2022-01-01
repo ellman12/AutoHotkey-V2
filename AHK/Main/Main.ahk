@@ -55,13 +55,13 @@ Loop {
 #Include, %A_ScriptDir%/../Functions/Tippy.ahk
 #Include, %A_ScriptDir%/../Functions/ToggleGUI.ahk
 
-;------------MODULE INITIALIZATION FILES------------
+;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
-#Include, %A_ScriptDir%/Main Components/Main Modules/Initialization/FnKeys.h.ahk
+#Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 
-;----------------MODULE HOTKEY FILES----------------
-#Include, %A_ScriptDir%/Main Components/Main Modules/Hotkeys/FnKeys.ahk
-#Include, %A_ScriptDir%/Main Components/Main Modules/Hotkeys/NumPad.ahk
+;-------------------HOTKEY FILES--------------------
+#Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
+#Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt.ahk
 
 ;----------------------------MISC HOTKEYS---------------------------
