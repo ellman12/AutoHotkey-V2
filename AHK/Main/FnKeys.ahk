@@ -42,6 +42,32 @@ shiftF10Mode := "Default"
 shiftF11Mode := "Default"
 shiftF12Mode := "Default"
 
+altF1Mode := "Default"
+altF2Mode := "Default"
+altF3Mode := "Default"
+altF4Mode := "Default"
+altF5Mode := "Default"
+altF6Mode := "WinRemover"
+altF7Mode := "Default"
+altF8Mode := "Default"
+altF9Mode := "Default"
+altF10Mode := "Default"
+altF11Mode := "Default"
+altF12Mode := "Default"
+
+winF1Mode := "FirefoxWins"
+winF2Mode := "Default"
+winF3Mode := "Default"
+winF4Mode := "Default"
+winF5Mode := "Default"
+winF6Mode := "Default"
+winF7Mode := "Default"
+winF8Mode := "Default"
+winF9Mode := "Default"
+winF10Mode := "Default"
+winF11Mode := "Default"
+winF12Mode := "Default"
+
 ;These work together to be interchangeable
 #Include, %A_ScriptDir%/Custom Window Groups.ahk
 
@@ -86,6 +112,7 @@ runAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 		case "VSWins":switchBetweenWindows("devenv.exe", "devenv.exe", "vsWins")
 
 		case "WinAdder":addWindowFx(windowGroupArray)
+		case "WinRemover":removeWindowFx(windowGroupArray)
 		case "WinSwitcher":nextWindowFx(windowGroupArray, currentWin)
 		case "WinHider":showOrHideWindowsFx(windowGroupArray, fxShowHideToggle)
 
@@ -195,3 +222,29 @@ $+F9::runAction(shiftF9Mode, windowGroupF9, currentWinF9, F9VisToggle)
 $+F10::runAction(shiftF10Mode, windowGroupF10, currentWinF10, F10VisToggle)
 $+F11::runAction(shiftF11Mode, windowGroupF11, currentWinF11, F11VisToggle)
 $+F12::runAction(shiftF12Mode, windowGroupF12, currentWinF12, F12VisToggle)
+
+$!F1::runAction(altF1Mode, windowGroupF1, currentWinF1, F1VisToggle)
+$!F2::runAction(altF2Mode, windowGroupF2, currentWinF2, F2VisToggle)
+$!F3::runAction(altF3Mode, windowGroupF3, currentWinF3, F3VisToggle)
+$!F4::runAction(altF4Mode, windowGroupF4, currentWinF4, F4VisToggle)
+$!F5::runAction(altF5Mode, windowGroupF5, currentWinF5, F5VisToggle)
+$!F6::runAction(altF6Mode, windowGroupF6, currentWinF6, F6VisToggle)
+$!F7::runAction(altF7Mode, windowGroupF7, currentWinF7, F7VisToggle)
+$!F8::runAction(altF8Mode, windowGroupF8, currentWinF8, F8VisToggle)
+$!F9::runAction(altF9Mode, windowGroupF9, currentWinF9, F9VisToggle)
+$!F10::runAction(altF10Mode, windowGroupF10, currentWinF10, F10VisToggle)
+$!F11::runAction(altF11Mode, windowGroupF11, currentWinF11, F11VisToggle)
+$!F12::runAction(altF12Mode, windowGroupF12, currentWinF12, F12VisToggle)
+
+$#F1::runAction(winF1Mode, windowGroupF1, currentWinF1, F1VisToggle)
+$#F2::runAction(winF2Mode, windowGroupF2, currentWinF2, F2VisToggle)
+$#F3::runAction(winF3Mode, windowGroupF3, currentWinF3, F3VisToggle)
+$#F4::runAction(winF4Mode, windowGroupF4, currentWinF4, F4VisToggle)
+$#F5::runAction(winF5Mode, windowGroupF5, currentWinF5, F5VisToggle)
+$#F6::runAction(winF6Mode, windowGroupF6, currentWinF6, F6VisToggle)
+$#F7::runAction(winF7Mode, windowGroupF7, currentWinF7, F7VisToggle)
+$#F8::runAction(winF8Mode, windowGroupF8, currentWinF8, F8VisToggle)
+$#F9::runAction(winF9Mode, windowGroupF9, currentWinF9, F9VisToggle)
+$#F10::runAction(winF10Mode, windowGroupF10, currentWinF10, F10VisToggle)
+$#F11::runAction(winF11Mode, windowGroupF11, currentWinF11, F11VisToggle)
+$#F12::runAction(winF12Mode, windowGroupF12, currentWinF12, F12VisToggle)
