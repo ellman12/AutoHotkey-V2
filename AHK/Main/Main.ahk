@@ -63,7 +63,12 @@ Loop {
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
-#!p::Suspend
+^#r::Reload
+
+^CtrlBreak:: ;Technically Ctrl + Pause. Read about this here: https://www.autohotkey.com/docs/KeyList.htm#other
+#!p::
+Suspend
+return
 
 Pause:: ;Suspends all hotkeys for the specified number in milliseconds.
 #p::
@@ -77,6 +82,11 @@ setTimerLabel:
 Suspend, Off
 SetTimer, setTimerLabel, Off
 ToolTip
+return
+
+\::
+Send, ^+{Left}
+Send, {BackSpace}
 return
 
 ^\::Send, \ ;This key normally deletes a word. This hotkey allows you to insert a \ without having to suspend hotkeys.
