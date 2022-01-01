@@ -1,5 +1,6 @@
 ;Grouping everything I use the most into 1 file.
 #NoEnv
+#UseHook
 #MaxHotkeysPerInterval 999999999999999999999999999999999
 #HotkeyInterval 99999999999999999999999999999999999
 #KeyHistory 0
@@ -24,18 +25,20 @@ DetectHiddenWindows, Off
 ; #Include, ...
 ; #Include, ...
 
-;------------MODULE HOTKEY FILES------------
+;----------------MODULE HOTKEY FILES----------------
 ; #Include, ...
 ; #Include, ...
 ; #Include, ...
 
-;------------MAIN COMPONENTS------------
-#Include, %A_ScriptDir%/Functions/BooleanToggle.ahk
-#Include, %A_ScriptDir%/Functions/InArray.ahk
-#Include, %A_ScriptDir%/Functions/Tippy.ahk
-#Include, %A_ScriptDir%/Functions/ToggleGUI.ahk
+;---------------------FUNCTIONS---------------------
+#Include, %A_ScriptDir%/../Functions/BooleanToggle.ahk
+#Include, %A_ScriptDir%/../Functions/InArray.ahk
+#Include, %A_ScriptDir%/../Functions/Tippy.ahk
+#Include, %A_ScriptDir%/../Functions/ToggleGUI.ahk
 
-#Include, %A_ScriptDir%/FnKeys.ahk
+;------------------MAIN COMPONENTS------------------
+#Include, %A_ScriptDir%/Main Components/FnKeys.ahk
+#Include, %A_ScriptDir%/Main Components/Prompt.ahk
 
 ;------------------------MISC HOTKEYS------------------------
 ;These are completely global and will work no matter the context

@@ -69,7 +69,7 @@ winF11Mode := "Default"
 winF12Mode := "Default"
 
 ;These work together to be interchangeable
-#Include, %A_ScriptDir%/Custom Window Groups.ahk
+#Include, %A_ScriptDir%/Main Components/Custom Window Groups.ahk
 
 /*
 F1-F12 are hotkeys that each call this and can be remapped at runtime.
