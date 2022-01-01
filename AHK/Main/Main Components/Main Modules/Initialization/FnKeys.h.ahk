@@ -39,7 +39,7 @@ shiftF11Mode := "Default"
 shiftF12Mode := "Default"
 
 altF1Mode := "Default"
-altF2Mode := "Default"
+altF2Mode := "ExplorerWins"
 altF3Mode := "Default"
 altF4Mode := "Default"
 altF5Mode := "Default"
@@ -111,6 +111,8 @@ runAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 		case "VSTabs":activateOrSwitchTabs("devenv.exe", "devenv.exe", false)
 		case "VSTabsReverse":activateOrSwitchTabs("devenv.exe", "devenv.exe", true)
 		case "VSWins":switchBetweenWindows("devenv.exe", "devenv.exe", "vsWins")
+		
+		case "ExplorerWins":switchToExplorer()
 
 		case "WinAdder":addWindowFx(windowGroupArray)
 		case "WinRemover":removeWindowFx(windowGroupArray)
@@ -181,4 +183,15 @@ switchBetweenWindows(exeName, exePath, groupName) {
 		else
 			WinActivate %fullExe%
 	}
+}
+
+;Run explorer if not exist and if does switch between windows
+switchToExplorer() {
+	IfWinNotExist, ahk_class CabinetWClass
+        Run, explorer.exe
+    GroupAdd, explorerWins, ahk_class CabinetWClass
+    if WinActive("ahk_exe explorer.exe")
+        GroupActivate, explorerWins, R
+    else
+        WinActivate ahk_class CabinetWClass
 }
