@@ -63,10 +63,10 @@ winF5Mode := "Default"
 winF6Mode := "Default"
 winF7Mode := "Default"
 winF8Mode := "Default"
-winF9Mode := "Default"
-winF10Mode := "Default"
-winF11Mode := "Default"
-winF12Mode := "Default"
+winF9Mode := "NewFFWin"
+winF10Mode := "NewChrWin"
+winF11Mode := "NewPrivFFWin"
+winF12Mode := "NewPrivChrWin"
 
 ;These work together to be interchangeable
 #Include, %A_ScriptDir%/Main Components/Custom Window Groups.ahk
@@ -79,6 +79,7 @@ windowGroup = the array of window IDs for that Fx. May or may not be needed depe
 fxShowHideToggle = visibility toggle for windows in the group (again, may or may not be used).
 
 Actions:
+NewFFWin/NewChrWin & NewPrivFFWin/NewPrivChrWin: yes
 *Tabs: run program if needed. Activate that window and go through tabs forwards
 *TabsReverse: same thing but reverse tab order
 *Wins: run program or switch between windows
@@ -91,10 +92,14 @@ runAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 {
 	switch (action)
 	{
+		case "NewFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe
+		case "NewPrivFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window
 		case "FirefoxTabs":activateOrSwitchTabs("firefox.exe", "firefox.exe", false)
 		case "FirefoxTabsReverse":activateOrSwitchTabs("firefox.exe", "firefox.exe", true)
 		case "FirefoxWins":switchBetweenWindows("firefox.exe", "firefox.exe", "firefoxWins")
 
+		case "NewChrWin":Run, chrome.exe
+		case "NewPrivChrWin":Run, chrome.exe -incognito
 		case "ChromeTabs":activateOrSwitchTabs("chrome.exe", "chrome.exe", false)
 		case "ChromeTabsReverse":activateOrSwitchTabs("chrome.exe", "chrome.exe", true)
 		case "ChromeWins":switchBetweenWindows("chrome.exe", "chrome.exe", "chromeWins")
