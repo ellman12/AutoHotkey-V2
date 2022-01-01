@@ -119,8 +119,6 @@ runAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 
 		Default: ;Need to move modifiers outside the {} or else Send won't work :/
 			ogHotkey := A_ThisHotkey
-			if (InStr(ogHotkey, "$")) ogHotkey := StrReplace(ogHotkey, "$")
-
 			modifiersList := ["#", "!", "^", "+"]
 			for k, v in modifiersList {
 				if (InStr(ogHotkey, v)) {
