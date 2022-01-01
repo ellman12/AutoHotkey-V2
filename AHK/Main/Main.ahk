@@ -19,7 +19,33 @@ DetectHiddenWindows, Off
 ;https://diymediahome.org/wp-content/uploads/shell32_icons.jpg
 ; Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
-;------------------------AUTO-EXECUTE------------------------
+;----------------------------AUTO-EXECUTE---------------------------
+;---------------------MAIN VARS---------------------
+global activeWindowTitle, activeWindowID
+
+global sleepDuration := 100 ;ms
+global Num2And8Step := 3 ;When Num2 or Num8 pressed, how much to increase/decrease volume.
+global autoNumPadModeToggle := true ;If true, switch NumPad modes automatically. Manual control if false.
+global savedNumMinusVol
+
+;---------------------MAIN LOOP---------------------
+;Doesn't work if put after AE
+Loop {
+	WinGetActiveTitle, activeWindowTitle
+	WinGet, activeWindowID, ID, A
+	
+	if (autoNumPadModeToggle = true) {
+		if InStr(activeWindowTitle, "- YouTube") {
+			SetNumLockState, On
+			SetScrollLockState, On
+		} else { ;Set it to MusicBee mode: the default (and also most commonly used) mode.
+			SetNumLockState, Off
+			SetScrollLockState, Off
+		}
+	}
+	Sleep sleepDuration ;Reduce CPU usage.
+}
+
 ;---------------------FUNCTIONS---------------------
 #Include, %A_ScriptDir%/../Functions/BooleanToggle.ahk
 #Include, %A_ScriptDir%/../Functions/InArray.ahk
@@ -32,9 +58,10 @@ DetectHiddenWindows, Off
 
 ;----------------MODULE HOTKEY FILES----------------
 #Include, %A_ScriptDir%/Main Components/Main Modules/Hotkeys/FnKeys.ahk
+#Include, %A_ScriptDir%/Main Components/Main Modules/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt.ahk
 
-;------------------------MISC HOTKEYS------------------------
+;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
 #!p::Suspend
 
