@@ -20,24 +20,18 @@ DetectHiddenWindows, Off
 ; Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
 ;------------------------AUTO-EXECUTE------------------------
-;------------MODULE INITIALIZATION FILES------------
-; #Include, ...
-; #Include, ...
-; #Include, ...
-
-;----------------MODULE HOTKEY FILES----------------
-; #Include, ...
-; #Include, ...
-; #Include, ...
-
 ;---------------------FUNCTIONS---------------------
 #Include, %A_ScriptDir%/../Functions/BooleanToggle.ahk
 #Include, %A_ScriptDir%/../Functions/InArray.ahk
 #Include, %A_ScriptDir%/../Functions/Tippy.ahk
 #Include, %A_ScriptDir%/../Functions/ToggleGUI.ahk
 
-;------------------MAIN COMPONENTS------------------
-#Include, %A_ScriptDir%/Main Components/FnKeys.ahk
+;------------MODULE INITIALIZATION FILES------------
+;Stuff to be ran in auto-execute before hotkeys
+#Include, %A_ScriptDir%/Main Components/Main Modules/Initialization/FnKeys.h.ahk
+
+;----------------MODULE HOTKEY FILES----------------
+#Include, %A_ScriptDir%/Main Components/Main Modules/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt.ahk
 
 ;------------------------MISC HOTKEYS------------------------
