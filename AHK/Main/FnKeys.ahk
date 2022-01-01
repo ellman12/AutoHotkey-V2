@@ -3,7 +3,7 @@
 ;A lot of my ideas can also be attributed to him as well either from videos or from emailing him.
 
 ;TODO: temp?
-F1Mode := "Default"
+F1Mode := "FirefoxTabs"
 F2Mode := "Default"
 F3Mode := "Default"
 F4Mode := "Default"
@@ -15,6 +15,19 @@ F9Mode := "Default"
 F10Mode := "Default"
 F11Mode := "Default"
 F12Mode := "Default"
+
+ctrlF1Mode := "Default"
+ctrlF2Mode := "Default"
+ctrlF3Mode := "Default"
+ctrlF4Mode := "Default"
+ctrlF5Mode := "Default"
+ctrlF6Mode := "WinAdder"
+ctrlF7Mode := "Default"
+ctrlF8Mode := "Default"
+ctrlF9Mode := "Default"
+ctrlF10Mode := "Default"
+ctrlF11Mode := "Default"
+ctrlF12Mode := "Default"
 
 shiftF1Mode := "FirefoxTabsReverse"
 shiftF2Mode := "Default"
@@ -37,11 +50,13 @@ F1-F12 are hotkeys that each call this and can be remapped at runtime.
 keyName = "F1"-"F12".
 action = what to run on press.
 windowGroup = the array of window IDs for that Fx. May or may not be needed depending on mode.
+fxShowHideToggle = visibility toggle for windows in the group (again, may or may not be used).
 
 Actions:
 *Tabs: run program if needed. Activate that window and go through tabs forwards
 *TabsReverse: same thing but reverse tab order
 *Wins: run program or switch between windows
+WinAdder: adding windows to the Fx group
 WinSwitcher: group windows together for switching between them
 WinHider: group windows together for showing/hiding them
 Default behavior is to just send the key like normal: Send the actual key. E.g., if Default specified for F5, send F5 and not anything else
@@ -70,6 +85,7 @@ fxKeyPress(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 		case "VSTabsReverse":activateOrSwitchTabs("devenv.exe", "devenv.exe", true)
 		case "VSWins":switchBetweenWindows("devenv.exe", "devenv.exe", "vsWins")
 
+		case "WinAdder":addWindowFx(windowGroupArray)
 		case "WinSwitcher":nextWindowFx(windowGroupArray, currentWin)
 		case "WinHider":showOrHideWindowsFx(windowGroupArray, fxShowHideToggle)
 
@@ -141,14 +157,6 @@ switchBetweenWindows(exeName, exePath, groupName) {
 	}
 }
 
-;If this Fx is in Window Switcher or Hider mode, add window to array. Else, fire like normal.
-ctrlFxPress(Fx, fxMode, windowGroupArray) {
-	if (fxMode == "WinSwitcher" or fxMode == "WinHider")
-		addWindowFx(windowGroupArray)
-	else
-		Send, ^{%Fx%}
-}
-
 $F1::fxKeyPress(F1Mode, windowGroupF1, currentWinF1, F1VisToggle)
 $F2::fxKeyPress(F2Mode, windowGroupF2, currentWinF2, F2VisToggle)
 $F3::fxKeyPress(F3Mode, windowGroupF3, currentWinF3, F3VisToggle)
@@ -162,18 +170,18 @@ $F10::fxKeyPress(F10Mode, windowGroupF10, currentWinF10, F10VisToggle)
 $F11::fxKeyPress(F11Mode, windowGroupF11, currentWinF11, F11VisToggle)
 $F12::fxKeyPress(F12Mode, windowGroupF12, currentWinF12, F12VisToggle)
 
-$^F1::ctrlFxPress("F1", F1Mode, windowGroupF1)
-$^F2::ctrlFxPress("F2", F2Mode, windowGroupF2)
-$^F3::ctrlFxPress("F3", F3Mode, windowGroupF3)
-$^F4::ctrlFxPress("F4", F4Mode, windowGroupF4)
-$^F5::ctrlFxPress("F5", F5Mode, windowGroupF5)
-$^F6::ctrlFxPress("F6", F6Mode, windowGroupF6)
-$^F7::ctrlFxPress("F7", F7Mode, windowGroupF7)
-$^F8::ctrlFxPress("F8", F8Mode, windowGroupF8)
-$^F9::ctrlFxPress("F9", F9Mode, windowGroupF9)
-$^F10::ctrlFxPress("F10", F10Mode, windowGroupF10)
-$^F11::ctrlFxPress("F11", F11Mode, windowGroupF11)
-$^F12::ctrlFxPress("F12", F12Mode, windowGroupF12)
+$^F1::fxKeyPress(ctrlF1Mode, windowGroupF1, currentWinF1, F1VisToggle)
+$^F2::fxKeyPress(ctrlF2Mode, windowGroupF2, currentWinF2, F2VisToggle)
+$^F3::fxKeyPress(ctrlF3Mode, windowGroupF3, currentWinF3, F3VisToggle)
+$^F4::fxKeyPress(ctrlF4Mode, windowGroupF4, currentWinF4, F4VisToggle)
+$^F5::fxKeyPress(ctrlF5Mode, windowGroupF5, currentWinF5, F5VisToggle)
+$^F6::fxKeyPress(ctrlF6Mode, windowGroupF6, currentWinF6, F6VisToggle)
+$^F7::fxKeyPress(ctrlF7Mode, windowGroupF7, currentWinF7, F7VisToggle)
+$^F8::fxKeyPress(ctrlF8Mode, windowGroupF8, currentWinF8, F8VisToggle)
+$^F9::fxKeyPress(ctrlF9Mode, windowGroupF9, currentWinF9, F9VisToggle)
+$^F10::fxKeyPress(ctrlF10Mode, windowGroupF10, currentWinF10, F10VisToggle)
+$^F11::fxKeyPress(ctrlF11Mode, windowGroupF11, currentWinF11, F11VisToggle)
+$^F12::fxKeyPress(ctrlF12Mode, windowGroupF12, currentWinF12, F12VisToggle)
 
 $+F1::fxKeyPress(shiftF1Mode, windowGroupF1, currentWinF1, F1VisToggle)
 $+F2::fxKeyPress(shiftF2Mode, windowGroupF2, currentWinF2, F2VisToggle)
