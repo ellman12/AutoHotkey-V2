@@ -16,6 +16,19 @@ F10Mode := "Default"
 F11Mode := "Default"
 F12Mode := "Default"
 
+shiftF1Mode := "FirefoxTabsReverse"
+shiftF2Mode := "Default"
+shiftF3Mode := "Default"
+shiftF4Mode := "Default"
+shiftF5Mode := "Default"
+shiftF6Mode := "WinSwitcher"
+shiftF7Mode := "WinHider"
+shiftF8Mode := "Default"
+shiftF9Mode := "Default"
+shiftF10Mode := "Default"
+shiftF11Mode := "Default"
+shiftF12Mode := "Default"
+
 ;These work together to be interchangeable
 #Include, %A_ScriptDir%/Custom Window Groups.ahk
 
@@ -136,7 +149,6 @@ ctrlFxPress(Fx, fxMode, windowGroupArray) {
 		Send, ^{%Fx%}
 }
 
-;TODO
 $F1::fxKeyPress(F1Mode, windowGroupF1, currentWinF1, F1VisToggle)
 $F2::fxKeyPress(F2Mode, windowGroupF2, currentWinF2, F2VisToggle)
 $F3::fxKeyPress(F3Mode, windowGroupF3, currentWinF3, F3VisToggle)
@@ -163,15 +175,15 @@ $^F10::ctrlFxPress("F10", F10Mode, windowGroupF10)
 $^F11::ctrlFxPress("F11", F11Mode, windowGroupF11)
 $^F12::ctrlFxPress("F12", F12Mode, windowGroupF12)
 
-; $+F1::fxKeyPress(F1Mode, windowGroupF1, currentWinF1)
-; $+F2::fxKeyPress(F2Mode, windowGroupF2, currentWinF2)
-; $+F3::fxKeyPress(F3Mode, windowGroupF3, currentWinF3)
-; $+F4::fxKeyPress(F4Mode, windowGroupF4, currentWinF4)
-; $+F5::fxKeyPress(F5Mode, windowGroupF5, currentWinF5)
-; $+F6::fxKeyPress(F6Mode, windowGroupF6, currentWinF6)
-; $+F7::fxKeyPress(F7Mode, windowGroupF7, currentWinF7)
-; $+F8::fxKeyPress(F8Mode, windowGroupF8, currentWinF8)
-; $+F9::fxKeyPress(F9Mode, windowGroupF9, currentWinF9)
-; $+F10::fxKeyPress(F10Mode, windowGroupF10, currentWinF10)
-; $+F11::fxKeyPress(F11Mode, windowGroupF11, currentWinF11)
-; $+F12::fxKeyPress(F12Mode, windowGroupF12, currentWinF12)
+$+F1::fxKeyPress(shiftF1Mode, windowGroupF1, currentWinF1, F1VisToggle)
+$+F2::fxKeyPress(shiftF2Mode, windowGroupF2, currentWinF2, F2VisToggle)
+$+F3::fxKeyPress(shiftF3Mode, windowGroupF3, currentWinF3, F3VisToggle)
+$+F4::fxKeyPress(shiftF4Mode, windowGroupF4, currentWinF4, F4VisToggle)
+$+F5::fxKeyPress(shiftF5Mode, windowGroupF5, currentWinF5, F5VisToggle)
+$+F6::fxKeyPress(shiftF6Mode, windowGroupF6, currentWinF6, F6VisToggle)
+$+F7::fxKeyPress(shiftF7Mode, windowGroupF7, currentWinF7, F7VisToggle)
+$+F8::fxKeyPress(shiftF8Mode, windowGroupF8, currentWinF8, F8VisToggle)
+$+F9::fxKeyPress(shiftF9Mode, windowGroupF9, currentWinF9, F9VisToggle)
+$+F10::fxKeyPress(shiftF10Mode, windowGroupF10, currentWinF10, F10VisToggle)
+$+F11::fxKeyPress(shiftF11Mode, windowGroupF11, currentWinF11, F11VisToggle)
+$+F12::fxKeyPress(shiftF12Mode, windowGroupF12, currentWinF12, F12VisToggle)
