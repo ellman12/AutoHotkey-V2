@@ -22,5 +22,9 @@ togglePrompt() {
 }
 
 runCommand(cmd) {
-    
+    switch (cmd) {
+        case "test":Tippy("hi", 1000)
+        case "":Tippy("Blank command", 1000)
+        Default:Tippy("Unknown command", 2000)
+    }
 }

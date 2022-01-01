@@ -40,7 +40,7 @@ global savedNumMinusVol
 ;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
-#Include, %A_ScriptDir%/Main Components/Initialization/Prompt.h.ahk
+#Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
 
 ;---------------------MAIN LOOP---------------------
 ;Only works if put here
@@ -63,7 +63,7 @@ Loop {
 ;-------------------HOTKEY FILES--------------------
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
-#Include, %A_ScriptDir%/Main Components/Hotkeys/Prompt.ahk
+#Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
