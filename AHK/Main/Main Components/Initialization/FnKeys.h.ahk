@@ -39,7 +39,7 @@ shiftF11Mode := "Default"
 shiftF12Mode := "Default"
 
 altF1Mode := "Default"
-altF2Mode := "ExplorerWins"
+altF2Mode := "NewPrivFFWin"
 altF3Mode := "Default"
 altF4Mode := "Default"
 altF5Mode := "Default"

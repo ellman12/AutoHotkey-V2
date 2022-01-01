@@ -95,8 +95,39 @@ Here's how to use it:
 ;down = dec index
 ;enter to run it
 
-!r::toggleGUI(promptVisible, "Prompt", PROMPT_WIDTH, PROMPT_HEIGHT, PROMPT_TITLE)
+!r::togglePrompt()
 
-PromptGUIClose:
-toggleGUI(promptVisible, "Prompt", PROMPT_WIDTH, PROMPT_HEIGHT, PROMPT_TITLE)
+CmdOnInput:
+GuiControlGet, currentCmd,, currentCmd
+prevCmds[currentIndex] := currentCmd
 return
+
+PromptGuiEscape:
+PromptGUIClose:
+togglePrompt()
+return
+
+#IfWinActive Enter a Command
+Up::
+if (currentIndex > 0)
+    currentIndex--
+currentCmd := prevCmds[currentIndex]
+GuiControl, Prompt:, currentCmd, %currentCmd%
+return
+
+Down::
+if (currentIndex < prevCmds.MaxIndex())
+    currentIndex++
+currentCmd := prevCmds[currentIndex]
+GuiControl, Prompt:, currentCmd, %currentCmd%
+return
+
+Enter::
+currentIndex := prevCmds.MaxIndex() + 1
+GuiControl, Prompt:, currentCmd,
+prevCmds.InsertAt(currentIndex, currentCmd)
+togglePrompt()
+;TODO: runcmd() or whatever
+return
+
+#If
