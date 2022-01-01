@@ -125,9 +125,9 @@ return
 Enter::
 currentIndex := prevCmds.MaxIndex() + 1
 GuiControl, Prompt:, currentCmd,
-prevCmds.InsertAt(currentIndex, currentCmd)
+prevCmds.InsertAt(prevCmds.MaxIndex(), currentCmd)
 togglePrompt()
-;TODO: runcmd() or whatever
+runCommand(currentCmd)
 return
 
 #If
