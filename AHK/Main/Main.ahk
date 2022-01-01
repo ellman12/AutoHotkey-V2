@@ -20,6 +20,9 @@ DetectHiddenWindows, Off
 ; Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
 ;----------------------------AUTO-EXECUTE---------------------------
+;------------------------MISC-----------------------
+SetCapsLockState, AlwaysOff
+
 ;---------------------MAIN VARS---------------------
 global activeWindowTitle, activeWindowID
 
@@ -36,11 +39,11 @@ Loop {
 	
 	if (autoNumPadModeToggle = true) {
 		if InStr(activeWindowTitle, "- YouTube") {
-			SetNumLockState, On
-			SetScrollLockState, On
+			SetNumLockState, AlwaysOn
+			SetScrollLockState, AlwaysOn
 		} else { ;Set it to MusicBee mode: the default (and also most commonly used) mode.
-			SetNumLockState, Off
-			SetScrollLockState, Off
+			SetNumLockState, AlwaysOff
+			SetScrollLockState, AlwaysOff
 		}
 	}
 	Sleep sleepDuration ;Reduce CPU usage.
