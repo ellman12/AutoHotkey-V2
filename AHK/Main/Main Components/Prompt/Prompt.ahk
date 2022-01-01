@@ -4,17 +4,6 @@
 ;TODO: copy other stuff from Run into here, too.
 ;TODO: Stuff copied and pasted from MSR that will be implemented later:
 
-; ^+g:: ;Calculate percent grade on a homework assignment or whatever, then show result and letter grade equivalent. So, for something like 40/50, you'd enter 40 and then 50.
-; InputBox, firstNum, Grade Percent Utility, What is the first number?,, 200, 150
-; InputBox, secondNum, Grade Percent Utility, What is the second number?,, 200, 150
-
-; result := round((firstNum/secondNum) * 100, 2)
-; MsgBox, 0, Grade, You got %result%`%.`n`nA+`t97-100`nA`t94-96`nA-`t90-93`nB+`t87-89`nB`t84-86`nB-`t80-83`nC+`t77-79`nC`t74-76`nC-`t70-73`nD+`t67-69`nD`t64-66`nD-`t60-63`nF`t0-59
-; return
-
-; ;Shows just the letter/number grades part of the MsgBox from ^+g.
-; !+g::MsgBox, 0, Letter/Number Grade Chart, A+`t97-100`nA`t94-96`nA-`t90-93`nB+`t87-89`nB`t84-86`nB-`t80-83`nC+`t77-79`nC`t74-76`nC-`t70-73`nD+`t67-69`nD`t64-66`nD-`t60-63`nF`t0-59
-
 ;***********************************RARELY USED BUT STILL USEFUL***********************************
 ; ^!+d:: ;Used for deleting videos from YouTube playlist. Asks you how many to delete and then it starts doing its thing.
 ; InputBox, numVidsToDelete, How many videos do you want to delete?, As soon as you hit enter`, the script will start deleting videos. Please position cursor over the first video's x button.
