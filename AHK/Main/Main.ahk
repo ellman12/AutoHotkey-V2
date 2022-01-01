@@ -31,8 +31,19 @@ global Num2And8Step := 3 ;When Num2 or Num8 pressed, how much to increase/decrea
 global autoNumPadModeToggle := true ;If true, switch NumPad modes automatically. Manual control if false.
 global savedNumMinusVol
 
+;---------------------FUNCTIONS---------------------
+#Include, %A_ScriptDir%/../Functions/BooleanToggle.ahk
+#Include, %A_ScriptDir%/../Functions/InArray.ahk
+#Include, %A_ScriptDir%/../Functions/Tippy.ahk
+#Include, %A_ScriptDir%/../Functions/ToggleGUI.ahk
+
+;---------------INITIALIZATION FILES----------------
+;Stuff to be ran in auto-execute before hotkeys
+#Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
+#Include, %A_ScriptDir%/Main Components/Initialization/Prompt.h.ahk
+
 ;---------------------MAIN LOOP---------------------
-;Doesn't work if put after AE
+;Only works if put here
 Loop {
 	WinGetActiveTitle, activeWindowTitle
 	WinGet, activeWindowID, ID, A
@@ -49,20 +60,10 @@ Loop {
 	Sleep sleepDuration ;Reduce CPU usage.
 }
 
-;---------------------FUNCTIONS---------------------
-#Include, %A_ScriptDir%/../Functions/BooleanToggle.ahk
-#Include, %A_ScriptDir%/../Functions/InArray.ahk
-#Include, %A_ScriptDir%/../Functions/Tippy.ahk
-#Include, %A_ScriptDir%/../Functions/ToggleGUI.ahk
-
-;---------------INITIALIZATION FILES----------------
-;Stuff to be ran in auto-execute before hotkeys
-#Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
-
 ;-------------------HOTKEY FILES--------------------
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
-#Include, %A_ScriptDir%/Main Components/Prompt.ahk
+#Include, %A_ScriptDir%/Main Components/Hotkeys/Prompt.ahk
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
