@@ -93,3 +93,10 @@ Here's how to use it:
 ;if active win = whatever
 ;up = inc index 
 ;down = dec index
+;enter to run it
+
+!r::toggleGUI(promptVisible, "Prompt", PROMPT_WIDTH, PROMPT_HEIGHT, PROMPT_TITLE)
+
+PromptGUIClose:
+toggleGUI(promptVisible, "Prompt", PROMPT_WIDTH, PROMPT_HEIGHT, PROMPT_TITLE)
+return

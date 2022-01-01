@@ -68,6 +68,7 @@ Loop {
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
 ^#r::Reload
+CapsLock::reload
 
 ^CtrlBreak:: ;Technically Ctrl + Pause. Read about this here: https://www.autohotkey.com/docs/KeyList.htm#other
 #!p::
