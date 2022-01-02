@@ -5,17 +5,6 @@
 ;TODO: Stuff copied and pasted from MSR that will be implemented later:
 
 ;***********************************RARELY USED BUT STILL USEFUL***********************************
-; ^!+d:: ;Used for deleting videos from YouTube playlist. Asks you how many to delete and then it starts doing its thing.
-; InputBox, numVidsToDelete, How many videos do you want to delete?, As soon as you hit enter`, the script will start deleting videos. Please position cursor over the first video's x button.
-
-; Loop %numVidsToDelete% {
-; 	Send, {Escape} ;Get rid of stupid annoying pop-up from YouTube.
-; 	Sleep 500
-; 	Send, {Click}
-; 	Sleep 500
-; }
-; return
-
 ; #+d::deleteMostRecentItemInFolder("Downloads") ;Recycle the most recently created file or folder in the Downloads folder.
 ; ^#+d::deleteMostRecentItemInFolder("Desktop") ;Same thing but for Desktop folder.
 

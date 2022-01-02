@@ -1,3 +1,6 @@
-?               Shows this
-Grade           Use to figure out letter grade for an assignment. Enter just l in the first box to show just the letter-number chart.
-ClassGrade      Figure out your grade in a class by entering all the scores on assignments, etc.
+?                       Shows this
+Grade                   Use to figure out letter grade for an assignment. Enter just l in the first box to show just the letter-number chart.
+ClassGrade              Figure out your grade in a class by entering all the scores on assignments, etc.
+
+RARELY USED BUT STILL USEFUL
+DelFromYTPlaylist       Used for deleting videos from YouTube playlist.

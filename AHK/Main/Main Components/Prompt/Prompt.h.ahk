@@ -68,6 +68,23 @@ runCommand(cmd) {
             MsgBox, 0, Grade, You got %result%`%.`n`nA+`t97-100`nA`t94-96`nA-`t90-93`nB+`t87-89`nB`t84-86`nB-`t80-83`nC+`t77-79`nC`t74-76`nC-`t70-73`nD+`t67-69`nD`t64-66`nD-`t60-63`nF`t0-59
         return
         
-                
+        ;---------------------------RARELY USED BUT STILL USEFUL---------------------------
+        
+        ;Used for deleting videos from YouTube playlist.
+        case "DelFromYTPlaylist":
+            InputBox, numVidsToDelete, How many videos do you want to delete?, As soon as you hit enter`, the script will start deleting videos. Please position cursor over the first video's x button.
+
+            if (ErrorLevel == 1) {
+                Tippy("Cancel/Escape was pressed.", 500)
+                return
+            }
+            
+            Loop %numVidsToDelete% {
+            	Send, {Escape} ;Get rid of stupid annoying pop-up from YouTube.
+            	Sleep 500
+            	Send, {Click}
+            	Sleep 500
+            }
+        return
     }
 }
