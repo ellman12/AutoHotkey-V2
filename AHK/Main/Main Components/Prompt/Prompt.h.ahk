@@ -30,7 +30,7 @@ runCommand(cmd) {
             Tippy("Unknown command", 2000)
         return
         
-        ;----------------------------------------MISC----------------------------------------
+        ;----------------------------------------TEXT----------------------------------------
         case "/":Clipboard := StrReplace(Clipboard, "\", "/") ;Replace '\' in the Clipboard with '/'.
         case "\":Clipboard := StrReplace(Clipboard, "/", "\") ;Vice versa.
         
@@ -40,7 +40,26 @@ runCommand(cmd) {
             Clipboard := StrReplace(Clipboard, "`r")
             Clipboard := StrReplace(Clipboard, "`n")
         return
+        
+        case "FAR": ;Find and Replace.
+            InputBox, textToSearch, Search what?, Enter the text to search.
+            if ErrorLevel = 1
+                return
+
+            InputBox, find, Find what?, Enter text to search for.
+            if ErrorLevel = 1
+                return
+
+            InputBox, replace, Find what?, Enter text to replace "%find%" with, and then store to the Clipboard.
+            if ErrorLevel = 1
+                return
+
+            newStr := StrReplace(textToSearch, find, replace, numReplaced)
+            Clipboard := newStr
+            Tippy(numReplaced + " occurrences replaced", 500)
+        return
     
+        ;----------------------------------------MISC----------------------------------------
         ;Enter points earned out of total points to figure out letter grade for an assignment
         ;Enter just l in the first box to show just the letter-number chart.
         case "Grade":
