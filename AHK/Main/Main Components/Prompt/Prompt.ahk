@@ -2,49 +2,10 @@
 ;This is basically the same thing as Run.ahk from AHK-V1
 
 ;TODO: copy other stuff from Run into here, too.
-;TODO: Stuff copied and pasted from MSR that will be implemented later:
-
-;***********************************RARELY USED BUT STILL USEFUL***********************************
-; #+d::deleteMostRecentItemInFolder("Downloads") ;Recycle the most recently created file or folder in the Downloads folder.
-; ^#+d::deleteMostRecentItemInFolder("Desktop") ;Same thing but for Desktop folder.
-
-; deleteMostRecentItemInFolder(folderName)
-; {
-; 	Loop, Files, C:\Users\%A_UserName%\%folderName%\*.*, FD ;FD = Include Files and Directories
-; 	{
-; 		;Loops through this directory, and if it encounters a file/folder that is newer than the previously encountered one,
-; 		; make that the one to potentially delete.
-; 		if ((A_LoopFileTimeModified > currentMaxCreationDate) AND (A_LoopFileName != ".tmp.drivedownload"))
-; 		{
-; 			currentMaxCreationDate := A_LoopFileTimeModified
-; 			thingToDelete := A_LoopFileName
-; 			thingToDeleteFileExt := A_LoopFileExt
-; 		}
-; 	}
-
-; 	if (thingToDelete == "") ;If the folder is empty.
-; 	{
-; 		MsgBox, 262160, Error., No more items in %folderName% folder. The current thread will now exit.
-; 		return
-; 	}
-
-; 	if (thingToDeleteFileExt == "") ;If it's a folder, don't tack on an extension thing in the prompt asking if you for sure want to delete it.
-; 		message = Recycle folder "%thingToDelete%"?
-; 	else
-; 		message = Recycle file "%thingToDelete%"?
-
-; 	MsgBox, 262180, Recycle Latest Thing in %folderName% Folder?, %message%
-; 	IfMsgBox, No
-; 		return
-
-; 	FileRecycle, C:\Users\%A_UserName%\%folderName%\%thingToDelete%
-; 	if (ErrorLevel == 1)
-; 		MsgBox, 262160, Error, An error occurred while trying to recycle "%thingToDelete%".
-; }
 
 /*
 Used for mass downloading music tracks from this website: https://downloads.khinsider.com/
-These coordinates only work with big 1080p Asus monitor.
+These coordinates only work with my big 1080p Asus monitor.
 Here's how to use it:
 1. Use the Snap Links extension to open several tabs at once
 2. Test and make sure the screen coordinates are all correct (test a single track at a time)
@@ -67,11 +28,6 @@ Here's how to use it:
 ; 	Sleep 900
 ; }
 ; return
-
-;if active win = whatever
-;up = inc index 
-;down = dec index
-;enter to run it
 
 !r::togglePrompt()
 
