@@ -32,7 +32,6 @@ Enter::
 currentIndex := prevCmds.MaxIndex() + 1
 GuiControl, Prompt:, currentCmd,
 prevCmds.InsertAt(prevCmds.MaxIndex(), currentCmd)
-togglePrompt()
 runCommand(currentCmd)
 return
 

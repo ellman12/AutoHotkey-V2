@@ -14,9 +14,6 @@ Gui, Prompt:Color,, Black
 editWidth := PROMPT_WIDTH - 10
 Gui, Prompt:Add, Edit, x5 y5 w%editWidth% vcurrentCmd gCmdOnInput -E0x200 ;Remove edit border: www.autohotkey.com/board/topic/71323-remove-type-specified-border-from-edit-control/?p=543956
 
-;TODO
-togglePrompt()
-
 togglePrompt() {
     toggleGUI(promptVisible, "Prompt", PROMPT_WIDTH, PROMPT_HEIGHT, PROMPT_TITLE)
 }
@@ -25,7 +22,10 @@ runCommand(cmd) {
     switch (cmd) {
         case "", "ERROR":Tippy("Blank/invalid command", 1000)
         case "?":Run, notepad.exe %A_ScriptDir%/Main Components/Prompt/Help.txt
-        Default:Tippy("Unknown command", 2000)
+        Default:
+            currentCmd := ""
+            Tippy("Unknown command", 2000)
+        return
         
         ;Enter points earned out of total points to figure out letter grade for an assignment
         ;Enter just l in the first box to show just the letter-number chart.
@@ -70,28 +70,28 @@ runCommand(cmd) {
         
         ;---------------------------RARELY USED BUT STILL USEFUL---------------------------
         case "DownloadMusic":
-        /*Used for mass downloading music tracks from this website: https://downloads.khinsider.com/
-        These coordinates only work with my big 1080p Asus monitor.
-        Here's how to use it:
-        1. Use the Snap Links browser extension to open several tabs at once
-        2. Test and make sure the screen coordinates are all correct (test a single track at a time)
-        3. That's it. Just don't open too many tabs at once, or else it won't work properly because your browser will seriously slow down and won't be as responsive.
-        */
-        InputBox, loopAmt, Num of tabs, Enter num of tabs,, 200, 130,,,,, 13
-        Sleep 600
-        Loop %loopAmt% {
-            ; MouseClick, Right, 751, 347 ;FLAC
-            MouseClick, Right, 742, 313 ;MP3
-            Sleep 300
-            Send, k
-            Sleep 1550
-            ; Send, {Home}{Delete 5}
-            ; Sleep 1200
-            MouseClick, Left, 1086, 822 ;Click "Save" button
-            ; Sleep 1050
-            Send, ^w
-            Sleep 900
-        }
+            /*Used for mass downloading music tracks from this website: https://downloads.khinsider.com/
+            These coordinates only work with my big 1080p Asus monitor.
+            Here's how to use it:
+            1. Use the Snap Links browser extension to open several tabs at once
+            2. Test and make sure the screen coordinates are all correct (test a single track at a time)
+            3. That's it. Just don't open too many tabs at once, or else it won't work properly because your browser will seriously slow down and won't be as responsive.
+            */
+            InputBox, loopAmt, Num of tabs, Enter num of tabs,, 200, 130,,,,, 13
+            Sleep 600
+            Loop %loopAmt% {
+                ; MouseClick, Right, 751, 347 ;FLAC
+                MouseClick, Right, 742, 313 ;MP3
+                Sleep 300
+                Send, k
+                Sleep 1550
+                ; Send, {Home}{Delete 5}
+                ; Sleep 1200
+                MouseClick, Left, 1086, 822 ;Click "Save" button
+                ; Sleep 1050
+                Send, ^w
+                Sleep 900
+            }
         return
         
         ;Used for deleting videos from YouTube playlist.
@@ -111,4 +111,6 @@ runCommand(cmd) {
             }
         return
     }
+    
+    togglePrompt()
 }
