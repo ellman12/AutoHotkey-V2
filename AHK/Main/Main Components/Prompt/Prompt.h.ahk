@@ -19,14 +19,28 @@ togglePrompt() {
 }
 
 runCommand(cmd) {
+    togglePrompt()
+    
     switch (cmd) {
         case "", "ERROR":Tippy("Blank/invalid command", 1000)
         case "?":Run, notepad.exe %A_ScriptDir%/Main Components/Prompt/Help.txt
         Default:
             currentCmd := ""
+            togglePrompt()
             Tippy("Unknown command", 2000)
         return
         
+        ;----------------------------------------MISC----------------------------------------
+        case "/":Clipboard := StrReplace(Clipboard, "\", "/") ;Replace '\' in the Clipboard with '/'.
+        case "\":Clipboard := StrReplace(Clipboard, "/", "\") ;Vice versa.
+        
+        ;Trims whitespace and newlines in Clipboard
+        case "trim":
+            Clipboard := Trim(Clipboard)
+            Clipboard := StrReplace(Clipboard, "`r")
+            Clipboard := StrReplace(Clipboard, "`n")
+        return
+    
         ;Enter points earned out of total points to figure out letter grade for an assignment
         ;Enter just l in the first box to show just the letter-number chart.
         case "Grade":
@@ -111,6 +125,4 @@ runCommand(cmd) {
             }
         return
     }
-    
-    togglePrompt()
 }
