@@ -23,6 +23,10 @@ togglePrompt() {
 
 runCommand(cmd) {
     switch (cmd) {
+        case "", "ERROR":Tippy("Blank/invalid command", 1000)
+        case "?":Run, notepad.exe %A_ScriptDir%/Main Components/Prompt/Help.txt
+        Default:Tippy("Unknown command", 2000)
+        
         ;Enter points earned out of total points to figure out letter grade for an assignment
         ;Enter just l in the first box to show just the letter-number chart.
         case "Grade":
@@ -64,8 +68,6 @@ runCommand(cmd) {
             MsgBox, 0, Grade, You got %result%`%.`n`nA+`t97-100`nA`t94-96`nA-`t90-93`nB+`t87-89`nB`t84-86`nB-`t80-83`nC+`t77-79`nC`t74-76`nC-`t70-73`nD+`t67-69`nD`t64-66`nD-`t60-63`nF`t0-59
         return
         
-        
-        case "", "ERROR":Tippy("Blank/invalid command", 1000)
-        Default:Tippy("Unknown command", 2000)
+                
     }
 }
