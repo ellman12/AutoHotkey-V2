@@ -42,6 +42,8 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
 
+#Include, %A_ScriptDir%/../Modules/Initialization/MultiLineInput.h.ahk
+
 ;---------------------MAIN LOOP---------------------
 ;Only works if put here
 Loop {
@@ -64,6 +66,8 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
+
+#Include, %A_ScriptDir%/../Modules/Hotkeys/MultiLineInput.ahk
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
