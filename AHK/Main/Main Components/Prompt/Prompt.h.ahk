@@ -4,6 +4,7 @@ global PROMPT_TITLE := "Enter a Command"
 global promptVisible := 0
 global prevCmds := []
 global currentIndex := 0
+global prevWinID := "" ;Used in !r
 
 Gui, Prompt:+AlwaysOnTop
 Gui, Prompt:Color, Black
@@ -59,6 +60,42 @@ runCommand(cmd) {
             Tippy(numReplaced + " occurrences replaced", 500)
         return
     
+        ;---------------------------------------INSERT---------------------------------------
+        
+        ;---------------------------------------SYMBOLS--------------------------------------
+        case "+-":Send, {U+00B1} ;±
+        case "-+":Send, {U+2213} ;∓
+        case "mult":Send, {U+00D7} ;×
+        case "mult2":Send, {U+22C5} ;⋅
+        case "mult3":Send, {U+00B7} ;·
+        case "div":Send, {U+00F7} ;÷
+        case "sqrt":Send, {U+221A} ;√
+        case "int":Send, {U+222B} ;∫
+        case "int top":Send, {U+2320} ;⌠
+        case "int bot":Send, {U+2321} ;⌡
+        case "approx":Send, {U+2248} ;≈
+        case "=/=":Send, {U+2260} ;≠
+        case "<=":Send, {U+2264} ;≤
+        case ">=":Send, {U+2265} ;≥
+        case "delta":Send, {U+0394} ;Δ
+        case "pi":Send, {U+03C0} ;π
+        case "micro":Send, {U+00B5} ;µ
+        case "inf":Send, {U+221E} ;∞
+        case "...":Send, {U+2026} ;…
+        case "theta":Send, {U+03B8} ;θ
+        case "u":Send, {U+2191} ;↑
+        case "r":Send, {U+2192} ;→
+        case "d":Send, {U+2193} ;↓
+        case "l":Send, {U+2190} ;←
+        case "deg":Send, {U+00B0} ;°
+        case "en":Send, {U+2013} ;–
+        case "em":Send, {U+2014} ;—
+        case "cent":Send, {U+00A2} ;¢
+        case "cent2":Send, {U+FFE0} ;￠
+        case "check":Send, {U+2713} ;✓
+        case "sec":Send, {U+00A7} ;§
+        case "x":Send, {U+2717} ;✗
+
         ;----------------------------------------MISC----------------------------------------
         ;Enter points earned out of total points to figure out letter grade for an assignment
         ;Enter just l in the first box to show just the letter-number chart.

@@ -4,6 +4,42 @@ TEXT
 trim                    Trims whitespace and newlines in Clipboard
 FAR                     Find and Replace
 
+INSERT
+
+SYMBOLS
++-                      ±
+-+                      ∓
+mult                    ×
+mult2                   ⋅
+mult3                   ·
+div                     ÷
+sqrt                    √
+int                     ∫
+int                     ⌠
+int                     ⌡
+approx                  ≈
+=/=                     ≠
+<=                      ≤
+>=                      ≥
+delta                   Δ
+pi                      π
+micro                   µ
+inf                     ∞
+...                     …
+theta                   θ
+u                       ↑
+r                       →
+d                       ↓
+l                       ←
+deg                     °
+en                      –
+em                      —
+cent                    ¢
+cent2                   ￠
+check                   ✓
+sec                     §
+x                       ✗
+
 MISC
 ?                       Shows this
 Grade                   Use to figure out letter grade for an assignment. Enter just l in the first box to show just the letter-number chart.
