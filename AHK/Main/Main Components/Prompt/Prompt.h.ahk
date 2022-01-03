@@ -43,21 +43,7 @@ runCommand(cmd) {
         return
         
         case "FAR": ;Find and Replace.
-            InputBox, textToSearch, Search what?, Enter the text to search.
-            if ErrorLevel = 1
-                return
-
-            InputBox, find, Find what?, Enter text to search for.
-            if ErrorLevel = 1
-                return
-
-            InputBox, replace, Find what?, Enter text to replace "%find%" with, and then store to the Clipboard.
-            if ErrorLevel = 1
-                return
-
-            newStr := StrReplace(textToSearch, find, replace, numReplaced)
-            Clipboard := newStr
-            Tippy(numReplaced + " occurrences replaced", 500)
+            runFAR()
         return
     
         ;---------------------------------------INSERT---------------------------------------
