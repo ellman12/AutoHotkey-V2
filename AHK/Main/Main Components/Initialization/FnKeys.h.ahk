@@ -1,6 +1,6 @@
 ;TODO: temp?
 F1Mode := "FirefoxTabs"
-F2Mode := "Default"
+F2Mode := "FirefoxWins"
 F3Mode := "Default"
 F4Mode := "Default"
 F5Mode := "Default"
@@ -12,7 +12,7 @@ F10Mode := "Default"
 F11Mode := "Default"
 F12Mode := "Default"
 
-ctrlF1Mode := "Default"
+ctrlF1Mode := "NewFFWin"
 ctrlF2Mode := "Default"
 ctrlF3Mode := "Default"
 ctrlF4Mode := "Default"
