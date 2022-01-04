@@ -134,7 +134,7 @@ if (onTop & 0x8) { ; 0x8 is WS_EX_TOPMOST.
 }
 return
 
-;------------------------CONTEXT-SENSITIVE HOTKEYS------------------------
+;---------------------CONTEXT-SENSITIVE HOTKEYS----------------------
 ;These only work in certain contexts (e.g., if a certain window is active).
 
 ;------------------------GLOBAL iCUE HOTKEYS------------------------
@@ -175,13 +175,44 @@ return
 ; 		F12Hotkey()
 ; }
 
-;------------------------GUI HOTKEYS AND LABELS------------------------
-;------------AUTOCORRECT GUI------------
-;------------CLIPBOARD GUI------------
-;------------EDIT CLIPBOARD GUI------------
-;------------MAIN CONTROL PANEL GUI------------
+;-------------------DEFAULT MOUSE BUTTON BEHAVIOR-------------------
+;Most if not all of these hotkeys work in basically every app ever
+;These can be overridden in profiles if desired
+;G1
+;Horizontal scroll
+F13 & WheelUp::Send, {WheelLeft}
+F13 & WheelDown::Send, {WheelRight}
 
-;------------------------MSR FUNCTIONS AND LABELS------------------------
+;G2: Ctrl Tab
+F14::Send, ^{Tab}
 
-;------------------------EXPERIMENTAL------------------------
-;------------------------TEMPORARY------------------------
+;G3: faster scrolling
+F15 & WheelUp::Send, {WheelUp 8}
+F15 & WheelDown::Send, {WheelDown 8}
+
+;G4
+F16::return
+
+;G5: tab to the right
+F17::Send, ^{PGDN}
+
+;G6: forward in history
+F18::Send, !{Right}
+
+;G7: close tab
+F19::Send, ^{w}
+
+;G8: tab to the left
+F20::Send, ^{PGUP}
+
+;G9: backwards in history
+F21::Send, !{Left}
+
+;G10: Alt + Tab
+F22::Send, !{Tab}
+
+;G11: minimize the current active window
+F23::WinMinimize, A
+
+;G12: restore previously closed tab
++F23::Send, ^+{t}
