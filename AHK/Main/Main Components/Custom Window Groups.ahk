@@ -61,6 +61,9 @@ addAndHideWindowFx(ByRef windowGroupArray) {
 }
 
 showOrHideWindowsFx(ByRef windowGroupArray, ByRef fxShowHideToggle) {
+    if (windowGroupArray.Count() == 0)
+        return
+
     removeNonexistentWindows(windowGroupArray)
 
     ;If it's 1, hide windows; if it's 0, it shows windows.
@@ -82,6 +85,9 @@ showOrHideWindowsFx(ByRef windowGroupArray, ByRef fxShowHideToggle) {
 }
 
 nextWindowFx(ByRef windowGroupArray, ByRef currentWin) {
+    if (windowGroupArray.Count() == 0)
+        return
+
     removeNonexistentWindows(windowGroupArray)
     
     WinGet, activeWindowID, ID, A
@@ -117,6 +123,9 @@ nextWindowFx(ByRef windowGroupArray, ByRef currentWin) {
 }
 
 prevWindowFx(ByRef windowGroupArray, ByRef currentWin) {
+    if (windowGroupArray.Count() == 0)
+        return
+
     removeNonexistentWindows(windowGroupArray)
 
     ;Checks if there's 2 windows in the array. If so, acts like !Tab.
