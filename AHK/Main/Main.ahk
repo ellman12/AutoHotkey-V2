@@ -134,6 +134,9 @@ if (onTop & 0x8) { ; 0x8 is WS_EX_TOPMOST.
 }
 return
 
+;Open MS To Do
+#t::Run, C:\Users\%A_UserName%\Documents\Microsoft To Do
+
 ;---------------------CONTEXT-SENSITIVE HOTKEYS----------------------
 ;These only work in certain contexts (e.g., if a certain window is active).
 
