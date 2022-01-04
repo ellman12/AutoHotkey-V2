@@ -1,13 +1,25 @@
 #Include, %A_ScriptDir%/Main Components/Custom Window Groups.ahk
 
-;TODO: temp?
-fxModes := ["FirefoxTabs", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "FirefoxWins"]
-ctrlFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
-shiftFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
-altFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
-winFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
-ctrlAltFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
-ctrlShiftFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+global fxModes := []
+global ctrlFxModes := []
+global shiftFxModes := []
+global altFxModes := []
+global winFxModes := []
+global ctrlAltFxModes := []
+global ctrlShiftFxModes := []
+
+resetFnModes()
+
+;Reset to default values like how it was in AHK-V1
+resetFnModes() {
+    fxModes := ["FirefoxTabs", "FirefoxWins", "VSCodeTabs", "VSCodeWins", "Default", "WinSwitcher", "WinSwitcher", "WinHider", "ExplorerWins", "WinHider", "Default", "Default"]
+    ctrlFxModes := ["NewFFWin", "NewFFWin", "NewChrWin", "NewChrWin", "Default", "WinAdder", "WinAdder", "WinAdder", "Default", "WinAdder", "Default", "Default"]
+    shiftFxModes := ["FirefoxTabsReverse", "Default", "VSCodeTabsReverse", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+    altFxModes := ["NewPrivFFWin", "NewPrivFFWin", "NewPrivChrWin", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+    winFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+    ctrlAltFxModes := ["Default", "Default", "Default", "Default", "Default", "WinRemover", "WinRemover", "WinRemover", "Default", "WinRemover", "Default", "Default"]
+    ctrlShiftFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+}
 
 /*
 F1-F12 are hotkeys that each call this and can be remapped at runtime.
