@@ -54,15 +54,10 @@ removeWindowFx(ByRef windowGroupArray) {
         windowGroupArray.RemoveAt(index)
 }
 
-addAndHideWindowFx(ByRef windowGroupArray, ByRef fxMode) {
-    if (fxMode == "Window Hider")
-    {
-        WinGet, activeWindowID, ID, A
-        addWindowFx(windowGroupArray)
-        WinHide, % "ahk_id" activeWindowID
-    }
-    else
-        MsgBox, 262160, Error. Wrong Fx Mode, Please set the desired Fx mode to Window Hider to do this.
+addAndHideWindowFx(ByRef windowGroupArray) {
+    WinGet, activeWindowID, ID, A
+    addWindowFx(windowGroupArray)
+    WinHide, % "ahk_id" activeWindowID
 }
 
 showOrHideWindowsFx(ByRef windowGroupArray, ByRef fxShowHideToggle) {

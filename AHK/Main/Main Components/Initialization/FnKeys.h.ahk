@@ -8,7 +8,7 @@ F6Mode := "WinSwitcher"
 F7Mode := "WinHider"
 F8Mode := "Default"
 F9Mode := "Default"
-F10Mode := "Default"
+F10Mode := "WinHider"
 F11Mode := "Default"
 F12Mode := "Default"
 
@@ -47,7 +47,7 @@ altF6Mode := "WinRemover"
 altF7Mode := "Default"
 altF8Mode := "Default"
 altF9Mode := "Default"
-altF10Mode := "Default"
+altF10Mode := "AddAndHide"
 altF11Mode := "Default"
 altF12Mode := "Default"
 
@@ -118,6 +118,7 @@ runAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 		case "WinRemover":removeWindowFx(windowGroupArray)
 		case "WinSwitcher":nextWindowFx(windowGroupArray, currentWin)
 		case "WinHider":showOrHideWindowsFx(windowGroupArray, fxShowHideToggle)
+		case "AddAndHide":addAndHideWindowFx(windowGroupArray)
 
 		Default: ;Need to move modifiers outside the {} or else Send won't work :/
 			ogHotkey := A_ThisHotkey
