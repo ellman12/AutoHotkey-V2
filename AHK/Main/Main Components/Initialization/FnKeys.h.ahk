@@ -64,6 +64,32 @@ winF10Mode := "NewChrWin"
 winF11Mode := "NewPrivFFWin"
 winF12Mode := "NewPrivChrWin"
 
+ctrlAltF1Mode := "FirefoxTabs"
+ctrlAltF2Mode := "Default"
+ctrlAltF3Mode := "Default"
+ctrlAltF4Mode := "Default"
+ctrlAltF5Mode := "Default"
+ctrlAltF6Mode := "Default"
+ctrlAltF7Mode := "Default"
+ctrlAltF8Mode := "Default"
+ctrlAltF9Mode := "Default"
+ctrlAltF10Mode := "Default"
+ctrlAltF11Mode := "Default"
+ctrlAltF12Mode := "Default"
+
+ctrlShiftF1Mode := "Default"
+ctrlShiftF2Mode := "Default"
+ctrlShiftF3Mode := "Default"
+ctrlShiftF4Mode := "Default"
+ctrlShiftF5Mode := "Default"
+ctrlShiftF6Mode := "Default"
+ctrlShiftF7Mode := "Default"
+ctrlShiftF8Mode := "Default"
+ctrlShiftF9Mode := "Default"
+ctrlShiftF10Mode := "Default"
+ctrlShiftF11Mode := "Default"
+ctrlShiftF12Mode := "Default"
+
 ;These work together to be interchangeable
 #Include, %A_ScriptDir%/Main Components/Custom Window Groups.ahk
 
