@@ -1,97 +1,13 @@
-;TODO: temp?
-F1Mode := "FirefoxTabs"
-F2Mode := "FirefoxWins"
-F3Mode := "Default"
-F4Mode := "Default"
-F5Mode := "Default"
-F6Mode := "WinSwitcher"
-F7Mode := "WinHider"
-F8Mode := "Default"
-F9Mode := "Default"
-F10Mode := "WinHider"
-F11Mode := "Default"
-F12Mode := "Default"
-
-ctrlF1Mode := "NewFFWin"
-ctrlF2Mode := "Default"
-ctrlF3Mode := "Default"
-ctrlF4Mode := "Default"
-ctrlF5Mode := "Default"
-ctrlF6Mode := "WinAdder"
-ctrlF7Mode := "Default"
-ctrlF8Mode := "Default"
-ctrlF9Mode := "Default"
-ctrlF10Mode := "Default"
-ctrlF11Mode := "Default"
-ctrlF12Mode := "Default"
-
-shiftF1Mode := "FirefoxTabsReverse"
-shiftF2Mode := "Default"
-shiftF3Mode := "Default"
-shiftF4Mode := "Default"
-shiftF5Mode := "Default"
-shiftF6Mode := "WinSwitcher"
-shiftF7Mode := "WinHider"
-shiftF8Mode := "Default"
-shiftF9Mode := "Default"
-shiftF10Mode := "Default"
-shiftF11Mode := "Default"
-shiftF12Mode := "Default"
-
-altF1Mode := "Default"
-altF2Mode := "NewPrivFFWin"
-altF3Mode := "Default"
-altF4Mode := "Default"
-altF5Mode := "Default"
-altF6Mode := "WinRemover"
-altF7Mode := "Default"
-altF8Mode := "Default"
-altF9Mode := "Default"
-altF10Mode := "AddAndHide"
-altF11Mode := "Default"
-altF12Mode := "Default"
-
-winF1Mode := "FirefoxWins"
-winF2Mode := "Default"
-winF3Mode := "Default"
-winF4Mode := "Default"
-winF5Mode := "Default"
-winF6Mode := "Default"
-winF7Mode := "Default"
-winF8Mode := "Default"
-winF9Mode := "NewFFWin"
-winF10Mode := "NewChrWin"
-winF11Mode := "NewPrivFFWin"
-winF12Mode := "NewPrivChrWin"
-
-ctrlAltF1Mode := "FirefoxTabs"
-ctrlAltF2Mode := "Default"
-ctrlAltF3Mode := "Default"
-ctrlAltF4Mode := "Default"
-ctrlAltF5Mode := "Default"
-ctrlAltF6Mode := "Default"
-ctrlAltF7Mode := "Default"
-ctrlAltF8Mode := "Default"
-ctrlAltF9Mode := "Default"
-ctrlAltF10Mode := "Default"
-ctrlAltF11Mode := "Default"
-ctrlAltF12Mode := "Default"
-
-ctrlShiftF1Mode := "Default"
-ctrlShiftF2Mode := "Default"
-ctrlShiftF3Mode := "Default"
-ctrlShiftF4Mode := "Default"
-ctrlShiftF5Mode := "Default"
-ctrlShiftF6Mode := "Default"
-ctrlShiftF7Mode := "Default"
-ctrlShiftF8Mode := "Default"
-ctrlShiftF9Mode := "Default"
-ctrlShiftF10Mode := "Default"
-ctrlShiftF11Mode := "Default"
-ctrlShiftF12Mode := "Default"
-
-;These work together to be interchangeable
 #Include, %A_ScriptDir%/Main Components/Custom Window Groups.ahk
+
+;TODO: temp?
+fxModes := ["FirefoxTabs", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "FirefoxWins"]
+ctrlFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+shiftFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+altFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+winFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+ctrlAltFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
+ctrlShiftFxModes := ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default"]
 
 /*
 F1-F12 are hotkeys that each call this and can be remapped at runtime.
