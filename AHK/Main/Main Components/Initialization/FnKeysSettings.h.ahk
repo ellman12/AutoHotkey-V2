@@ -45,25 +45,28 @@ GuiControl, ChooseString, F10Mode, %F10Mode%
 GuiControl, ChooseString, F11Mode, %F11Mode%
 GuiControl, ChooseString, F12Mode, %F12Mode%
 
-Gui, Tab, ^Fx
 ;------------------------^Fx------------------------
-textWidth := 24
-
-Gui, Add, Text, x17 y45 w%textWidth%, ^F1
+Gui, Tab, ^Fx
+Gui, Add, Text, x17 y45 w%textWidth%, F1
 Gui, Add, DropDownList, x+8 yp-2 w%ddlWidth% vctrlF1Mode, %FN_OPTIONS%
-Gui, Add, Text, x+20 yp+2 w%textWidth%, ^F2
+Gui, Add, Text, x+20 yp+2 w%textWidth%, F2
 Gui, Add, DropDownList, x+8 yp-2 w%ddlWidth% vctrlF2Mode, %FN_OPTIONS%
 
 i := 3
-while (i < 13) {
-    Gui, Add, Text, x17 y+20 w%textWidth%, % "^F" . i
+while (i < 11) {
+    Gui, Add, Text, x17 y+20 w%textWidth%, % "F" . i
     Gui, Add, DropDownList, % "x+8 yp-2 w" ddlWidth " vctrlF" . i . "Mode", %FN_OPTIONS%    
     i++
     
-    Gui, Add, Text, x+20 yp+2 w%textWidth%, % "^F" . i
+    Gui, Add, Text, x+20 yp+2 w%textWidth%, % "F" . i
     Gui, Add, DropDownList, % "x+8 yp-2 w" ddlWidth " vctrlF" . i . "Mode", %FN_OPTIONS%
     i++
 }
+Gui, Add, Text, x17 y+20 w%textWidth%, F11
+Gui, Add, DropDownList, x+8 yp-2 w%ddlWidth% vctrlF11Mode, %FN_OPTIONS%    
+
+Gui, Add, Text, x+20 yp+2 w%textWidth%, F12
+Gui, Add, DropDownList, x+8 yp-2 w%ddlWidth% vctrlF12Mode, %FN_OPTIONS%
 
 GuiControl, ChooseString, ctrlF1Mode, %ctrlF1Mode%
 GuiControl, ChooseString, ctrlF2Mode, %ctrlF2Mode%
