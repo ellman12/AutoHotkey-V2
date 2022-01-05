@@ -20,8 +20,9 @@ DetectHiddenWindows, Off
 ; Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
 ;----------------------------AUTO-EXECUTE---------------------------
-;------------------------MISC-----------------------
 SetCapsLockState, AlwaysOff
+
+OnExit, RunOnExit
 
 ;---------------------MAIN VARS---------------------
 global activeWindowTitle, activeWindowID, FrontTopMouseBtnBehavior, BackTopMouseBtnBehavior
@@ -39,6 +40,7 @@ global savedNumMinusVol
 
 ;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
+#Include, %A_ScriptDir%/Main.h.ahk
 #Include, %A_ScriptDir%/MainSettings.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
@@ -142,7 +144,7 @@ return
 ;Open MS To Do
 #t::Run, C:\Users\%A_UserName%\Documents\Microsoft To Do
 
-;---------------------CONTEXT-SENSITIVE HOTKEYS----------------------
+;---------------------CONTEXT-SENSITIVE HOTKEYS---------------------
 ;These only work in certain contexts (e.g., if a certain window is active).
 
 ;------------------------GLOBAL iCUE HOTKEYS------------------------
@@ -212,3 +214,9 @@ F23::WinMinimize, A
 
 ;G12: restore previously closed tab
 +F23::Send, ^+{t}
+
+;----------------------MAIN LABELS AND FUNCS------------------------
+RunOnExit:
+MsgBox, hi
+ExitApp
+return

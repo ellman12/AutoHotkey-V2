@@ -24,4 +24,4 @@ Gui, Add, Button, x6 y280 gMainOkClick, OK
 Gui, Add, Button, x+10 y280 gMainCancelClick, Cancel
 Gui, Add, Button, x+10 yp gMainApplyClick, Apply
 
-toggleGUI(mainVis, "Main", MAIN_WIDTH, MAIN_HEIGHT, MAIN_TITLE)
+; toggleGUI(mainVis, "Main", MAIN_WIDTH, MAIN_HEIGHT, MAIN_TITLE)
