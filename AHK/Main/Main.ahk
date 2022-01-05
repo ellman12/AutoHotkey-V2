@@ -20,9 +20,8 @@ DetectHiddenWindows, Off
 ; Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
 ;----------------------------AUTO-EXECUTE---------------------------
-SetCapsLockState, AlwaysOff
-
-OnExit, RunOnExit
+;---------------------CONSTANTS---------------------
+global TMP_FOLDER_PATH := A_ScriptDir . "/../tmp"
 
 ;---------------------MAIN VARS---------------------
 global activeWindowTitle, activeWindowID, FrontTopMouseBtnBehavior, BackTopMouseBtnBehavior
@@ -46,6 +45,24 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
+
+;-----------------------MISC-----------------------
+SetCapsLockState, AlwaysOff
+
+OnExit, RunOnExit
+
+readGroupFromFile("F1", windowGroupF1)
+readGroupFromFile("F2", windowGroupF2)
+readGroupFromFile("F3", windowGroupF3)
+readGroupFromFile("F4", windowGroupF4)
+readGroupFromFile("F5", windowGroupF5)
+readGroupFromFile("F6", windowGroupF6)
+readGroupFromFile("F7", windowGroupF7)
+readGroupFromFile("F8", windowGroupF8)
+readGroupFromFile("F9", windowGroupF9)
+readGroupFromFile("F10", windowGroupF10)
+readGroupFromFile("F11", windowGroupF11)
+readGroupFromFile("F12", windowGroupF12)
 
 ;---------------------MAIN LOOP---------------------
 ;Only works if put here
@@ -217,6 +234,17 @@ F23::WinMinimize, A
 
 ;----------------------MAIN LABELS AND FUNCS------------------------
 RunOnExit:
-MsgBox, hi
-ExitApp
+	writeGroupToFile("F1", windowGroupF1)
+	writeGroupToFile("F2", windowGroupF2)
+	writeGroupToFile("F3", windowGroupF3)
+	writeGroupToFile("F4", windowGroupF4)
+	writeGroupToFile("F5", windowGroupF5)
+	writeGroupToFile("F6", windowGroupF6)
+	writeGroupToFile("F7", windowGroupF7)
+	writeGroupToFile("F8", windowGroupF8)
+	writeGroupToFile("F9", windowGroupF9)
+	writeGroupToFile("F10", windowGroupF10)
+	writeGroupToFile("F11", windowGroupF11)
+	writeGroupToFile("F12", windowGroupF12)
+	ExitApp
 return

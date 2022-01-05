@@ -198,34 +198,22 @@ altTabGroupAdd(ByRef windowGroupArray) {
     Send, !{Tab}
 }
 
-;TODO
-;Stores a group in a .tmp file for later use. calledOnExit is used for the Reload function so the user isn't bombarded with Tippys on every reload. 0 = false; 1 = true.
-; writeGroupToFile(Fx, windowGroupArray, calledOnExit) {
+;Stores a group in a .tmp file for later use on exit. Space is the delimiter between IDs.
+writeGroupToFile(Fx, windowGroupArray)
+{
+    FileDelete, %TMP_FOLDER_PATH%/%Fx% Group.tmp ;Reset/overwrite file.
 
-;     if ((windowGroupArray.Length() == 0) AND (calledOnExit == 0)) {
-;         MsgBox, 262160, Error, This array has no elements in it.
-;         return
-;     }
+    for index, value in windowGroupArray ;Append values to the file.
+    {
+        valueToAppend := value . A_Space
+        FileAppend, %valueToAppend%, %TMP_FOLDER_PATH%/%Fx% Group.tmp
+    }
+}
 
-;     FileDelete, %A_ScriptDir%\Misc. MSR Scripts\Custom Window Groups\%Fx% Group.tmp ;Reset/overwrite file.
-
-;     for index, value in windowGroupArray ;Append values to the file.
-;     {
-;         valueToAppend := value . A_Space
-;         FileAppend, %valueToAppend%, %A_ScriptDir%\Misc. MSR Scripts\Custom Window Groups\%Fx% Group.tmp
-;     }
-
-;     if (calledOnExit == 0)
-;         Tippy("The " . Fx . " Group has been saved to disk.", 1000)
-; }
-
-;Retrieves that group from the file. Added calledOnStartup so when the script starts up and calls this 4 times, those Tippys aren't there every single time. Similar to calledOnExit; optional parameter as well.
-readGroupFromFile(Fx, ByRef windowGroupArray, calledOnStartup := 1) {
-
-    FileRead, groupFileContents, %A_ScriptDir%\Misc. MSR Scripts\Custom Window Groups\%Fx% Group.tmp
+;Retrieves group from the file (only used on startup).
+readGroupFromFile(Fx, ByRef windowGroupArray)
+{
+    FileRead, groupFileContents, %TMP_FOLDER_PATH%/%Fx% Group.tmp
     windowGroupArray := StrSplit(groupFileContents, A_Space) ;Split up the file and store in the passed-in array. The delimiter is spaces because they're easiest to work with.
     groupFileContents := ;Free.
-
-    if (calledOnStartup == 0)
-        Tippy("The " . Fx . " Group has been restored from disk.", 1000)
 }
