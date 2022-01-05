@@ -45,7 +45,41 @@ GuiControl, ChooseString, F10Mode, %F10Mode%
 GuiControl, ChooseString, F11Mode, %F11Mode%
 GuiControl, ChooseString, F12Mode, %F12Mode%
 
-Gui, Tab ;End this section of the Tab
+Gui, Tab, ^Fx
+;------------------------^Fx------------------------
+textWidth := 24
+
+Gui, Add, Text, x17 y45 w%textWidth%, ^F1
+Gui, Add, DropDownList, x+8 yp-2 w%ddlWidth% vctrlF1Mode, %FN_OPTIONS%
+Gui, Add, Text, x+20 yp+2 w%textWidth%, ^F2
+Gui, Add, DropDownList, x+8 yp-2 w%ddlWidth% vctrlF2Mode, %FN_OPTIONS%
+
+i := 3
+while (i < 13) {
+    Gui, Add, Text, x17 y+20 w%textWidth%, % "^F" . i
+    Gui, Add, DropDownList, % "x+8 yp-2 w" ddlWidth " vctrlF" . i . "Mode", %FN_OPTIONS%    
+    i++
+    
+    Gui, Add, Text, x+20 yp+2 w%textWidth%, % "^F" . i
+    Gui, Add, DropDownList, % "x+8 yp-2 w" ddlWidth " vctrlF" . i . "Mode", %FN_OPTIONS%
+    i++
+}
+
+GuiControl, ChooseString, ctrlF1Mode, %ctrlF1Mode%
+GuiControl, ChooseString, ctrlF2Mode, %ctrlF2Mode%
+GuiControl, ChooseString, ctrlF3Mode, %ctrlF3Mode%
+GuiControl, ChooseString, ctrlF4Mode, %ctrlF4Mode%
+GuiControl, ChooseString, ctrlF5Mode, %ctrlF5Mode%
+GuiControl, ChooseString, ctrlF6Mode, %ctrlF6Mode%
+GuiControl, ChooseString, ctrlF7Mode, %ctrlF7Mode%
+GuiControl, ChooseString, ctrlF8Mode, %ctrlF8Mode%
+GuiControl, ChooseString, ctrlF9Mode, %ctrlF9Mode%
+GuiControl, ChooseString, ctrlF10Mode, %ctrlF10Mode%
+GuiControl, ChooseString, ctrlF11Mode, %ctrlF11Mode%
+GuiControl, ChooseString, ctrlF12Mode, %ctrlF12Mode%
+
+;Not in any tab group
+Gui, Tab
 Gui, Font, s10
 Gui, Add, Button, x6 y280 gFxOkClick, Confirm
 Gui, Add, Button, x+10 yp gFxApplyClick, Apply
