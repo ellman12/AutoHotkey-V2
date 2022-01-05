@@ -51,18 +51,10 @@ SetCapsLockState, AlwaysOff
 
 OnExit, RunOnExit
 
-readGroupFromFile("F1", windowGroupF1)
-readGroupFromFile("F2", windowGroupF2)
-readGroupFromFile("F3", windowGroupF3)
-readGroupFromFile("F4", windowGroupF4)
-readGroupFromFile("F5", windowGroupF5)
-readGroupFromFile("F6", windowGroupF6)
-readGroupFromFile("F7", windowGroupF7)
-readGroupFromFile("F8", windowGroupF8)
-readGroupFromFile("F9", windowGroupF9)
-readGroupFromFile("F10", windowGroupF10)
-readGroupFromFile("F11", windowGroupF11)
-readGroupFromFile("F12", windowGroupF12)
+Loop 12 { ;Read in all 12 win group files
+	group := "windowGroupF" . A_Index
+	readGroupFromFile("F" . A_Index, %group%)
+}
 
 ;---------------------MAIN LOOP---------------------
 ;Only works if put here
