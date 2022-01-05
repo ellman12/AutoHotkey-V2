@@ -1,7 +1,7 @@
-;Main initialization stuff
-global SETTINGS_WIDTH := 400
-global SETTINGS_HEIGHT := 312
-global SETTINGS_TITLE := "Fx Settings"
+;Controlling Function keys at runtime
+global FN_WIDTH := 392
+global FN_HEIGHT := 314
+global FN_TITLE := "Fx Settings"
 global FN_OPTIONS := "NewFFWin|NewPrivFFWin|FirefoxTabs|FirefoxTabsReverse|FirefoxWins|NewChrWin|NewPrivChrWin|ChromeTabs|ChromeTabsReverse|ChromeWins|RiderTabs|RiderTabsReverse|RiderWins|VSCodeTabs|VSCodeTabsReverse|VSCodeWins|VSTabs|VSTabsReverse|VSWins|ExplorerWins|WinAdder|WinRemover|WinSwitcher|WinHider|AddAndHide|Default"
 
 Gui, FnSettings:Default
@@ -9,7 +9,7 @@ Gui, +AlwaysOnTop
 Gui, Color, Black
 
 Gui, Font, cWhite s12
-tabWidth := SETTINGS_WIDTH - 15
+tabWidth := FN_WIDTH - 15
 Gui, Add, Tab3, x6 h260 w%tabWidth%, Fx|^Fx|+Fx|!Fx|#Fx|^!Fx|^+Fx
 Gui, Font, cWhite s9
 ;-------------------------Fx------------------------
@@ -264,5 +264,6 @@ GuiControl, ChooseString, ctrlShiftF12Mode, %ctrlShiftF12Mode%
 ;Not in any tab group
 Gui, Tab
 Gui, Font, s10
-Gui, Add, Button, x6 y280 gFxOkClick, Confirm
+Gui, Add, Button, x6 y280 gFxOkClick, OK
+Gui, Add, Button, x+10 y280 gFxCancelClick, Cancel
 Gui, Add, Button, x+10 yp gFxApplyClick, Apply
