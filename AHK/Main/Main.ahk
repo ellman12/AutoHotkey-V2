@@ -198,6 +198,14 @@ F14::Send, ^{Tab}
 F15 & WheelUp::Send, {WheelUp 8}
 F15 & WheelDown::Send, {WheelDown 8}
 
+;A way to make the mouse move faster while Mouse G3 and the Right Button are held down.
+;It's basically the complete opposite of the sniper button.
+F15 & RButton::
+DllCall("SystemParametersInfo", Int,113, Int,0, UInt,17, Int,1)
+KeyWait, RButton
+DllCall("SystemParametersInfo", Int,113, Int,0, UInt,10, Int,1)
+return
+
 ;G4
 F16::return
 
