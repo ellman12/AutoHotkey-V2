@@ -24,7 +24,7 @@ DetectHiddenWindows, Off
 SetCapsLockState, AlwaysOff
 
 ;---------------------MAIN VARS---------------------
-global activeWindowTitle, activeWindowID
+global activeWindowTitle, activeWindowID, FrontTopMouseBtnBehavior, BackTopMouseBtnBehavior
 
 global sleepDuration := 100 ;ms
 global Num2And8Step := 3 ;When Num2 or Num8 pressed, how much to increase/decrease volume.
@@ -151,37 +151,17 @@ return
 +F21::Send, ^x ;M2 on K95 RGB cuts to the clipboard.
 +F22::Send, ^v ;M3 on K95 RGB pastes the clipboard.
 
-;TODO: will be implemented once i get around to AppSwitcher
-; ^!F23::topMouseButtons(FrontMouseButtonBehavior) ;Top Front Mouse Button on Scimitar RGB.
-; ^+F23::topMouseButtons(BackMouseButtonBehavior) ;Top Back Mouse Button on Scimitar RGB.
+^!F23::topMouseButtons(FrontTopMouseBtnBehavior) ;Top Front Mouse Button on Scimitar RGB.
+^+F23::topMouseButtons(BackTopMouseBtnBehavior) ;Top Back Mouse Button on Scimitar RGB.
 
-; ;Called by top 2 mouse button hotkeys.
-; topMouseButtons(buttonMode) {
-; global
-
-; 	if (buttonMode = "Double Click")
-; 		Send, {Click 2}
-; 	else if (buttonMode = "Triple Click")
-; 		Send, {Click 3}
-; 	else if (buttonMode = "F1")
-; 		switchToFirefoxAndBetweenTabs()
-; 	else if (buttonMode = "F2")
-; 		switchToOtherFirefoxWindows()
-; 	else if (buttonMode = "F3")
-; 		F3Hotkey()
-; 	else if (buttonMode = "F4")
-; 		F4Hotkey()
-; 	else if (buttonMode = "F6")
-; 		nextWinOrShowHideWins("F6", WindowGroupF6, currentWinF6)
-; 	else if (buttonMode = "F7")
-; 		nextWinOrShowHideWins("F7", WindowGroupF7, currentWinF7)
-; 	else if (buttonMode = "F8")
-; 		nextWinOrShowHideWins("F8", WindowGroupF8, currentWinF8)
-; 	else if (buttonMode = "F10")
-; 		nextWinOrShowHideWins("F10", WindowGroupF10, currentWinF10)
-; 	else if (buttonMode = "F12")
-; 		F12Hotkey()
-; }
+topMouseButtons(buttonMode) {
+	if (buttonMode = "Double Click")
+		Send, {Click 2}
+	else if (buttonMode = "Triple Click")
+		Send, {Click 3}
+	else
+		runFnAction(buttonMode, _, _, _)
+}
 
 ;-------------------DEFAULT MOUSE BUTTON BEHAVIOR-------------------
 ;Most if not all of these hotkeys work in basically every app ever
