@@ -85,10 +85,10 @@ Loop {
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
-^#r::Reload
+^#r::Reload ;Saves custom window groups on reload (exit).
 CapsLock::reload
 
-; +#r::deleteConfigFile() ;Delete .ini file. To restart MSR with the default config values, do this and then ^#r.
+; +#r::deleteConfigFile()
 
 ^!r:: ;Restart script without restoring window groups.
 Loop 12 {
@@ -235,17 +235,9 @@ F23::WinMinimize, A
 
 ;----------------------MAIN LABELS AND FUNCS------------------------
 RunOnExit:
-	writeGroupToFile("F1", windowGroupF1)
-	writeGroupToFile("F2", windowGroupF2)
-	writeGroupToFile("F3", windowGroupF3)
-	writeGroupToFile("F4", windowGroupF4)
-	writeGroupToFile("F5", windowGroupF5)
-	writeGroupToFile("F6", windowGroupF6)
-	writeGroupToFile("F7", windowGroupF7)
-	writeGroupToFile("F8", windowGroupF8)
-	writeGroupToFile("F9", windowGroupF9)
-	writeGroupToFile("F10", windowGroupF10)
-	writeGroupToFile("F11", windowGroupF11)
-	writeGroupToFile("F12", windowGroupF12)
+	Loop 12 { ;Write all 12 win group files
+		group := "windowGroupF" . A_Index
+		writeGroupToFile("F" . A_Index, %group%)
+	}
 	ExitApp
 return
