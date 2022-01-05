@@ -39,6 +39,7 @@ global savedNumMinusVol
 
 ;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
+#Include, %A_ScriptDir%/MainSettings.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR.h.ahk
@@ -63,6 +64,8 @@ Loop {
 }
 
 ;-------------------HOTKEY FILES--------------------
+#Include, %A_ScriptDir%/MainSettings.ahk
+
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeysSettings.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
