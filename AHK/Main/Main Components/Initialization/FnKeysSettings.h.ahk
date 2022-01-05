@@ -46,7 +46,8 @@ GuiControl, ChooseString, F11Mode, %F11Mode%
 GuiControl, ChooseString, F12Mode, %F12Mode%
 
 Gui, Tab ;End this section of the Tab
-Gui, Add, Button, x17 y280 gFxOkClick, hi
-; Gui, Add, Button, x117 y280 gFxCancelClick, hi
+Gui, Font, s10
+Gui, Add, Button, x6 y280 gFxOkClick, Confirm
+Gui, Add, Button, x+10 yp gFxApplyClick, Apply
 
 Gui, Show, w%SETTINGS_WIDTH% h%SETTINGS_HEIGHT% x1800, %SETTINGS_TITLE%
