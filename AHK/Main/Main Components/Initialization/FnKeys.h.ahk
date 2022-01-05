@@ -108,7 +108,7 @@ WinSwitcher: group windows together for switching between them
 WinHider: group windows together for showing/hiding them
 Default behavior is to just send the key like normal: Send the actual key. E.g., if Default specified for F5, send F5 and not anything else
 */
-runAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
+runFnAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 {
 	switch (action)
 	{
