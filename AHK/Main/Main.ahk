@@ -96,6 +96,15 @@ Loop {
 ^#r::Reload
 CapsLock::reload
 
+; +#r::deleteConfigFile() ;Delete .ini file. To restart MSR with the default config values, do this and then ^#r.
+
+^!r:: ;Restart script without restoring window groups.
+Loop 12 {
+	FileDelete, %TMP_FOLDER_PATH%/F%A_Index% Group.tmp
+}
+Reload
+return
+
 ^CtrlBreak:: ;Technically Ctrl + Pause. Read about this here: https://www.autohotkey.com/docs/KeyList.htm#other
 #!p::
 Suspend
