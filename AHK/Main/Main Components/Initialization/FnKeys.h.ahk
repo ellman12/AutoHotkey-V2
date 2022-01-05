@@ -1,95 +1,95 @@
 #Include, %A_ScriptDir%/Main Components/Custom Window Groups.ahk
 
-global F1Mode := "FirefoxTabs"
-global F2Mode := "FirefoxWins"
-global F3Mode := "VSCodeTabs"
-global F4Mode := "VSCodeWins"
-global F5Mode := "Default"
-global F6Mode := "WinSwitcher"
-global F7Mode := "WinSwitcher"
-global F8Mode := "WinHider"
-global F9Mode := "ExplorerWins"
-global F10Mode := "WinHider"
-global F11Mode := "Default"
-global F12Mode := "Default"
+global F1Mode
+global F2Mode
+global F3Mode
+global F4Mode
+global F5Mode
+global F6Mode
+global F7Mode
+global F8Mode
+global F9Mode
+global F10Mode
+global F11Mode
+global F12Mode
 
-global ctrlF1Mode := "NewFFWin"
-global ctrlF2Mode := "NewFFWin"
-global ctrlF3Mode := "NewChrWin"
-global ctrlF4Mode := "NewChrWin"
-global ctrlF5Mode := "Default"
-global ctrlF6Mode := "WinAdder"
-global ctrlF7Mode := "WinAdder"
-global ctrlF8Mode := "WinAdder"
-global ctrlF9Mode := "Default"
-global ctrlF10Mode := "WinAdder"
-global ctrlF11Mode := "Default"
-global ctrlF12Mode := "Default"
+global ctrlF1Mode
+global ctrlF2Mode
+global ctrlF3Mode
+global ctrlF4Mode
+global ctrlF5Mode
+global ctrlF6Mode
+global ctrlF7Mode
+global ctrlF8Mode
+global ctrlF9Mode
+global ctrlF10Mode
+global ctrlF11Mode
+global ctrlF12Mode
 
-global shiftF1Mode := "FirefoxTabsReverse"
-global shiftF2Mode := "Default"
-global shiftF3Mode := "VSCodeTabsReverse"
-global shiftF4Mode := "Default"
-global shiftF5Mode := "Default"
-global shiftF6Mode := "Default"
-global shiftF7Mode := "Default"
-global shiftF8Mode := "Default"
-global shiftF9Mode := "Default"
-global shiftF10Mode := "Default"
-global shiftF11Mode := "Default"
-global shiftF12Mode := "Default"
+global shiftF1Mode
+global shiftF2Mode
+global shiftF3Mode
+global shiftF4Mode
+global shiftF5Mode
+global shiftF6Mode
+global shiftF7Mode
+global shiftF8Mode
+global shiftF9Mode
+global shiftF10Mode
+global shiftF11Mode
+global shiftF12Mode
 
-global altF1Mode := "NewPrivFFWin"
-global altF2Mode := "NewPrivFFWin"
-global altF3Mode := "NewPrivChrWin"
-global altF4Mode := "NewPrivChrWin"
-global altF5Mode := "Default"
-global altF6Mode := "AddAndHide"
-global altF7Mode := "AddAndHide"
-global altF8Mode := "AddAndHide"
-global altF9Mode := "Default"
-global altF10Mode := "AddAndHide"
-global altF11Mode := "Default"
-global altF12Mode := "Default"
+global altF1Mode
+global altF2Mode
+global altF3Mode
+global altF4Mode
+global altF5Mode
+global altF6Mode
+global altF7Mode
+global altF8Mode
+global altF9Mode
+global altF10Mode
+global altF11Mode
+global altF12Mode
 
-global winF1Mode := "Default"
-global winF2Mode := "Default"
-global winF3Mode := "Default"
-global winF4Mode := "Default"
-global winF5Mode := "Default"
-global winF6Mode := "Default"
-global winF7Mode := "Default"
-global winF8Mode := "Default"
-global winF9Mode := "Default"
-global winF10Mode := "Default"
-global winF11Mode := "Default"
-global winF12Mode := "Default"
+global winF1Mode
+global winF2Mode
+global winF3Mode
+global winF4Mode
+global winF5Mode
+global winF6Mode
+global winF7Mode
+global winF8Mode
+global winF9Mode
+global winF10Mode
+global winF11Mode
+global winF12Mode
 
-global ctrlAltF1Mode := "Default"
-global ctrlAltF2Mode := "Default"
-global ctrlAltF3Mode := "Default"
-global ctrlAltF4Mode := "Default"
-global ctrlAltF5Mode := "Default"
-global ctrlAltF6Mode := "WinRemover"
-global ctrlAltF7Mode := "WinRemover"
-global ctrlAltF8Mode := "WinRemover"
-global ctrlAltF9Mode := "Default"
-global ctrlAltF10Mode := "WinRemover"
-global ctrlAltF11Mode := "Default"
-global ctrlAltF12Mode := "Default"
+global ctrlAltF1Mode
+global ctrlAltF2Mode
+global ctrlAltF3Mode
+global ctrlAltF4Mode
+global ctrlAltF5Mode
+global ctrlAltF6Mode
+global ctrlAltF7Mode
+global ctrlAltF8Mode
+global ctrlAltF9Mode
+global ctrlAltF10Mode
+global ctrlAltF11Mode
+global ctrlAltF12Mode
 
-global ctrlShiftF1Mode := "Default"
-global ctrlShiftF2Mode := "Default"
-global ctrlShiftF3Mode := "Default"
-global ctrlShiftF4Mode := "Default"
-global ctrlShiftF5Mode := "Default"
-global ctrlShiftF6Mode := "Default"
-global ctrlShiftF7Mode := "Default"
-global ctrlShiftF8Mode := "Default"
-global ctrlShiftF9Mode := "Default"
-global ctrlShiftF10Mode := "Default"
-global ctrlShiftF11Mode := "Default"
-global ctrlShiftF12Mode := "Default"
+global ctrlShiftF1Mode
+global ctrlShiftF2Mode
+global ctrlShiftF3Mode
+global ctrlShiftF4Mode
+global ctrlShiftF5Mode
+global ctrlShiftF6Mode
+global ctrlShiftF7Mode
+global ctrlShiftF8Mode
+global ctrlShiftF9Mode
+global ctrlShiftF10Mode
+global ctrlShiftF11Mode
+global ctrlShiftF12Mode
 
 /*
 F1-F12 are hotkeys that each call this and can be remapped at runtime.

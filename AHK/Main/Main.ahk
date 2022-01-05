@@ -40,6 +40,7 @@ global savedNumMinusVol
 ;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
 #Include, %A_ScriptDir%/Main.h.ahk
+
 #Include, %A_ScriptDir%/MainSettings.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
@@ -55,6 +56,10 @@ Loop 12 { ;Read in all 12 win group files
 	group := "windowGroupF" . A_Index
 	readGroupFromFile("F" . A_Index, %group%)
 }
+
+; FileDelete, %CONFIG_PATH%
+readConfigFile()
+writeConfigFile()
 
 ;---------------------MAIN LOOP---------------------
 ;Only works if put here
