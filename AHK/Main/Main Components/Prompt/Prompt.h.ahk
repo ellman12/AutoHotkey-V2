@@ -7,10 +7,6 @@ global currentIndex := 0
 global prevWinID := "" ;Used in !r
 global PROMPT_HISTORY_PATH := A_ScriptDir . "/../tmp/cmd_hist.tmp"
 
-FileRead, prevCmdsStr, %PROMPT_HISTORY_PATH%
-prevCmds := StrSplit(prevCmdsStr, "`n")
-currentIndex := prevCmds.Count()
-
 Gui, Prompt:+AlwaysOnTop
 Gui, Prompt:Color, Black
 Gui, Prompt:Font, cWhite s12
@@ -19,6 +15,11 @@ Gui, Prompt:Margin, 10, 10
 Gui, Prompt:Color,, Black
 editWidth := PROMPT_WIDTH - 10
 Gui, Prompt:Add, Edit, x5 y5 w%editWidth% vcurrentCmd gCmdOnInput -E0x200 ;Remove edit border: www.autohotkey.com/board/topic/71323-remove-type-specified-border-from-edit-control/?p=543956
+
+;Read in previous commands
+FileRead, prevCmdsStr, %PROMPT_HISTORY_PATH%
+prevCmds := StrSplit(prevCmdsStr, "`n")
+currentIndex := prevCmds.Count()
 
 togglePrompt() {
     toggleGUI(promptVisible, "Prompt", PROMPT_WIDTH, PROMPT_HEIGHT, PROMPT_TITLE)
@@ -129,6 +130,12 @@ runCommand(cmd) {
 
             result := round((totalPointsEarned/totalMaxPoints) * 100, 2)
             MsgBox, 0, Grade, You got %result%`%.`n`nA+`t97-100`nA`t94-96`nA-`t90-93`nB+`t87-89`nB`t84-86`nB-`t80-83`nC+`t77-79`nC`t74-76`nC-`t70-73`nD+`t67-69`nD`t64-66`nD-`t60-63`nF`t0-59
+        return
+        
+        case "DelPrHist": ;Delete Prompt history
+            FileDelete, %PROMPT_HISTORY_PATH%
+            prevCmds := []
+            currentIndex := 0
         return
         
         ;---------------------------RARELY USED BUT STILL USEFUL---------------------------
