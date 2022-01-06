@@ -3,10 +3,11 @@ Gui, FnSettings:Submit
 writeConfigFile()
 return
 
-FxCancelClick:
-Gui, FnSettings:Cancel
-readConfigFile()
-setMainGUIValues()
+FnGuiClose:
+FnCancelClick:
+    Gui, FnSettings:Cancel
+    readConfigFile()
+    setMainGUIValues()
 return
 
 FxApplyClick:

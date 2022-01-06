@@ -265,6 +265,6 @@ GuiControl, ChooseString, ctrlShiftF12Mode, %ctrlShiftF12Mode%
 Gui, Tab
 Gui, Font, s10
 Gui, Add, Button, x6 y280 gFxOkClick, OK
-Gui, Add, Button, x+10 y280 gFxCancelClick, Cancel
+Gui, Add, Button, x+10 y280 gFnCancelClick, Cancel
 Gui, Add, Button, x+10 yp gFxApplyClick, Apply
 Gui, Add, Button, x+10 yp gFxResetClick, Reset

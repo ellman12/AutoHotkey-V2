@@ -7,10 +7,11 @@ Gui, Main:Submit
 writeConfigFile()
 return
 
+MainGuiClose:
 MainCancelClick:
-Gui, Main:Cancel
-readConfigFile()
-setMainGUIValues()
+    Gui, Main:Cancel
+    readConfigFile()
+    setMainGUIValues()
 return
 
 MainApplyClick:
