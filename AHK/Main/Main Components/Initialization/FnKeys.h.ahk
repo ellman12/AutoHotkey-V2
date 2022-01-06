@@ -179,12 +179,12 @@ activateOrSwitchTabs(exeName, exePath, reverse) {
 	else
 		Send ^{PgDn}
 	else {
-		; WinActivate %fullExe% ;TODO??????????
-		WinActivatebottom ahk_exe firefox.exe
+		WinActivate %fullExe%
+		; WinActivatebottom ahk_exe firefox.exe
 		;sometimes winactivate is not enough. the window is brought to the foreground, but not put into FOCUS.
 		;the below code should fix that.
-		WinGet, hWnd, ID, ahk_exe firefox.exe
-		DllCall("SetForegroundWindow", UInt, hWnd)
+		; WinGet, hWnd, ID, ahk_exe firefox.exe
+		; DllCall("SetForegroundWindow", UInt, hWnd)
 	}
 }
 
