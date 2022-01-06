@@ -5,7 +5,17 @@
 #If (GetKeyState("CapsLock", "P"))
 Enter::Send, Kind regards`,{Enter 2}Elliott DuCharme
 
+;Open Google Calendar.
+n::Run, "C:\Program Files\Mozilla Firefox\firefox.exe" https://calendar.google.com/calendar/u/0/r
+
+;Comma for moving window to left monitor
+SC033::Send, +#{Left}
+
+;Period for moving window to right monitor
+SC034::Send, +#{Right}
+
 i::Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window https://images.google.com/ ;Create a new Private Firefox window w/ Google Images.
+p::Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window https://www.google.com/ ;Create a new Private Firefox window w/ Google.
 
 ;Left bracket -> Google Images Search for selected text in Private Firefox.
 SC01A::
@@ -24,18 +34,6 @@ else ;If can't find text just do what i does.
     Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window https://images.google.com/
 clipboard = %prevClipboard%
 return
-
-;Open Google Calendar.
-n::Run, "C:\Program Files\Mozilla Firefox\firefox.exe" https://calendar.google.com/calendar/u/0/r
-
-;Create a new Private Firefox window w/ Google.
-p::Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window https://www.google.com/
-
-;Comma for moving window to left monitor
-SC033::Send, +#{Left}
-
-;Period for moving window to right monitor
-SC034::Send, +#{Right}
 
 ;Right bracket -> Google Search for selected text in Private Firefox.
 SC01B::
