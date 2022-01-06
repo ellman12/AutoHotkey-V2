@@ -1,10 +1,15 @@
 global PROMPT_WIDTH := 350
 global PROMPT_HEIGHT := 30
 global PROMPT_TITLE := "Enter a Command"
-global promptVisible := 0
+global promptVisible := false
 global prevCmds := []
 global currentIndex := 0
 global prevWinID := "" ;Used in !r
+global PROMPT_HISTORY_PATH := A_ScriptDir . "/../tmp/cmd_hist.tmp"
+
+FileRead, prevCmdsStr, %PROMPT_HISTORY_PATH%
+prevCmds := StrSplit(prevCmdsStr, "`n")
+currentIndex := prevCmds.Count()
 
 Gui, Prompt:+AlwaysOnTop
 Gui, Prompt:Color, Black
@@ -21,6 +26,8 @@ togglePrompt() {
 
 runCommand(cmd) {
     togglePrompt()
+    
+    FileAppend, % cmd . "`n", %PROMPT_HISTORY_PATH%
     
     switch (cmd) {
         case "", "ERROR":Tippy("Blank/invalid command", 1000)
