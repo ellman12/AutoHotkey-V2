@@ -1,4 +1,4 @@
-#Include, %A_ScriptDir%/Main Components/Custom Window Groups.ahk
+#Include, %A_ScriptDir%/Main Components/Initialization/Custom Window Groups.ahk
 
 global F1Mode
 global F2Mode

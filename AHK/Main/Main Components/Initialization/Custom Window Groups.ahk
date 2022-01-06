@@ -162,7 +162,7 @@ removeNonexistentWindows(ByRef windowGroupArray) {
 }
 
 removeAllWins(Fx, ByRef windowGroupArray, ByRef currentWin) {
-    FileDelete, %A_ScriptDir%\Misc. MSR Scripts\Custom Window Groups\%Fx%.tmp ;Reset/overwrite file.
+    ; FileDelete, %A_ScriptDir%\Misc. MSR Scripts\Custom Window Groups\%Fx%.tmp ;Reset/overwrite file.
     windowGroupArray := [] ;Blank out the array. It's that simple.
     currentWin := 1
     Tippy("All windows in " . Fx . " Group have been removed.", 4000)
