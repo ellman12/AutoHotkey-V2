@@ -55,6 +55,7 @@ runCommand(cmd) {
         return
     
         ;---------------------------------------INSERT---------------------------------------
+        case "paste":SendRaw, %Clipboard% ;Send Clipboard contents
         
         ;---------------------------------------SYMBOLS--------------------------------------
         case "+-":Send, {U+00B1} ;±

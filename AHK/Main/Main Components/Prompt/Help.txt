@@ -5,6 +5,7 @@ trim                    Trims whitespace and newlines in Clipboard
 FAR                     Find and Replace
 
 INSERT
+paste                   Send Clipboard contents
 
 SYMBOLS
 +-                      ±
