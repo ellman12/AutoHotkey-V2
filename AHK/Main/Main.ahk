@@ -176,6 +176,10 @@ return
 +F21::Send, ^x ;M2 on K95 RGB cuts to the clipboard.
 +F22::Send, ^v ;M3 on K95 RGB pastes the clipboard.
 
+;Volume wheel up/down on K95 RGB does log volume scaling.
+^!F22::changeVolume(1)
+^+F22::changeVolume(-1)
+
 ^!F23::topMouseButtons(FrontTopMouseBtnBehavior) ;Top Front Mouse Button on Scimitar RGB.
 ^+F23::topMouseButtons(BackTopMouseBtnBehavior) ;Top Back Mouse Button on Scimitar RGB.
 

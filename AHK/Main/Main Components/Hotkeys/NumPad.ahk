@@ -226,11 +226,16 @@ NumPadSub::saveAndRestoreVolumeLevel()
 #If
 
 ;Log volume scaling stuff: https://www.autohotkey.com/boards/viewtopic.php?t=38738
-changeVolume(ud) { ;Called by NumPadAdd and NumPadEnter.
-	fullVolumeTippy()
+changeVolume(ud) { ;Called by NumPadAdd and NumPadEnter and volume wheel on K95.
 	static p := 20
 	SoundGet, vol
 	SoundSet, % vol * (1 + ud * p / 100)
+	
+	SoundGet, systemMasterVolume
+	if (systemMasterVolume = 100) {
+		Tippy("The master volume is at 100%!", 700)
+		return
+	}
 }
 
 ;Allows the user to save the current volume level, and then return to it later. only used for NumPadSub.
@@ -257,14 +262,5 @@ saveAndRestoreVolumeLevel()
 		;Save volume if a double press.
 		SoundGet, savedNumMinusVol
 		Tippy("Saving volume", 600)
-	}
-	IniWrite, %savedNumMinusVol%, %MSR_CONFIG_PATH%, Miscellaneous, savedNumMinusVol
-}
-
-fullVolumeTippy() {
-	SoundGet, systemMasterVolume
-	if (systemMasterVolume = 100) {
-		Tippy("The master volume is at 100%!", 1000)
-		return
 	}
 }
