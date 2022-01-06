@@ -26,6 +26,8 @@ global TMP_FOLDER_PATH := A_ScriptDir . "/../tmp"
 ;---------------------MAIN VARS---------------------
 global activeWindowTitle, activeWindowID, FrontTopMouseBtnBehavior, BackTopMouseBtnBehavior
 
+global F11F12Toggled ;Override F11 & F12 to be Home and End (for Asus Laptop).
+
 global sleepDuration := 100 ;ms
 global Num2And8Step := 3 ;When Num2 or Num8 pressed, how much to increase/decrease volume.
 global autoNumPadModeToggle := true ;If true, switch NumPad modes automatically. Manual control if false.
@@ -172,7 +174,19 @@ return
 #t::Run, C:\Users\%A_UserName%\Documents\Microsoft To Do
 
 ;---------------------CONTEXT-SENSITIVE HOTKEYS---------------------
-;These only work in certain contexts (e.g., if a certain window is active).
+;These only work in certain contexts (e.g., if a certain window is active or something is toggled).
+;My Asus laptop requires holding Fn to activate Home/End/PgUp/PgDn so remap useless keys to make it easier
+#If F11F12Toggled
+F11::Send, {Home}
+^F11::Send, ^{Home}
++F11::Send, +{Home}
+^+F11::Send, ^+{Home}
+
+F12::Send, {End}
+^F12::Send, ^{End}
++F12::Send, +{End}
+^+F12::Send, ^+{End}
+#If
 
 ;------------------------GLOBAL iCUE HOTKEYS------------------------
 ;Hotkeys sent from iCUE that are interpreted by AutoHotkey.

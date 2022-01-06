@@ -11,13 +11,20 @@ Gui, Font, cWhite s11
 Gui, Add, Button, gShowFx, Fx Settings
 
 modes := "Double Click|Triple Click|FirefoxTabs|FirefoxWins|ChromeTabs|ChromeWins|RiderTabs|RiderWins|VSCodeTabs|VSCodeWins|VSTabs|VSWins|ExplorerWins"
+Gui, Font, cWhite s11
 Gui, Add, Text, xm y+13 w87, Front Top Btn
+
 Gui, Font, cWhite s9
 Gui, Add, DropDownList, x+10 yp-2 w150 vFrontTopMouseBtnBehavior, %modes%
+
 Gui, Font, cWhite s11
 Gui, Add, Text, xm y+13 w87, Back Top Btn
+
 Gui, Font, cWhite s9
 Gui, Add, DropDownList, x+10 yp-2 w150 vBackTopMouseBtnBehavior, %modes%
+
+Gui, Font, cWhite s11
+Gui, Add, Checkbox, xm y+13 vF11F12Toggled, F11 && F12 Toggled
 
 Gui, Font, s10
 Gui, Add, Button, x6 y280 gMainOkClick, OK
@@ -134,6 +141,8 @@ global
     
     IniWrite, %FrontTopMouseBtnBehavior%, %CONFIG_PATH%, Mouse, FrontTopMouseBtnBehavior
     IniWrite, %BackTopMouseBtnBehavior%, %CONFIG_PATH%, Mouse, BackTopMouseBtnBehavior
+    
+    IniWrite, %F11F12Toggled%, %CONFIG_PATH%, Misc, F11F12Toggled
 }
 
 readConfigFile() { ;Reads values from the ini file for #o (really only for the script startup). If value(s) aren't found default to the default value.
@@ -233,6 +242,8 @@ global
 
     IniRead, FrontTopMouseBtnBehavior, %CONFIG_PATH%, Mouse, FrontTopMouseBtnBehavior, Double Click
     IniRead, BackTopMouseBtnBehavior, %CONFIG_PATH%, Mouse, BackTopMouseBtnBehavior, Double Click
+    
+    IniRead, F11F12Toggled, %CONFIG_PATH%, Misc, F11F12Toggled, 0
 }
 
 setMainGUIValues() {
@@ -331,4 +342,6 @@ global
     ;Might need "Main:" here because of leftover Gui Default from FnSetting
     GuiControl, Main:ChooseString, FrontTopMouseBtnBehavior, %FrontTopMouseBtnBehavior%
     GuiControl, Main:ChooseString, BackTopMouseBtnBehavior, %BackTopMouseBtnBehavior%
+    
+    GuiControl, Main:, F11F12Toggled, %F11F12Toggled%
 }
