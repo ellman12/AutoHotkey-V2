@@ -1,2 +1,2 @@
-global CONFIG_PATH := TMP_FOLDER_PATH . "/main.ini"
+global CONFIG_PATH := TMP_FOLDER_PATH . "/Main.ini"
 

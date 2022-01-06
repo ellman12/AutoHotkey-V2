@@ -92,7 +92,7 @@ Loop {
 ^#r::Reload ;Saves custom window groups on reload (exit).
 CapsLock::reload
 
-; +#r::deleteConfigFile()
++#r::resetMainSettings()
 
 ^!r:: ;Restart script without restoring window groups.
 Loop 12 {
@@ -108,8 +108,6 @@ return
 
 Pause:: ;Suspends all hotkeys for the specified number in milliseconds.
 #p::
-if (suspendTippyToggled = 1)
-	ToolTip, Suspended...
 SetTimer, setTimerLabel, 2500, On
 Suspend, On
 return

@@ -13,3 +13,7 @@ FxApplyClick:
 Gui, FnSettings:Submit, NoHide
 writeConfigFile()
 return
+
+FxResetClick:
+resetMainSettings()
+return

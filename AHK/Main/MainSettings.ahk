@@ -18,4 +18,8 @@ Gui, Main:Submit, NoHide
 writeConfigFile()
 return
 
+MainResetClick:
+resetMainSettings()
+return
+
 #o::toggleGUI(mainVis, "Main", MAIN_WIDTH, MAIN_HEIGHT, MAIN_TITLE)

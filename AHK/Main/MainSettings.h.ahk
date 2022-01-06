@@ -27,6 +27,17 @@ Gui, Add, Button, x+10 yp gMainResetClick, Reset
 
 ; toggleGUI(mainVis, "Main", MAIN_WIDTH, MAIN_HEIGHT, MAIN_TITLE)
 
+deleteConfigFile() {
+    FileDelete, %CONFIG_PATH%
+}
+
+resetMainSettings() {
+    deleteConfigFile()
+    readConfigFile()
+    setMainGUIValues()
+    writeConfigFile()
+}
+
 writeConfigFile() { ;Writes #o values to the config file.
 global
     section := "FnKeys"
