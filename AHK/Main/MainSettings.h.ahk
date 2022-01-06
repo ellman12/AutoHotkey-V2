@@ -136,7 +136,7 @@ global
     IniWrite, %BackTopMouseBtnBehavior%, %CONFIG_PATH%, Mouse, BackTopMouseBtnBehavior
 }
 
-readConfigFile() { ;Reads values from the ini file for #o (really only for the script startup).
+readConfigFile() { ;Reads values from the ini file for #o (really only for the script startup). If value(s) aren't found default to the default value.
 global
     section := "FnKeys"
     ;Last parameter is the default value if it isn't found in the .ini file.

@@ -92,7 +92,10 @@ Loop {
 ^#r::Reload ;Saves custom window groups on reload (exit).
 CapsLock::reload
 
-+#r::resetMainSettings()
+#+r::
+resetMainSettings()
+Tippy("Settings reset", 900)
+return
 
 ^!r:: ;Restart script without restoring window groups.
 Loop 12 {
