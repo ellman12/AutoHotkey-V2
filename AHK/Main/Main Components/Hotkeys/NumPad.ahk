@@ -60,7 +60,7 @@ $NumPad8::SoundSet, +%Num2And8Step%
 $NumPadUp::SoundSet, +%Num2And8Step%
 
 $NumPad9::return
-$NumPadPgup::return
+$NumPadPgUp::return
 
 $NumPadDiv::SoundSet, -1
 $NumPadMult::SoundSet, +1
@@ -114,7 +114,7 @@ $NumPadUp::SoundSet, +%Num2And8Step%
 
 ;Forwards ten seconds.
 $NumPad9::Send, l
-$NumPadPgup::Send, l
+$NumPadPgUp::Send, l
 
 $NumPadDiv::SoundSet, -1
 $NumPadMult::SoundSet, +1
@@ -159,7 +159,7 @@ $NumPad8::Send, {NumPad8}
 $NumPadUp::Send, {NumPad8}
 
 $NumPad9::Send, {NumPad9}
-$NumPadPgup::Send, {NumPad9}
+$NumPadPgUp::Send, {NumPad9}
 
 $NumPadDiv::Send, {NumPadDiv}
 $NumPadMult::Send, {NumPadMult}
@@ -216,7 +216,7 @@ $NumPadUp::SoundSet, +%Num2And8Step%
 
 ;Forwards ten seconds.
 $NumPad9::Send, {Right 2}
-$NumPadPgup::Send, {Right 2}
+$NumPadPgUp::Send, {Right 2}
 
 $NumPadDiv::SoundSet, -1
 $NumPadMult::SoundSet, +1
