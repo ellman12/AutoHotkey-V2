@@ -83,18 +83,18 @@ Loop {
 #Include, %A_ScriptDir%/MainSettings.ahk
 
 #Include, %A_ScriptDir%/Main Components/Hotkeys/AutoCorrect.ahk
-#Include, %A_ScriptDir%/Main Components/Hotkeys/Temp Hotstrings.ahk
-
+#Include, %A_ScriptDir%/Main Components/Hotkeys/CapsLock.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeysSettings.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
+#Include, %A_ScriptDir%/Main Components/Hotkeys/Temp Hotstrings.ahk
+
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
 ^#r::Reload ;Saves custom window groups on reload (exit).
-CapsLock::reload
 
 #+r::
 resetMainSettings()
