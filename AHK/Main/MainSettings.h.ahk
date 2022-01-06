@@ -182,7 +182,7 @@ global
     IniRead, altF1Mode, %CONFIG_PATH%, %section%, altF1Mode, NewPrivFFWin
     IniRead, altF2Mode, %CONFIG_PATH%, %section%, altF2Mode, NewPrivFFWin
     IniRead, altF3Mode, %CONFIG_PATH%, %section%, altF3Mode, NewPrivChrWin
-    IniRead, altF4Mode, %CONFIG_PATH%, %section%, altF4Mode, NewPrivChrWin
+    IniRead, altF4Mode, %CONFIG_PATH%, %section%, altF4Mode, Default
     IniRead, altF5Mode, %CONFIG_PATH%, %section%, altF5Mode, Default
     IniRead, altF6Mode, %CONFIG_PATH%, %section%, altF6Mode, AddAndHide
     IniRead, altF7Mode, %CONFIG_PATH%, %section%, altF7Mode, AddAndHide
