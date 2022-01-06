@@ -57,9 +57,8 @@ Loop 12 { ;Read in all 12 win group files
 	readGroupFromFile("F" . A_Index, %group%)
 }
 
-; FileDelete, %CONFIG_PATH%
 readConfigFile()
-writeConfigFile()
+setMainGUIValues()
 
 ;---------------------MAIN LOOP---------------------
 ;Only works if put here
