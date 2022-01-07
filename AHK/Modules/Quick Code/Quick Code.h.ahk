@@ -1,11 +1,22 @@
 ;Run a custom script at runtime from inside another script.
+global QC_DEFAULT_WIDTH := 500
+global QC_DEFAULT_HEIGHT := 300
+global QC_TITLE := "Quick Code"
+
+global qcWidth := QC_DEFAULT_WIDTH
+global qcHeight := QC_DEFAULT_HEIGHT
+
+global qcEditWidth := qcWidth - 12
+global qcEditHeight := qcHeight - 45
 
 Gui, QC:Default
 Gui, +AlwaysOnTop
-Gui, Font, s9
-Gui, Add, Text, x3 y3, Enter code to run:
-Gui, Add, Edit, vQuickCodeEdit xp-2 y20 w196 h189
-Gui, Add, Button, xp y212 gQuickCodeDoneButton, &Done
+Gui, +Resize
+Gui, Font, s10
+Gui, Add, Button, x5 y6 gQCDoneClick, &Done
+Gui, Add, Button, x+4 yp gQCCloseBtnPress, &Close (#+q)
+Gui, Add, Edit, vQuickCodeEdit x5 y38 w%qcEditWidth% h%qcEditHeight%
 
-global QUICK_SCRIPT_PATH := A_ScriptDir . "/Main Components/Quick Code/Quick Script.ahk"
+;The script used by this
+global QUICK_SCRIPT_PATH := A_ScriptDir . "../../Modules/Quick Code/Quick Script.ahk"
 global QCVisibility := 0
