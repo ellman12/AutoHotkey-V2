@@ -97,6 +97,7 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
 
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Clipboard Edit.ahk
+#Include, %A_ScriptDir%/../Modules/Hotkeys/Text Modifier.ahk
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
