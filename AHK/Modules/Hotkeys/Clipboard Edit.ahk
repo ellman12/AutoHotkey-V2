@@ -1,7 +1,7 @@
 #c::
 GuiControl, CE:,clipboardBoxText, %Clipboard%
 GuiControl, CE:Focus, clipboardBoxText
-toggleGUI(clipboardEditVis, "CE", ecWidth, ecHeight, EC_TITLE)
+toggleGUI(clipboardEditVis, "CE", ceWidth, ceHeight, CE_TITLE)
 return
 
 clipboardFinishButtonClick:
@@ -18,9 +18,9 @@ GuiControl, CE:, clipboardBoxText, %clipboardBoxText%
 return
 
 resetBtnClick:
-ecWidth := CE_DEFAULT_WIDTH
-ecHeight := CE_DEFAULT_HEIGHT
-Gui, CE:Show, xCenter yCenter w%ecWidth% h%ecHeight%, %CE_TITLE%
+ceWidth := CE_DEFAULT_WIDTH
+ceHeight := CE_DEFAULT_HEIGHT
+Gui, CE:Show, xCenter yCenter w%ceWidth% h%ceHeight%, %CE_TITLE%
 return
 
 clipboardTextChanged:
@@ -35,9 +35,9 @@ clipboardEditVis := !clipboardEditVis
 return
 
 CEGuiSize:
-ecWidth := A_GuiWidth
-ecHeight := A_GuiHeight
-ceEditWidth := ecWidth - 10
-ceEditHeight := ecHeight - 47
+ceWidth := A_GuiWidth
+ceHeight := A_GuiHeight
+ceEditWidth := ceWidth - 10
+ceEditHeight := ceHeight - 47
 GuiControl, CE:Move, clipboardBoxText, % "x4 y40 w" ceEditWidth "h" ceEditHeight
 return
