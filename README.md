@@ -3,11 +3,18 @@
 AutoHotkey-V2 is a significantly refined and improved version of my original AutoHotkey repo.<br>
 AHK-V2 aims to be slimmer, more organized, and more modular. Modularity makes it easier to add/remove different files and also makes it easier for others to use these script(s) in their own scripts if desired.<br>
 
-## Conventions for Modules
+## Documentation
+### Conventions for Modules
 Initialization files contain code to be ran in the auto-execute section and thus must come before the hotkey files. By convention these files end in .h.ahk<br>
 Hotkey files include hotkeys, labels, and anything else that must come after auto-execute. By convention these files end in just .ahk.<br>
 
 In AHK-V1's Main Script, all the initialization stuff was dumped at the top of the Main file which made it unnecessarily long and cluttered. But here, by just #Including the .h.ahk and/or .ahk file, Main in V2 is significantly shorter and more organized.
+
+### Steps for Adding an Item to Main Settings GUI
+&nbsp;1. Add control(s) with variables to the GUI in MainSettings.h.ahk. Also a good idea to define a (global?) variable in auto-execute with the same name (what I do anyways).<br>
+&nbsp;2. Add an IniWrite in writeConfigFile() in the same file. This allows the variable to be saved on exit and read on startup.<br>
+&nbsp;3. Add an IniRead in readConfigFile() in the same file, plus its default value. Default value is needed if user (me) ever decides to reset the settings to their default values.<br>
+&nbsp;4. Add a GuiControl in setMainGUIValues() in the same file. This allows the GUI control to have this value picked on startup.
 
 ## History + Why Do All of This?
 It's hard to remember all this stuff even though they weren't even that long ago.<br>
