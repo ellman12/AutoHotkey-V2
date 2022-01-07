@@ -1,1 +1,1 @@
-Essential parts of Main.ahk that it needs to be able to run
+Essential parts of Main.ahk separated into their own files

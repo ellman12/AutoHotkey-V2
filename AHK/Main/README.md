@@ -1,5 +1,2 @@
-The core things used the most live here
-Anything that is also a part of Main but separated to its own file (AKA a Main Component) also is in the same folder as Main.ahk
-Other Main Components:
-Main Modules folder
-Profiles Folder
+The core script Main and its components live here.
+Main also relies on things in the Modules folder but those things aren't reliant on Main thus they're out there, ready to use by anyone else if desired.
