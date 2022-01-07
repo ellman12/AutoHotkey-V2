@@ -208,6 +208,7 @@ if (M3Paste)
 	Send, ^v
 else if (M3Send)
 	SendRaw, %Clipboard%
+return
 
 ;Volume wheel up/down on K95 RGB does log volume scaling.
 ^!F22::changeVolume(1)
