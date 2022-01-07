@@ -1,10 +1,10 @@
 ;Edit text in Clipboard
 global CE_DEFAULT_WIDTH := 650
 global CE_DEFAULT_HEIGHT := 400
+global CE_TITLE := "Clipboard Edit"
 
 global ecWidth := CE_DEFAULT_WIDTH
 global ecHeight := CE_DEFAULT_HEIGHT
-global CE_TITLE := "Clipboard Edit"
 
 global ecEditWidth := 640
 global ecEditHeight := 355
