@@ -26,8 +26,6 @@ togglePrompt() {
 }
 
 runCommand(cmd) {
-    togglePrompt()
-    
     FileAppend, % cmd . "`n", %PROMPT_HISTORY_PATH%
     
     switch (cmd) {
