@@ -51,6 +51,7 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
 
 #Include, %A_ScriptDir%/../Modules/Initialization/Clipboard Edit.h.ahk
+#Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.h.ahk
 
 ;-----------------------MISC-----------------------
 SetCapsLockState, AlwaysOff
@@ -99,6 +100,8 @@ Loop {
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Clipboard Edit.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Text Modifier.ahk
+
+#Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.ahk
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
