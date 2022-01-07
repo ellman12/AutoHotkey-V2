@@ -1,6 +1,6 @@
 ;Edit text in Clipboard
-global EC_WIDTH := 650
-global EC_HEIGHT := 400
+global ecWidth := 650
+global ecHeight := 400
 global EC_TITLE := "Clipboard Edit"
 
 global ecEditWidth := 640
@@ -17,3 +17,5 @@ Gui, CE:+Resize
 Gui, CE:Color, Silver
 
 clipboardEditVis := 0
+
+toggleGUI(clipboardEditVis, "CE", ecWidth, ecHeight, EC_TITLE)
