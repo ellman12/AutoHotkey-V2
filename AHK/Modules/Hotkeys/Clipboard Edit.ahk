@@ -4,7 +4,7 @@ GuiControl, CE:Focus, clipboardBoxText
 toggleGUI(clipboardEditVis, "CE", ecWidth, ecHeight, EC_TITLE)
 return
 
-clipboardFinishButton:
+clipboardFinishButtonClick:
 Gui, CE:Submit
 Clipboard := clipboardBoxText
 clipboardEditVis := !clipboardEditVis
@@ -15,6 +15,12 @@ clipboardBoxText := Trim(clipboardBoxText)
 clipboardBoxText := StrReplace(clipboardBoxText, "`r")
 clipboardBoxText := StrReplace(clipboardBoxText, "`n")
 GuiControl, CE:, clipboardBoxText, %clipboardBoxText%
+return
+
+resetBtnClick:
+ecWidth := CE_DEFAULT_WIDTH
+ecHeight := CE_DEFAULT_HEIGHT
+Gui, CE:Show, xCenter yCenter w%ecWidth% h%ecHeight%, %CE_TITLE%
 return
 
 clipboardTextChanged:
