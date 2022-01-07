@@ -16,8 +16,10 @@ Gui, CE:Submit, NoHide
 return
 
 CEGuiSize:
-ceEditWidth := A_GuiWidth - 10
-ceEditHeight := A_GuiHeight - 45
+EC_WIDTH := A_GuiWidth
+EC_HEIGHT := A_GuiHeight
+ceEditWidth := EC_WIDTH - 10
+ceEditHeight := EC_HEIGHT - 45
 GuiControl, CE:Move, clipboardBoxText, % "x4 y36 w" ceEditWidth "h" ceEditHeight
 return
 
