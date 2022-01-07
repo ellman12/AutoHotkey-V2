@@ -1,0 +1,1 @@
+Files that have hotkeys, labels, or anything else that can't be in the auto-execute section.

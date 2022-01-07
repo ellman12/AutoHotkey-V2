@@ -85,6 +85,7 @@ Loop {
 }
 
 ;-------------------HOTKEY FILES--------------------
+;Files that have hotkeys, labels, or anything else that can't be in the auto-execute section.
 #Include, %A_ScriptDir%/MainSettings.ahk
 
 #Include, %A_ScriptDir%/Main Components/Hotkeys/AutoCorrect.ahk
