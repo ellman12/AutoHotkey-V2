@@ -26,6 +26,10 @@ Gui, Add, DropDownList, x+10 yp-2 w150 vBackTopMouseBtnBehavior, %modes%
 Gui, Font, cWhite s11
 Gui, Add, Checkbox, xm y+13 vF11F12Toggled, F11 && F12 Toggled
 
+Gui, Font, cWhite s11
+Gui, Add, Radio, vM3Paste y+13, Paste Clipboard
+Gui, Add, Radio, vM3Send, Send Clipboard
+
 Gui, Font, s10
 Gui, Add, Button, x6 y280 gMainOkClick, OK
 Gui, Add, Button, x+10 y280 gMainCancelClick, Cancel
@@ -143,6 +147,8 @@ global
     IniWrite, %BackTopMouseBtnBehavior%, %CONFIG_PATH%, Mouse, BackTopMouseBtnBehavior
     
     IniWrite, %F11F12Toggled%, %CONFIG_PATH%, Misc, F11F12Toggled
+    IniWrite, %M3Paste%, %CONFIG_PATH%, Misc, M3Paste
+    IniWrite, %M3Send%, %CONFIG_PATH%, Misc, M3Send
 }
 
 readConfigFile() { ;Reads values from the ini file for #o (really only for the script startup). If value(s) aren't found default to the default value.
@@ -244,6 +250,8 @@ global
     IniRead, BackTopMouseBtnBehavior, %CONFIG_PATH%, Mouse, BackTopMouseBtnBehavior, Double Click
     
     IniRead, F11F12Toggled, %CONFIG_PATH%, Misc, F11F12Toggled, 0
+    IniRead, M3Paste, %CONFIG_PATH%, Misc, M3Paste, 1
+    IniRead, M3Send, %CONFIG_PATH%, Misc, M3Send, 0
 }
 
 setMainGUIValues() {
@@ -344,4 +352,6 @@ global
     GuiControl, Main:ChooseString, BackTopMouseBtnBehavior, %BackTopMouseBtnBehavior%
     
     GuiControl, Main:, F11F12Toggled, %F11F12Toggled%
+    GuiControl, Main:, M3Paste, %M3Paste%
+    GuiControl, Main:, M3Send, %M3Send%
 }

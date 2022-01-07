@@ -202,7 +202,12 @@ F12::Send, {End}
 ;Hotkeys sent from iCUE that are interpreted by AutoHotkey.
 +F24::Send, ^c ;M1 on K95 RGB copies to the clipboard.
 +F21::Send, ^x ;M2 on K95 RGB cuts to the clipboard.
-+F22::Send, ^v ;M3 on K95 RGB pastes the clipboard.
+;M3 on K95 RGB pastes the clipboard.
++F22::
+if (M3Paste)
+	Send, ^v
+else if (M3Send)
+	SendRaw, %Clipboard%
 
 ;Volume wheel up/down on K95 RGB does log volume scaling.
 ^!F22::changeVolume(1)
