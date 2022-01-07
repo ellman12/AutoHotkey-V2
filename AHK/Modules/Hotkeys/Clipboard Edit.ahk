@@ -11,6 +11,7 @@ clipboardEditVis := !clipboardEditVis
 return
 
 trimBtnClick:
+Gui, CE:Submit, NoHide
 clipboardBoxText := Trim(clipboardBoxText)
 clipboardBoxText := StrReplace(clipboardBoxText, "`r")
 clipboardBoxText := StrReplace(clipboardBoxText, "`n")
