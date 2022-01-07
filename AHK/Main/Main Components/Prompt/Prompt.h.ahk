@@ -54,6 +54,7 @@ runCommand(cmd) {
     
         ;---------------------------------------INSERT---------------------------------------
         case "paste":SendRaw, %Clipboard% ;Send Clipboard contents
+        case "ed":Send, Elliott DuCharme  ;My name
         
         ;---------------------------------------SYMBOLS--------------------------------------
         case "+-":Send, {U+00B1} ;±

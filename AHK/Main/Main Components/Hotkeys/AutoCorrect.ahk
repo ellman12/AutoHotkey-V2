@@ -5444,4 +5444,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:f23::F23
 :*:f24::F24
 
+;Acronyms. Convention with these is to put an extra of the last letter at the end of the "incorrect word".
+:*:ahkk::AutoHotkey
+
 ;Misc hotstrings I've added over time, either manually or through #h.

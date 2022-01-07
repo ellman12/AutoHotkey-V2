@@ -6,6 +6,7 @@ FAR                     Find and Replace
 
 INSERT
 paste                   Send Clipboard contents
+ed                      Send my name
 
 SYMBOLS
 +-                      ±
