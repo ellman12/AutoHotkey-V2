@@ -32,6 +32,6 @@ CEGuiSize:
 ecWidth := A_GuiWidth
 ecHeight := A_GuiHeight
 ceEditWidth := ecWidth - 10
-ceEditHeight := ecHeight - 45
-GuiControl, CE:Move, clipboardBoxText, % "x4 y36 w" ceEditWidth "h" ceEditHeight
+ceEditHeight := ecHeight - 47
+GuiControl, CE:Move, clipboardBoxText, % "x4 y40 w" ceEditWidth "h" ceEditHeight
 return
