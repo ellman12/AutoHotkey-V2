@@ -42,13 +42,15 @@ global savedNumMinusVol
 ;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
 #Include, %A_ScriptDir%/Main.h.ahk
-
 #Include, %A_ScriptDir%/MainSettings.h.ahk
+
 #Include, %A_ScriptDir%/Main Components/Initialization/AutoCorrect.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
+
+#Include, %A_ScriptDir%/../Modules/Initialization/Clipboard Edit.h.ahk
 
 ;-----------------------MISC-----------------------
 SetCapsLockState, AlwaysOff
@@ -93,6 +95,8 @@ Loop {
 
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
+
+#Include, %A_ScriptDir%/../Modules/Hotkeys/Clipboard Edit.ahk
 
 ;----------------------------MISC HOTKEYS---------------------------
 ;These are completely global and will work no matter the context
