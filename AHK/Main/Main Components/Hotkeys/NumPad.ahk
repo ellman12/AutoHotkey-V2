@@ -238,10 +238,11 @@ changeVolume(ud) { ;Called by NumPadAdd and NumPadEnter and volume wheel on K95.
 	}
 }
 
-;Allows the user to save the current volume level, and then return to it later. only used for NumPadSub.
+;Allows the user to save the current volume level, and then return to it later. Only used for NumPadSub.
 ;https://www.autohotkey.com/boards/viewtopic.php?f=76&t=10067
 saveAndRestoreVolumeLevel()
 {
+	static DELAY := 1400
     KeyWait, NumPadSub
     KeyWait, NumPadSub, D T0.1
 	if ErrorLevel ;Timed out. I.e., single press.
@@ -249,18 +250,18 @@ saveAndRestoreVolumeLevel()
 		;Save if not already set.
 		if (savedNumMinusVol == "") {
 			SoundGet, savedNumMinusVol
-			Tippy("Saving volume", 600)
+			Tippy("Saving volume of " + Round(savedNumMinusVol, 2), DELAY)
 			return
 		}
 
 		;Restore Volume.
 		SoundSet, savedNumMinusVol
-		Tippy("Restoring volume", 600)
+		Tippy("Restoring volume of " + Round(savedNumMinusVol, 2), DELAY)
 	}
 	else ;Double press.
 	{
 		;Save volume if a double press.
 		SoundGet, savedNumMinusVol
-		Tippy("Saving volume", 600)
+		Tippy("Saving volume of " + Round(savedNumMinusVol, 2), DELAY)
 	}
 }
