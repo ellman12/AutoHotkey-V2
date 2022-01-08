@@ -17,7 +17,7 @@ DetectHiddenWindows, Off
 #SingleInstance force
 
 ;https://diymediahome.org/wp-content/uploads/shell32_icons.jpg
-; Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
+Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
 ;----------------------------AUTO-EXECUTE---------------------------
 ;---------------------CONSTANTS---------------------
