@@ -1,6 +1,7 @@
 TEXT
 /                       Replace '\' in the Clipboard with '/'.
 \                       Vice versa.
+/'                      Does what '\' does and also removes "" from Clipboard too.
 trim                    Trims whitespace and newlines in Clipboard
 FAR                     Find and Replace
 

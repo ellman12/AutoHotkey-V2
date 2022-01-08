@@ -41,6 +41,11 @@ runCommand(cmd) {
         case "/":Clipboard := StrReplace(Clipboard, "\", "/") ;Replace '\' in the Clipboard with '/'.
         case "\":Clipboard := StrReplace(Clipboard, "/", "\") ;Vice versa.
         
+        case "/'": ;Does what '\' does and also removes "" from Clipboard too.
+            Clipboard := StrReplace(Clipboard, "\", "/")
+            Clipboard := StrReplace(Clipboard, """", "")
+        return
+        
         ;Trims whitespace and newlines in Clipboard
         case "trim":
             Clipboard := Trim(Clipboard)
