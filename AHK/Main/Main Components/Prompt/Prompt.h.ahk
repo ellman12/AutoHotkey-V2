@@ -56,6 +56,13 @@ runCommand(cmd) {
         case "FAR": ;Find and Replace.
             runFAR()
         return
+        
+        ;---------------------------------------NUMBER---------------------------------------
+        case "round":
+            InputBox, numToRound, Enter Number to Round, Enter Number to Round,, 200, 150,,,,, %Clipboard%
+            InputBox, decPlaces, How Many Decimal Places, How Many Decimal Places,, 200, 150,,,,, 2
+            Clipboard := Round(numToRound, decPlaces)
+        return
     
         ;---------------------------------------INSERT---------------------------------------
         case "paste":SendRaw, %Clipboard% ;Send Clipboard contents
