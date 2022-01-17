@@ -7,6 +7,7 @@ FAR                     Find and Replace
 
 NUMBER
 Round                   Show an InputBox for rounding a number.
+Roundc                  Round number in Clipboard
 
 INSERT
 paste                   Send Clipboard contents
