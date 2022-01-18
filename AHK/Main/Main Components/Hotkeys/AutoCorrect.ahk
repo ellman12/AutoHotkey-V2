@@ -5448,3 +5448,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:ahkk::AutoHotkey
 
 ;Misc hotstrings I've added over time, either manually or through #h.
+::rly::really
+::idkk::I don't know
+::tmr::tomorrow
+::theyu::they
