@@ -78,6 +78,45 @@ runCommand(cmd) {
         case "ed":Send, Elliott DuCharme  ;My name
         
         ;---------------------------------------SYMBOLS--------------------------------------
+        ;(Discrete) Math Symbols. Source: https://www.compart.com/en/unicode/block/U+2200
+        case "for all":Send, {U+2200} ;∀
+        case "there exists":Send, {U+2203} ;∃
+        case "empty set":Send, {U+2205} ;∅
+        case "elm of":Send, {U+2208} ;∈
+        case "!elm of":Send, {U+2209} ;∉
+        case "elm of r":Send, {U+220B} ;∋
+        case "!elm of r":Send, {U+220C} ;∌
+        case "and":Send, {U+2227} ;∧
+        case "or":Send, {U+2228} ;∨
+        case "intsec":Send, {U+2229} ;∩
+        case "union":Send, {U+222A} ;∪
+        case "===":Send, {U+2261} ;≡
+        case "!===":Send, {U+2262} ;≢
+        case "subset":Send, {U+2282} ;⊂
+        case "subset r":Send, {U+2283} ;⊃
+        case "!subset":Send, {U+2284} ;⊄
+        case "!subset r":Send, {U+2285} ;⊅
+        case "propsubset":Send, {U+2286} ;⊆
+        case "propsubset r":Send, {U+2287} ;⊇
+        case "!propsubset":Send, {U+2288} ;⊈
+        case "!propsubset r":Send, {U+2289} ;⊉
+        case "xor":Send, {U+2295} ;⊕
+        case "intsec2":Send, {U+22C2} ;⋂
+        case "union2":Send, {U+22C3} ;⋃
+        case "not":Send, {U+00AC} ;¬
+        case "therefore":Send, {U+2234} ;∴
+        
+        ;Arrows
+        case "u":Send, {U+2191} ;↑
+        case "r":Send, {U+2192} ;→
+        case "d":Send, {U+2193} ;↓
+        case "l":Send, {U+2190} ;←
+        case "<---":Send, {U+27F5} ;⟵
+        case "--->":Send, {U+27F6} ;⟶
+        case "==>":Send, {U+27F9} ;⟹
+        case "<==":Send, {U+27F8} ;⟸
+        case "<->":Send, {U+2194} ;↔
+        
         case "+-":Send, {U+00B1} ;±
         case "-+":Send, {U+2213} ;∓
         case "mult":Send, {U+00D7} ;×
@@ -98,10 +137,6 @@ runCommand(cmd) {
         case "inf":Send, {U+221E} ;∞
         case "...":Send, {U+2026} ;…
         case "theta":Send, {U+03B8} ;θ
-        case "u":Send, {U+2191} ;↑
-        case "r":Send, {U+2192} ;→
-        case "d":Send, {U+2193} ;↓
-        case "l":Send, {U+2190} ;←
         case "deg":Send, {U+00B0} ;°
         case "en":Send, {U+2013} ;–
         case "em":Send, {U+2014} ;—

@@ -14,6 +14,43 @@ paste                   Send Clipboard contents
 ed                      Send my name
 
 SYMBOLS
+for all                 ∀
+there exists            ∃
+empty set               ∅
+elm of                  ∈
+!elm of                 ∉
+elm of r                ∋
+!elm of r               ∌
+and                     ∧
+or                      ∨
+intsec                  ∩
+union                   ∪
+===                     ≡
+!===                    ≢
+subset                  ⊂
+subset r                ⊃
+!subset                 ⊄
+!subset r               ⊅
+propsubset              ⊆
+propsubset r            ⊇
+!propsubset             ⊈
+!propsubset r           ⊉
+xor                     ⊕
+intsec2                 ⋂
+union2                  ⋃
+not                     ¬
+therefore               ∴
+
+u                       ↑
+r                       →
+d                       ↓
+l                       ←
+<---                    ⟵
+--->                    ⟶
+==>                     ⟹
+<==                     ⟸
+<->                     ↔
+
 +-                      ±
 -+                      ∓
 mult                    ×
@@ -34,10 +71,6 @@ micro                   µ
 inf                     ∞
 ...                     …
 theta                   θ
-u                       ↑
-r                       →
-d                       ↓
-l                       ←
 deg                     °
 en                      –
 em                      —
