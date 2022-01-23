@@ -185,6 +185,11 @@ return
 ;Open MS To Do
 #t::Run, C:\Users\%A_UserName%\Documents\Microsoft To Do
 
+;------------------DISABLE ANNOYING WINDOWS HOTKEYS-----------------
+^#f::
+^#BackSpace::
+return
+
 ;---------------------CONTEXT-SENSITIVE HOTKEYS---------------------
 ;These only work in certain contexts (e.g., if a certain window is active or something is toggled).
 ;My Asus laptop requires holding Fn to activate Home/End/PgUp/PgDn so remap useless keys to make it easier
