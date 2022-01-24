@@ -79,6 +79,7 @@ runCommand(cmd) {
         
         ;---------------------------------------SYMBOLS--------------------------------------
         ;(Discrete) Math Symbols. Source: https://www.compart.com/en/unicode/block/U+2200
+        case "maps to":Send, {U+21A6} ;↦
         case "for all":Send, {U+2200} ;∀
         case "there exists":Send, {U+2203} ;∃
         case "empty set":Send, {U+2205} ;∅
