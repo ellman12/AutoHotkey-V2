@@ -1,0 +1,64 @@
+Computer Vision
+Autonomous Robots
+Robotics Programming
+Robotics
+Robots
+Linux
+Windows
+Blazor
+Problem Solving
+Problem Analysis
+Project Management
+Time Management
+Learning Quickly
+Teamwork
+GNU Debugger
+CSS
+Cascading Style Sheets (CSS)
+x86 Assembly
+x64 Assembly
+CSS
+HTML
+HyperText Markup Language (HTML)
+Software Documentation
+Microsoft PowerPoint
+Microsoft Word
+Microsoft Excel
+Microsoft Office
+Database Management Systems (DBMS)
+Relational Database Management Systems (RDBMS)
+Relational Database Concepts
+SQL
+Structured Query Language (SQL)
+Structured Query Language (SQL) Development
+PostgreSQL
+SQL Tools
+MySQL
+MySQL Administration
+MySQL Database Development
+MySQL Workbench
+MySQL Database Design
+MySQL Database Management
+Python
+JavaScript
+Java
+Git Bash
+Git
+GitHub
+Keyboard Shortcuts
+Macros
+Automation
+Linux Terminal
+PowerShell
+Windows Automation
+Bash Command Line
+Bash
+Windows Command Line
+AutoHotkey
+C++
+C#
+OOP
+Object-Oriented Programming Languages
+C Sharp (Programming Language)
+C (Programming Language)
+C++ Programming Language
