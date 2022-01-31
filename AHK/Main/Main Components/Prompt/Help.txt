@@ -14,8 +14,8 @@ paste                   Send Clipboard contents
 ed                      Send my name
 
 SYMBOLS
-for all                 ∀
-there exists            ∃
+4a OR for all           ∀
+ex OR there exists      ∃
 empty set               ∅
 elm of                  ∈
 !elm of                 ∉
@@ -40,6 +40,9 @@ intsec2                 ⋂
 union2                  ⋃
 not                     ¬
 therefore               ∴
+m2                      ↦
+reals                   ℝ
+sq                      ²
 
 u                       ↑
 r                       →
@@ -62,7 +65,7 @@ int                     ∫
 int                     ⌠
 int                     ⌡
 approx                  ≈
-=/=                     ≠
+!=                      ≠
 <=                      ≤
 >=                      ≥
 delta                   Δ

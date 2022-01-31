@@ -80,8 +80,8 @@ runCommand(cmd) {
         ;---------------------------------------SYMBOLS--------------------------------------
         ;(Discrete) Math Symbols. Source: https://www.compart.com/en/unicode/block/U+2200
         case "maps to":Send, {U+21A6} ;↦
-        case "for all":Send, {U+2200} ;∀
-        case "there exists":Send, {U+2203} ;∃
+        case "4a", "for all":Send, {U+2200} ;∀
+        case "ex", "there exists":Send, {U+2203} ;∃
         case "empty set":Send, {U+2205} ;∅
         case "elm of":Send, {U+2208} ;∈
         case "!elm of":Send, {U+2209} ;∉
@@ -106,6 +106,9 @@ runCommand(cmd) {
         case "union2":Send, {U+22C3} ;⋃
         case "not":Send, {U+00AC} ;¬
         case "therefore":Send, {U+2234} ;∴
+        case "m2":Send, {U+21A6} ;↦
+        case "reals":Send, {U+211D} ;ℝ
+        case "sq":Send, {U+00B2} ;²
         
         ;Arrows
         case "u":Send, {U+2191} ;↑
@@ -129,7 +132,7 @@ runCommand(cmd) {
         case "int top":Send, {U+2320} ;⌠
         case "int bot":Send, {U+2321} ;⌡
         case "approx":Send, {U+2248} ;≈
-        case "=/=":Send, {U+2260} ;≠
+        case "!=":Send, {U+2260} ;≠
         case "<=":Send, {U+2264} ;≤
         case ">=":Send, {U+2265} ;≥
         case "delta":Send, {U+0394} ;Δ
