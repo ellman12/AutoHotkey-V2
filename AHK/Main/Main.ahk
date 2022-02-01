@@ -21,6 +21,7 @@ Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
 ;----------------------------AUTO-EXECUTE---------------------------
 ;---------------------CONSTANTS---------------------
+global CONFIG_PATH := TMP_FOLDER_PATH . "/Main.ini"
 global TMP_FOLDER_PATH := A_ScriptDir . "/../tmp"
 
 ;---------------------MAIN VARS---------------------
@@ -41,7 +42,6 @@ global savedNumMinusVol
 
 ;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
-#Include, %A_ScriptDir%/Main.h.ahk
 #Include, %A_ScriptDir%/MainSettings.h.ahk
 
 #Include, %A_ScriptDir%/Main Components/Initialization/AutoCorrect.h.ahk
