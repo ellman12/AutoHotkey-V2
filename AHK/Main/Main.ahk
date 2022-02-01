@@ -92,7 +92,6 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Hotkeys/CapsLock.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeysSettings.ahk
-#Include, %A_ScriptDir%/Main Components/Hotkeys/InsertModifier.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/Temp Hotstrings.ahk
 
@@ -105,6 +104,7 @@ Loop {
 
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Clipboard Edit.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
+#Include, %A_ScriptDir%/../Modules/Hotkeys/InsertModifier.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Text Modifier.ahk
 
 #Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.ahk
