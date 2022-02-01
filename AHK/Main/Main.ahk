@@ -92,6 +92,7 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Hotkeys/CapsLock.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeysSettings.ahk
+#Include, %A_ScriptDir%/Main Components/Hotkeys/InsertModifier.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/Temp Hotstrings.ahk
 
