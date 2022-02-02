@@ -1,6 +1,9 @@
 ;Stuff for FnKeys.ahk pertaining to creating custom groupings of windows for F1-12
 
 ;------------------------VARIABLES------------------------
+windowGroupGraveAccent := []
+currentWinGraveAccent := 1
+graveAccentVisToggle := 0 
 windowGroupF1 := [] ;Stores window IDs
 currentWinF1 := 1 ;Where in array are you
 F1VisToggle := 0 ;Declare these as 1 so the first time you press Fx, it hides everything. If it's 1, hide windows; if it's 0, show windows.

@@ -42,11 +42,10 @@ global savedNumMinusVol
 
 ;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
-#Include, %A_ScriptDir%/MainSettings.h.ahk
-
 #Include, %A_ScriptDir%/Main Components/Initialization/AutoCorrect.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
+#Include, %A_ScriptDir%/MainSettings.h.ahk ;<-- Put after FnKeys stuff so it can access the Fn Modes constant for the ` key
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
 
@@ -151,7 +150,7 @@ return
 
 #n::Run, Notepad ;Open Notepad.
 
-sc029::Send, !{Tab} ;The grave accent key (that weird thing under the Tilde ~ symbol) sends Alt + Tab.
+sc029::runFnAction(graveAccentMode, windowGroupGraveAccent, currentWinGraveAccent, graveAccentVisToggle) ;The grave accent key (that weird thing under the Tilde ~ symbol) can be remapped just like F1-F12.
 ^sc029::Send, `` ;Holding Ctrl and pushing the grave accent key inserts the grave accent symbol: `.
 
 !SC00C::WinMinimize, A ;Alt + -

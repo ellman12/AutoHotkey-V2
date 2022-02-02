@@ -10,6 +10,12 @@ Gui, Color, Black
 Gui, Font, cWhite s11
 Gui, Add, Button, gShowFx, Fx Settings
 
+Gui, Font, cWhite s11
+Gui, Add, Text, xm y+13 w87, Grave Accent Mode
+
+Gui, Font, cWhite s9
+Gui, Add, DropDownList, x+10 yp-2 w150 vgraveAccentMode, %FN_MODES%
+
 modes := "Double Click|Triple Click|FirefoxTabs|FirefoxWins|ChromeTabs|ChromeWins|RiderTabs|RiderWins|VSCodeTabs|VSCodeWins|VSTabs|VSWins|ExplorerWins"
 Gui, Font, cWhite s11
 Gui, Add, Text, xm y+13 w87, Front Top Btn
@@ -149,6 +155,7 @@ global
     IniWrite, %F11F12Toggled%, %CONFIG_PATH%, Misc, F11F12Toggled
     IniWrite, %M3Paste%, %CONFIG_PATH%, Misc, M3Paste
     IniWrite, %M3Send%, %CONFIG_PATH%, Misc, M3Send
+    IniWrite, %graveAccentMode%, %CONFIG_PATH%, Misc, graveAccentMode
 }
 
 readConfigFile() { ;Reads values from the ini file for #o (really only for the script startup). If value(s) aren't found default to the default value.
@@ -252,6 +259,7 @@ global
     IniRead, F11F12Toggled, %CONFIG_PATH%, Misc, F11F12Toggled, 0
     IniRead, M3Paste, %CONFIG_PATH%, Misc, M3Paste, 1
     IniRead, M3Send, %CONFIG_PATH%, Misc, M3Send, 0
+    IniRead, graveAccentMode, %CONFIG_PATH%, Misc, graveAccentMode, Alt Tab
 }
 
 setMainGUIValues() {
@@ -354,4 +362,5 @@ global
     GuiControl, Main:, F11F12Toggled, %F11F12Toggled%
     GuiControl, Main:, M3Paste, %M3Paste%
     GuiControl, Main:, M3Send, %M3Send%
+    GuiControl, Main:ChooseString, graveAccentMode, %graveAccentMode%
 }

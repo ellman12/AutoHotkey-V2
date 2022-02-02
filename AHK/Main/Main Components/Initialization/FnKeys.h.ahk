@@ -2,6 +2,8 @@
 ;A lot (most) of the ideas and inspiration behind this came from this video and the script(s?) in the description: https://youtu.be/OqyQABySV8k
 #Include, %A_ScriptDir%/Main Components/Initialization/Custom Window Groups.ahk
 
+global graveAccentMode
+
 global F1Mode
 global F2Mode
 global F3Mode
@@ -114,6 +116,8 @@ runFnAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 {
 	switch (action)
 	{
+		case "Alt Tab":Send, !{Tab}
+		
 		case "NewFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe
 		case "NewPrivFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window
 		case "FirefoxTabs":activateOrSwitchTabs("firefox.exe", "firefox.exe", false)
