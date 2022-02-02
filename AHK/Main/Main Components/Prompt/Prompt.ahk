@@ -8,7 +8,11 @@ return
 ;Repeat last command
 ^CapsLock::
 prevIndex := --currentIndex
-runCommand(prevCmds[prevIndex])
+
+commands := StrSplit(prevCmds[prevIndex], "&")
+for k, v in commands
+    runCommand(Trim(v))
+
 prevIndex := ++currentIndex
 return
 
@@ -40,8 +44,12 @@ return
 Enter::
 currentIndex := prevCmds.MaxIndex() + 1
 prevCmds.InsertAt(prevCmds.MaxIndex(), currentCmd)
+FileAppend, % currentCmd . "`n", %PROMPT_HISTORY_PATH%
 togglePrompt()
-runCommand(currentCmd)
+
+commands := StrSplit(currentCmd, "&")
+for k, v in commands
+    runCommand(Trim(v))
 GuiControl, Prompt:, currentCmd,
 return
 

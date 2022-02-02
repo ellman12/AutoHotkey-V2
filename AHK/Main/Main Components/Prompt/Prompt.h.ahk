@@ -238,6 +238,4 @@ runCommand(cmd) {
             }
         return
     }
-    
-    FileAppend, % cmd . "`n", %PROMPT_HISTORY_PATH%
 }
