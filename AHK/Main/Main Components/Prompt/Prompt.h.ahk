@@ -29,15 +29,12 @@ togglePrompt() {
 }
 
 runCommand(cmd) {
-    FileAppend, % cmd . "`n", %PROMPT_HISTORY_PATH%
-    
     switch (cmd) {
         case "", "ERROR":Tippy("Blank/invalid command", 1000)
         case "?":Run, notepad.exe %A_ScriptDir%/Main Components/Prompt/Help.txt
         Default:
-            currentCmd := ""
             togglePrompt()
-            Tippy("Unknown command", 2000)
+            return
         return
         
         ;----------------------------------------TEXT----------------------------------------
@@ -241,4 +238,6 @@ runCommand(cmd) {
             }
         return
     }
+    
+    FileAppend, % cmd . "`n", %PROMPT_HISTORY_PATH%
 }
