@@ -30,9 +30,17 @@ togglePrompt() {
 
 runCommand(cmd) {
     switch (cmd) {
-        case "", "ERROR":Tippy("Blank/invalid command", 1000)
         case "?":Run, notepad.exe %A_ScriptDir%/Main Components/Prompt/Help.txt
         Default:
+
+            if (InStr(cmd, "FAR"))
+            {
+                cmd := StrReplace(cmd, "FAR")
+                cmd := Trim(cmd)
+                Run, %A_ScriptDir%/../Modules/Hotkeys/FAR.ahk %cmd%
+                return
+            }
+            
             togglePrompt()
             return
         return
@@ -53,7 +61,7 @@ runCommand(cmd) {
             Clipboard := StrReplace(Clipboard, "`n")
         return
         
-        case "FAR": ;Find and Replace.
+        case "FAR": ;Find and Replace GUI.
             runFAR()
         return
         
