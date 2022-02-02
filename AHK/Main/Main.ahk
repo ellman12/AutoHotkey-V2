@@ -21,8 +21,8 @@ Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 
 ;----------------------------AUTO-EXECUTE---------------------------
 ;---------------------CONSTANTS---------------------
-global CONFIG_PATH := TMP_FOLDER_PATH . "/Main.ini"
 global TMP_FOLDER_PATH := A_ScriptDir . "/../tmp"
+global CONFIG_PATH := TMP_FOLDER_PATH . "/Main.ini"
 
 ;---------------------MAIN VARS---------------------
 global activeWindowTitle, activeWindowID, FrontTopMouseBtnBehavior, BackTopMouseBtnBehavior
