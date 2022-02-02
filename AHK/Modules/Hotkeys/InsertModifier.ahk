@@ -13,6 +13,7 @@ r::Send, {U+211D} ;ℝ
 s::Send, {U+2282} ;⊂
 +s::Send, {U+2286} ;⊆
 u::Send, {U+222A} ;∪
+z::Send, {U+2124} ;ℤ
 
 Up::Send, {U+2191} ;↑
 Right::Send, {U+2192} ;→
