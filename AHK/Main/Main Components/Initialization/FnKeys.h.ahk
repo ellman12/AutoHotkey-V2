@@ -120,9 +120,9 @@ runFnAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 		
 		case "NewFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe
 		case "NewPrivFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window
-		case "FirefoxTabs":activateOrSwitchTabs("firefox.exe", "firefox.exe", false)
-		case "FirefoxTabsReverse":activateOrSwitchTabs("firefox.exe", "firefox.exe", true)
-		case "FirefoxWins":switchBetweenWindows("firefox.exe", "firefox.exe", "firefoxWins")
+		case "FirefoxTabs":activateOrSwitchTabs("firefox.exe", "C:/Program Files/Mozilla Firefox/firefox.exe", false)
+		case "FirefoxTabsReverse":activateOrSwitchTabs("firefox.exe", "C:/Program Files/Mozilla Firefox/firefox.exe", true)
+		case "FirefoxWins":switchBetweenWindows("firefox.exe", "C:/Program Files/Mozilla Firefox/firefox.exe", "firefoxWins")
 
 		case "NewChrWin":Run, chrome.exe
 		case "NewPrivChrWin":Run, chrome.exe -incognito
