@@ -47,7 +47,7 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/Main Components/Initialization/AutoCorrect.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
-#Include, %A_ScriptDir%/Main Components/Prompt/FAR.h.ahk
+#Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
 
 #Include, %A_ScriptDir%/../Modules/Initialization/Clipboard Edit.h.ahk
@@ -95,7 +95,7 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/Temp Hotstrings.ahk
 
-#Include, %A_ScriptDir%/Main Components/Prompt/FAR.ahk
+#Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
 
 #Include, %A_ScriptDir%/Profiles/Unity.ahk
