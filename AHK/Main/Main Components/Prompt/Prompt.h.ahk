@@ -203,6 +203,13 @@ runCommand(cmd) {
             currentIndex := 0
         return
         
+        case "bkupGH": ;Backup GitHub folder to tmp folder on PC and put in a timestamp folder. Useful to do before doing a destructive git operation like force push, merge, etc.
+            FormatTime, timestamp,, M-d-yyyy h;mm;ss tt
+            dest := "C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp
+            FileCopyDir, C:/Users/Elliott/Documents/GitHub, %dest%
+            MsgBox, 262208, GitHub Backup Done, GitHub Backup Done
+        return
+        
         ;---------------------------RARELY USED BUT STILL USEFUL---------------------------
         case "DownloadMusic":
             /*Used for mass downloading music tracks from this website: https://downloads.khinsider.com/
