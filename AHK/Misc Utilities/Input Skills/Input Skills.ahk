@@ -14,8 +14,11 @@ for k, v in input
     if (v == "") ;Skip blank lines
         continue
 
-    SendRaw, %v%
+    Clipboard := v
+    Send, ^v
     Send, {Enter}
-    Sleep 5000
+    Sleep 1000
 }
 return
+
+!+Enter::ExitApp
