@@ -207,7 +207,10 @@ runCommand(cmd) {
             FormatTime, timestamp,, M-d-yyyy h;mm;ss tt
             dest := "C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp
             FileCopyDir, C:/Users/Elliott/Documents/GitHub, %dest%
-            MsgBox, 262208, GitHub Backup Done, GitHub Backup Done
+            if ErrorLevel = 1
+                MsgBox, 262160, An Error Occurred, Something happened while backing up the GitHub folder.
+            else
+                MsgBox, 262208, GitHub Backup Done, GitHub Backup Done
         return
         
         ;---------------------------RARELY USED BUT STILL USEFUL---------------------------
