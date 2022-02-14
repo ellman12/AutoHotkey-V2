@@ -21,7 +21,7 @@ Gui, Prompt:Add, Edit, x5 y5 w%editWidth% vcurrentCmd gCmdOnInput -E0x200 ;Remov
 
 ;Read in previous commands
 FileRead, prevCmdsStr, %PROMPT_HISTORY_PATH%
-prevCmds := StrSplit(prevCmdsStr, "`n")
+prevCmds := StrSplit(prevCmdsStr, "`r`n")
 currentIndex := prevCmds.Count()
 
 togglePrompt() {
