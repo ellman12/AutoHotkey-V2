@@ -20,6 +20,7 @@ z::Send, {U+2124} ;ℤ
 
 SC033::Send, {U+2264} ;< → ≤
 SC034::Send, {U+2265} ;> → ≥
+SC00D::Send, {U+2260} ;≠
 
 Up::Send, {U+2191} ;↑
 Right::Send, {U+2192} ;→
