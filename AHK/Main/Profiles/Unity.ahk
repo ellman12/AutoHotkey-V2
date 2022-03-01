@@ -1,4 +1,4 @@
-#If InStr(activeWindowTitle, " - Unity")
+#If WinActive("ahk_exe Unity.exe")
 
 ;Mouse G4
 F16::Send, ^p

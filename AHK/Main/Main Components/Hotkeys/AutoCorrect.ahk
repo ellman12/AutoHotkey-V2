@@ -5457,3 +5457,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tmr::tomorrow
 ::theyu::they
 ::cakk::call
+::sec::second
+::secs::seconds
+::mins::minutes
