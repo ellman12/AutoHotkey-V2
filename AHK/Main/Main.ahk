@@ -92,6 +92,7 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeysSettings.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/K95.ahk
+#Include, %A_ScriptDir%/Main Components/Hotkeys/MS To Do.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/Temp Hotstrings.ahk
 
@@ -184,9 +185,6 @@ if (onTop & 0x8) { ; 0x8 is WS_EX_TOPMOST.
 	Tippy(message, 1000)
 }
 return
-
-;Open MS To Do
-#t::Run, C:\Users\%A_UserName%\Documents\Microsoft To Do
 
 ;------------------DISABLE ANNOYING WINDOWS HOTKEYS-----------------
 ^#f::
