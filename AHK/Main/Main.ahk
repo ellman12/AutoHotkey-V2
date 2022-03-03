@@ -258,7 +258,7 @@ DllCall("SystemParametersInfo", Int,113, Int,0, UInt,10, Int,1)
 return
 
 ;G4
-F16::return
+F16::Send, ^t
 
 ;G5: tab to the right
 F17::Send, ^{PGDN}
