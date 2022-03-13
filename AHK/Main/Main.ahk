@@ -114,12 +114,10 @@ Loop {
 ;These are completely global and will work no matter the context
 ^#r::Reload ;Saves custom window groups on reload (exit).
 
-#+r::
-resetMainSettings()
-Tippy("Settings reset", 900)
-return
+#+r::resetMainSettings()
 
 ^!r:: ;Restart script without restoring window groups.
+clearGroups := true
 Loop 12 {
 	FileDelete, %TMP_FOLDER_PATH%/F%A_Index% Group.tmp
 }
@@ -286,11 +284,14 @@ F23::WinMinimize, A
 
 ;----------------------MAIN LABELS AND FUNCS------------------------
 RunOnExit:
+if (!clearGroups)
+{
 	Loop 12 { ;Write all 12 win group files
 		group := "windowGroupF" . A_Index
 		writeGroupToFile("F" . A_Index, %group%)
 	}
-	ExitApp
+}
+ExitApp
 return
 
 ;--------------------------EXPERIMENTAL-----------------------------
