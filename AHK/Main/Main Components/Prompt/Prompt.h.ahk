@@ -40,6 +40,15 @@ runCommand(cmd) {
                 Run, %A_ScriptDir%/../Modules/Hotkeys/FAR.ahk %cmd%
                 return
             }
+            else if (InStr(cmd, "Send"))
+            {
+                cmd := StrReplace(cmd, "Send,")
+                cmd := StrReplace(cmd, "Send")
+                cmd := Trim(cmd)
+                if (cmd != "")
+                    SendInput, %cmd%
+                return
+            }
             
             togglePrompt()
             return
