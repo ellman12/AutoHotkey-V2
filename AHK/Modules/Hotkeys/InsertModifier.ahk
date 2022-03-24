@@ -1,5 +1,6 @@
 ;Inserting very common symbols as a faster alternative to using Prompt.
 #If (GetKeyState("Insert", "P"))
+Insert::return ;If this isn't here Insert will still work like normal.
 
 a::Send, {U+2200} ;∀
 !a::Send, {U+2227} ;∧
