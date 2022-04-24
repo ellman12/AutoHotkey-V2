@@ -8,7 +8,7 @@ global prevWinID := "" ;Used in !r
 global PROMPT_HISTORY_PATH := A_ScriptDir . "/../tmp/cmd_hist.tmp"
 
 ;Variables for commands
-global prevRoundCDec := 1
+global prevRoundCDec := 2
 
 Gui, Prompt:+AlwaysOnTop
 Gui, Prompt:Color, Black
@@ -77,14 +77,14 @@ runCommand(cmd) {
         ;---------------------------------------NUMBER---------------------------------------
         case "round":
             InputBox, numToRound, Enter Number to Round, Enter Number to Round,, 200, 150,,,,, %Clipboard%
-            InputBox, decPlaces, How Many Decimal Places?, How Many Decimal Places?,, 200, 150,,,,, 2
-            Clipboard := Round(numToRound, decPlaces)
+            InputBox, prevRoundCDec, How Many Decimal Places?, How Many Decimal Places?,, 200, 150,,,,, %prevRoundCDec%
+            Clipboard := Round(numToRound, prevRoundCDec)
         return
         
         ;Round number in Clipboard
         case "roundc":
             InputBox, prevRoundCDec, How Many Decimal Places, How Many Decimal Places?,, 200, 150,,,,, %prevRoundCDec%
-            Clipboard := Round(numToRound, decPlaces)
+            Clipboard := Round(Clipboard, prevRoundCDec)
         return
     
         ;---------------------------------------INSERT---------------------------------------
