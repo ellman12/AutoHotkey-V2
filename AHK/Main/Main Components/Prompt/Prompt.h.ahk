@@ -9,6 +9,7 @@ global PROMPT_HISTORY_PATH := A_ScriptDir . "/../tmp/cmd_hist.tmp"
 
 ;Variables for commands
 global prevRoundCDec := 2
+global repoName := ""
 
 Gui, Prompt:+AlwaysOnTop
 Gui, Prompt:Color, Black
@@ -212,12 +213,15 @@ runCommand(cmd) {
             currentIndex := 0
         return
         
-        case "bkupGH": ;Backup GitHub folder to tmp folder on PC and put in a timestamp folder. Useful to do before doing a destructive git operation like force push, merge, etc.
+        case "bkupGH": ;Backup GitHub folder (or a single repo) to tmp folder on PC and put in a timestamp folder. Useful to do before doing a destructive git operation like force push, merge, etc.
+            InputBox, repoName, Which Repo?, Enter a single repo to back up`, or nothing for the whole folder.,, 250, 150,,,,, %repoName%
+            
             FormatTime, timestamp,, M-d-yyyy h;mm;ss tt
-            dest := """C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp . """"
-            ; FileCopyDir, C:/Users/Elliott/Documents/GitHub, %dest%
+            src := """C:/Users/Elliott/Documents/GitHub/" . repoName . """"
+            dest := """C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp . "/" . repoName . """"
+            
             ;https://superuser.com/a/1004069
-            Run, robocopy C:/Users/Elliott/Documents/GitHub %dest% /e
+            Run, robocopy %src% %dest% /e
         return
         
         ;---------------------------RARELY USED BUT STILL USEFUL---------------------------

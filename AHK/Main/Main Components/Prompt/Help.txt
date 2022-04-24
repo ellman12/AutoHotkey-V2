@@ -88,7 +88,7 @@ MISC
 Grade                   Use to figure out letter grade for an assignment. Enter just l in the first box to show just the letter-number chart.
 ClassGrade              Figure out your grade in a class by entering all the scores on assignments, etc.
 DelPrHist               Delete Prompt history
-bkupGH                  Backup GitHub folder to tmp folder on PC and put in a timestamp folder. Useful to do before doing a destructive git operation like force push, merge, etc.
+bkupGH                  Backup GitHub folder (or a single repo) to tmp folder on PC and put in a timestamp folder. Useful to do before doing a destructive git operation like force push, merge, etc.
 Send			Works exactly like SendInput in AHK. Also allows adding a ',' after the 'Send' like 'Send, '.
 
 RARELY USED BUT STILL USEFUL
