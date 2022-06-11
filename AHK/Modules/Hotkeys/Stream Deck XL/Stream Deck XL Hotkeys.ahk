@@ -9,13 +9,4 @@ return
 
 #IfWinActive, Stardew Valley
 ^!c::Send, {Click 12} ;Click a bunch of times
-
-#IfWinActive, ahk_exe rider64.exe
-^!c::
-SendRaw, //
-Send, {Home}
-Send, /
-Send, {End}
-Send, {LAlt}
-return
 #If
