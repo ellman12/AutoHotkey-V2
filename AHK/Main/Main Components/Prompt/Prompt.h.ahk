@@ -224,6 +224,14 @@ runCommand(cmd) {
             Run, robocopy %src% %dest% /e
         return
         
+        case "Rename": ;Sets the active window title to whatever you want.
+            ; DetectHiddenWindows, On
+            ; DetectHiddenText, On
+            WinGetActiveTitle, oldTitle
+            InputBox, newTitle, Set Window Title, Enter a new name for this window.,, 250, 150
+            WinSetTitle, %oldTitle%, , %newTitle%
+        return
+        
         ;---------------------------RARELY USED BUT STILL USEFUL---------------------------
         case "DownloadMusic":
             /*Used for mass downloading music tracks from this website: https://downloads.khinsider.com/

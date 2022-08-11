@@ -5467,3 +5467,5 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::!+::!=
 ::english::English
 :*:groupbox::GroupBox
+::probbaly::probably
+::ppl::people
