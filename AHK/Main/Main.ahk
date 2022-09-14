@@ -205,6 +205,11 @@ F12::Send, {End}
 ^+F12::Send, ^+{End}
 #If
 
+$SC01A::Send, +{SC01A}
+$SC01B::Send, +{SC01B}
+$+SC01A::Send, {SC01A}
+$+SC01B::Send, {SC01B}
+
 ;------------------------GLOBAL iCUE HOTKEYS------------------------
 ;Hotkeys sent from iCUE that are interpreted by AutoHotkey.
 +F24::Send, ^c ;M1 on K95 RGB copies to the clipboard.

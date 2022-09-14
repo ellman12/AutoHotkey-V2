@@ -5275,6 +5275,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ;------------------------------------------------------------------------------------------------------------------------------
 ; Contractions that I added in alphabetical order. Source: https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
 ;------------------------------------------------------------------------------------------------------------------------------
+#If !InStr(activeWindowTitle, "OneNote")
 ::aint::ain't
 ::arent::aren't
 ::cant::can't
@@ -5417,6 +5418,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*c?:! x::! X
 :*c?:! y::! Y
 :*c?:! z::! Z
+#If
 
 ;Automatically change things like f1 to F1; makes life easier.
 :*:f1::F1
@@ -5469,3 +5471,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:groupbox::GroupBox
 ::probbaly::probably
 ::ppl::people
+::simple::simple
+::curret::current
+::gonna::going to
