@@ -1,18 +1,21 @@
 #If WinActive("ahk_exe Unity.exe")
 
-;Mouse G4
-F16::Send, ^p
-return
+;Mouse G2
+F14::Send, {Enter}
 
 ;Mouse G5
 F17::
-Send, {MButton down}
+Send, {LAlt down}
+Send, {LButton down}
 KeyWait, F17
-Send, {MButton up}
+Send, {LAlt up}
+Send, {LButton up}
 return
+
+;Mouse G6
+F18::Send, ^p
 
 ;Mouse G8
 F20::Send, ^s
-return
 
 #If

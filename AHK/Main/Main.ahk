@@ -45,6 +45,7 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/Main Components/Initialization/AutoCorrect.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
+#Include, %A_ScriptDir%/Main Components/Initialization/iCUE.h.ahk
 #Include, %A_ScriptDir%/MainSettings.h.ahk ;<-- Put after FnKeys stuff so it can access the Fn Modes constant for the ` key
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
@@ -91,7 +92,7 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Hotkeys/CapsLock.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeysSettings.ahk
-#Include, %A_ScriptDir%/Main Components/Hotkeys/K95.ahk
+#Include, %A_ScriptDir%/Main Components/Hotkeys/iCUE.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/MS To Do.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/Temp Hotstrings.ahk
@@ -185,6 +186,12 @@ if (onTop & 0x8) { ; 0x8 is WS_EX_TOPMOST.
 }
 return
 
+;Swaps the [] and {} keys.
+$SC01A::Send, +{SC01A}
+$SC01B::Send, +{SC01B}
+$+SC01A::Send, {SC01A}
+$+SC01B::Send, {SC01B}
+
 ;------------------DISABLE ANNOYING WINDOWS HOTKEYS-----------------
 ^#f::
 ^#BackSpace::
@@ -204,39 +211,6 @@ F12::Send, {End}
 +F12::Send, +{End}
 ^+F12::Send, ^+{End}
 #If
-
-$SC01A::Send, +{SC01A}
-$SC01B::Send, +{SC01B}
-$+SC01A::Send, {SC01A}
-$+SC01B::Send, {SC01B}
-
-;------------------------GLOBAL iCUE HOTKEYS------------------------
-;Hotkeys sent from iCUE that are interpreted by AutoHotkey.
-+F24::Send, ^c ;M1 on K95 RGB copies to the clipboard.
-+F21::Send, ^x ;M2 on K95 RGB cuts to the clipboard.
-;M3 on K95 RGB pastes the clipboard.
-+F22::
-if (M3Paste)
-	Send, ^v
-else if (M3Send)
-	SendRaw, %Clipboard%
-return
-
-;Volume wheel up/down on K95 RGB does log volume scaling.
-^!F22::changeVolume(1)
-^+F22::changeVolume(-1)
-
-^!F23::topMouseButtons(FrontTopMouseBtnBehavior) ;Top Front Mouse Button on Scimitar RGB.
-^+F23::topMouseButtons(BackTopMouseBtnBehavior) ;Top Back Mouse Button on Scimitar RGB.
-
-topMouseButtons(buttonMode) {
-	if (buttonMode = "Double Click")
-		Send, {Click 2}
-	else if (buttonMode = "Triple Click")
-		Send, {Click 3}
-	else
-		runFnAction(buttonMode, _, _, _)
-}
 
 ;-------------------DEFAULT MOUSE BUTTON BEHAVIOR-------------------
 ;Most if not all of these hotkeys work in basically every app ever
