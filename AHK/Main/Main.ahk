@@ -301,4 +301,27 @@ ExitApp
 return
 
 ;--------------------------EXPERIMENTAL-----------------------------
+!v::
+if (InStr(Clipboard, " - job post"))
+{
+	Clipboard := StrReplace(Clipboard, " - job post")
+	split := StrSplit(Clipboard, "`r`n")
+	Clipboard := split[1]
+	Sleep 50
+	Send, ^v
+	Sleep 50
+	Send, {Tab}
+	Sleep 50
+	Clipboard := split[2]
+	Sleep 50
+	Send, ^v
+	Send, {Tab}
+	Send, ^{SC027}
+	Send, {Tab}
+	Send, Waiting for Response{Tab}Indeed{Enter}
+	Send, ^s
+}
+
+return
+
 ;----------------------------TEMPORARY------------------------------
