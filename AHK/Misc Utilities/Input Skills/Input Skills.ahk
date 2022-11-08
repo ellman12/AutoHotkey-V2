@@ -16,9 +16,17 @@ for k, v in input
 
     Clipboard := v
     Send, ^v
+    Sleep 1000
     Send, {Enter}
+    Sleep 1000
+    Send, {Enter}
+    Sleep 1000
+    Send, +{Tab}
+    Sleep 1000
+    Send, {Tab}
     Sleep 1000
 }
 return
 
 !+Enter::ExitApp
+^!Enter::Reload

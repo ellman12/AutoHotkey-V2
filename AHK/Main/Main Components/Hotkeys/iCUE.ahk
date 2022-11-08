@@ -81,3 +81,8 @@ return
 
 ;Keeb G18
 !F18::Send, ^#{Right}
+
+;M1, M2, and M3: Copy, cut, and paste
++F24::Send, ^c
++F21::Send, ^x
++F22::Send, ^v
