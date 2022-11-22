@@ -276,7 +276,12 @@ return
 
 ;--------------------------EXPERIMENTAL-----------------------------
 !v::
-if (InStr(Clipboard, " - job post"))
+WinGetActiveTitle, title
+Send, ^c
+Sleep 100
+WinActivate, ahk_exe Excel.exe
+Sleep 100
+if (Instr(title, "Indeed"))
 {
 	Clipboard := StrReplace(Clipboard, " - job post")
 	split := StrSplit(Clipboard, "`r`n")
@@ -289,13 +294,23 @@ if (InStr(Clipboard, " - job post"))
 	Clipboard := split[2]
 	Sleep 50
 	Send, ^v
-	Send, {Tab}
-	Send, ^{SC027}
-	Send, {Tab}
-	Send, Waiting for Response{Tab}Indeed{Enter}
-	Send, ^s
+	Send, {Enter}
 }
-
+else if (Instr(title, "LinkedIn"))
+{
+	split := StrSplit(Clipboard, "`r`n")
+	Clipboard := split[2]
+	Sleep 50
+	Send, ^v
+	Sleep 50
+	Send, {Tab}
+	Sleep 50
+	Clipboard := split[3]
+	Sleep 50
+	Send, ^v
+	Send, {Enter}
+}
+Send, ^s
 return
 
 ;----------------------------TEMPORARY------------------------------
