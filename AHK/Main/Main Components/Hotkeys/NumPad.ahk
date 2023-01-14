@@ -81,9 +81,9 @@ $NumPadDel::Send, ^#{Right}
 $NumPad1::Send, c
 $NumPadEnd::Send, c
 
-;Turns the volume down according to the "Num2And8Step" variable.
-$NumPad2::SoundSet, -%Num2And8Step%
-$NumPadDown::SoundSet, -%Num2And8Step%
+;Decrease YT video speed.
+$NumPad2::Send, +{SC033}
+$NumPadDown::Send, +{SC033}
 
 ;Send f to make the YouTube video full screen
 $NumPad3::Send, f
@@ -108,9 +108,9 @@ $NumPadRight::Send, {Right}
 $NumPad7::Send, j
 $NumPadHome::Send, j
 
-;Turns the volume up according to the "Num2And8Step" variable.
-$NumPad8::SoundSet, +%Num2And8Step%
-$NumPadUp::SoundSet, +%Num2And8Step%
+;Increase YT video speed.
+$NumPad8::Send, +{SC034}
+$NumPadUp::Send, +{SC034}
 
 ;Forwards ten seconds.
 $NumPad9::Send, l
