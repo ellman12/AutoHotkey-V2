@@ -17,14 +17,14 @@ for k, v in input
     Clipboard := v
     Send, ^v
     Sleep 1000
-    Send, {Enter}
+    Send, {Enter 2}
     Sleep 1000
-    Send, {Enter}
-    Sleep 1000
-    Send, +{Tab}
-    Sleep 1000
-    Send, {Tab}
-    Sleep 1000
+    ; Send, {Enter}
+    ; Sleep 2000
+    ; Send, +{Tab}
+    ; Sleep 2000
+    ; Send, {Tab}
+    ; Sleep 2000
 }
 return
 

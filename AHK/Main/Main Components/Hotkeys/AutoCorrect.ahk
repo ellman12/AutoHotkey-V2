@@ -5293,7 +5293,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hes::he's
 ::howd::how'd
 ::Ill::I'll
-::Im::I'm
+; ::Im::I'm
 ::Ive::I've
 ::isnt::isn't
 ::itd::it'd
@@ -5474,3 +5474,14 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::simple::simple
 ::curret::current
 ::gonna::going to
+:*:c3::C#
+:*:veryt::very
+:*:hows::how's
+:*:on e::one
+::tho::though
+::thr::the
+::dsuu::Dakota State University
+::whetre::where
+::thruout::throughout
+:*:edd::Elliott DuCharme
+:*:kkt::Kwik Trip

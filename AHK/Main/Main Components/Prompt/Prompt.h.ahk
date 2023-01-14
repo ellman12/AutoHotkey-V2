@@ -89,7 +89,8 @@ runCommand(cmd) {
         return
     
         ;---------------------------------------INSERT---------------------------------------
-        case "paste":SendRaw, %Clipboard% ;Send Clipboard contents
+        case "paste": SendRaw, %Clipboard% ;Send Clipboard contents
+        
         case "ed":Send, Elliott DuCharme  ;My name
         
         ;---------------------------------------SYMBOLS--------------------------------------
