@@ -5485,3 +5485,5 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::thruout::throughout
 :*:edd::Elliott DuCharme
 :*:kkt::Kwik Trip
+::msg::message
+:*:havbe::have

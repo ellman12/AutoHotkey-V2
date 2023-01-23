@@ -262,6 +262,17 @@ F23::WinMinimize, A
 ;G12: restore previously closed tab
 +F23::Send, ^+{t}
 
+^!F23::
+Send, {CtrlDown}{Tab 2}
+Send, {CtrlUp}
+return
+
+^+F23::
+Send, ^!{Tab}
+Sleep 100
+Send, {Right}{Enter}
+return
+
 ;----------------------MAIN LABELS AND FUNCS------------------------
 RunOnExit:
 if (!clearGroups)
