@@ -1,6 +1,6 @@
 # AutoHotkey-V2
 
-AutoHotkey-V2 is a significantly refined and improved version of my original AutoHotkey repo.<br>
+AutoHotkey-V2 is a significantly refined and improved version of my original AutoHotkey repo of Windows automation scripts.<br>
 AHK-V2 aims to be slimmer, more organized, and more modular. Modularity makes it easier to add/remove different files and also makes it easier for others to use these script(s) in their own scripts if desired.<br>
 
 ## Documentation
