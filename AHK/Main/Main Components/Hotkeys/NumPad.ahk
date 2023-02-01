@@ -65,40 +65,49 @@ NumPadSub::saveAndRestoreVolumeLevel()
 ;Rider and VSCode
 #If numPadMode = "Code"
 
-$NumPad0::Send, ^#{Left}
-$NumPadIns::Send, ^#{Left}
-$NumPadDot::Send, ^#{Right}
-$NumPadDel::Send, ^#{Right}
+NumLock::Send, ^z
 
-$NumPad1::return
-$NumPadEnd::return
+$NumPad0::Send, ^d
+$NumPadIns::Send, ^d
+$NumPadDot::Send, ^u
+$NumPadDel::Send, ^u
 
-$NumPad2::return
-$NumPadDown::return
+;CamelCase select to the left.
+$NumPad1::Send, ^!+{Left}
+$NumPadEnd::Send, ^!+{Left}
 
-$NumPad3::return
-$NumPadPgdn::return
+$NumPad2::Send, {Down}
+$NumPadDown::Send, {Down}
+
+;CamelCase select to the right.
+$NumPad3::Send, ^!+{Right}
+$NumPadPgdn::Send, ^!+{Right}
 
 $NumPadAdd::changeVolume(1)
 $NumPadEnter::changeVolume(-1)
 
-$NumPad4::return
-$NumPadLeft::return
+;Previous word
+$NumPad4::Send, ^{Left}
+$NumPadLeft::Send, ^{Left}
 
-$NumPad5::return
-$NumPadClear::return
+;Next error
+$NumPad5::Send, !{F2}
+$NumPadClear::Send, !{F2}
 
-$NumPad6::return
-$NumPadRight::return
+;Next word
+$NumPad6::Send, ^{Right}
+$NumPadRight::Send, ^{Right}
 
-$NumPad7::return
-$NumPadHome::return
+;Select previous word
+$NumPad7::Send, ^+{Left}
+$NumPadHome::Send, ^+{Left}
 
-$NumPad8::return
-$NumPadUp::return
+$NumPad8::Send, {Up}
+$NumPadUp::Send, {Up}
 
-$NumPad9::return
-$NumPadPgUp::return
+;Select next word
+$NumPad9::Send, ^+{Right}
+$NumPadPgUp::Send, ^+{Right}
 
 ;Change volume by 1
 $NumPadDiv::SoundSet, -1
