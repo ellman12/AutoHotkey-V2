@@ -20,15 +20,6 @@ modes := "Double Click|Triple Click|FirefoxTabs|FirefoxWins|ChromeTabs|ChromeWin
 Gui, Font, cWhite s11
 Gui, Add, Text, xm y+13 w87, Front Top Btn
 
-Gui, Font, cWhite s9
-Gui, Add, DropDownList, x+10 yp-2 w150 vFrontTopMouseBtnBehavior, %modes%
-
-Gui, Font, cWhite s11
-Gui, Add, Text, xm y+13 w87, Back Top Btn
-
-Gui, Font, cWhite s9
-Gui, Add, DropDownList, x+10 yp-2 w150 vBackTopMouseBtnBehavior, %modes%
-
 Gui, Font, cWhite s11
 Gui, Add, Checkbox, xm y+13 vF11F12Toggled, F11 && F12 Toggled
 
@@ -149,9 +140,6 @@ global
     IniWrite, %ctrlShiftF11Mode%, %CONFIG_PATH%, %section%, ctrlShiftF11Mode
     IniWrite, %ctrlShiftF12Mode%, %CONFIG_PATH%, %section%, ctrlShiftF12Mode
     
-    IniWrite, %FrontTopMouseBtnBehavior%, %CONFIG_PATH%, Mouse, FrontTopMouseBtnBehavior
-    IniWrite, %BackTopMouseBtnBehavior%, %CONFIG_PATH%, Mouse, BackTopMouseBtnBehavior
-    
     IniWrite, %F11F12Toggled%, %CONFIG_PATH%, Misc, F11F12Toggled
     IniWrite, %M3Paste%, %CONFIG_PATH%, Misc, M3Paste
     IniWrite, %M3Send%, %CONFIG_PATH%, Misc, M3Send
@@ -253,9 +241,6 @@ global
     IniRead, ctrlShiftF11Mode, %CONFIG_PATH%, %section%, ctrlShiftF11Mode, Default
     IniRead, ctrlShiftF12Mode, %CONFIG_PATH%, %section%, ctrlShiftF12Mode, Default
 
-    IniRead, FrontTopMouseBtnBehavior, %CONFIG_PATH%, Mouse, FrontTopMouseBtnBehavior, Double Click
-    IniRead, BackTopMouseBtnBehavior, %CONFIG_PATH%, Mouse, BackTopMouseBtnBehavior, Double Click
-    
     IniRead, F11F12Toggled, %CONFIG_PATH%, Misc, F11F12Toggled, 0
     IniRead, M3Paste, %CONFIG_PATH%, Misc, M3Paste, 1
     IniRead, M3Send, %CONFIG_PATH%, Misc, M3Send, 0
@@ -355,10 +340,6 @@ global
     GuiControl, FnSettings:ChooseString, ctrlShiftF11Mode, %ctrlShiftF11Mode%
     GuiControl, FnSettings:ChooseString, ctrlShiftF12Mode, %ctrlShiftF12Mode%
 
-    ;Might need "Main:" here because of leftover Gui Default from FnSetting
-    GuiControl, Main:ChooseString, FrontTopMouseBtnBehavior, %FrontTopMouseBtnBehavior%
-    GuiControl, Main:ChooseString, BackTopMouseBtnBehavior, %BackTopMouseBtnBehavior%
-    
     GuiControl, Main:, F11F12Toggled, %F11F12Toggled%
     GuiControl, Main:, M3Paste, %M3Paste%
     GuiControl, Main:, M3Send, %M3Send%

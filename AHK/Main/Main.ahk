@@ -25,7 +25,7 @@ global TMP_FOLDER_PATH := A_ScriptDir . "/../tmp"
 global CONFIG_PATH := TMP_FOLDER_PATH . "/Main.ini"
 
 ;---------------------MAIN VARS---------------------
-global activeWindowTitle, activeWindowID, FrontTopMouseBtnBehavior, BackTopMouseBtnBehavior
+global activeWindowTitle, activeWindowID
 
 global F11F12Toggled ;Override F11 & F12 to be Home and End (for Asus Laptop).
 
@@ -265,11 +265,13 @@ F23::WinMinimize, A
 ;G12: restore previously closed tab
 +F23::Send, ^+{t}
 
+;Ctrl tab tab
 ^!F23::
 Send, {CtrlDown}{Tab 2}
 Send, {CtrlUp}
 return
 
+;Alt tab tab
 ^+F23::
 Send, ^!{Tab}
 Sleep 100
