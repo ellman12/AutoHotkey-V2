@@ -21,9 +21,8 @@ F17::Send, r
 ;Mouse G6: inventory
 F18::Send, e
 
-;Mouse G7
-F19::
-return
+;Mouse G7: toggle exoskeleton
+F19::Send, !{Enter}
 
 ;Mouse G8: rotate other direction
 F20::Send, y

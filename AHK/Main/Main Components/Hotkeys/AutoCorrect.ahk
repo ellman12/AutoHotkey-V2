@@ -4570,7 +4570,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::threee::three
 ::threshhold::threshold
 ::throuhg::through
-::thru::through
+:*:thru::through
 ::thoughout::throughout
 ::througout::throughout
 ::tiget::tiger
@@ -5487,3 +5487,4 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:kkt::Kwik Trip
 ::msg::message
 :*:havbe::have
+::diff::difference
