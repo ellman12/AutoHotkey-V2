@@ -30,7 +30,6 @@ global activeWindowTitle, activeWindowID, FrontTopMouseBtnBehavior, BackTopMouse
 global F11F12Toggled ;Override F11 & F12 to be Home and End (for Asus Laptop).
 
 global sleepDuration := 100 ;ms
-global Num2And8Step := 3 ;When Num2 or Num8 pressed, how much to increase/decrease volume.
 global autoNumPadModeToggle := true ;If true, switch NumPad modes automatically. Manual control if false.
 global savedNumMinusVol
 

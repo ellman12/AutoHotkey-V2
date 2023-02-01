@@ -10,9 +10,6 @@ else
 	SoundSet, %systemMasterVolume%
 return
 
-;Change the step value of NumPad 2 and NumPad 8.
-!NumPadSub::InputBox, Num2And8Step, Input Num2 and Num8 step value, Input Num2 and Num8 step value. Current value: %Num2And8Step%., , , , , , , , %Num2And8Step%
-
 ^Pause:: ;autoNumPadModeToggle hotkey. Technically ^NumLock. https://www.autohotkey.com/docs/KeyList.htm#numpad
 autoNumPadModeToggle := !autoNumPadModeToggle
 if (autoNumPadModeToggle = "1")
@@ -33,9 +30,8 @@ $NumPadDel::Send, ^#{Right}
 $NumPad1::return
 $NumPadEnd::return
 
-;Turns the volume down according to the "Num2And8Step" variable.
-$NumPad2::SoundSet, -%Num2And8Step%
-$NumPadDown::SoundSet, -%Num2And8Step%
+$NumPad2::return
+$NumPadDown::return
 
 $NumPad3::return
 $NumPadPgdn::return
@@ -55,9 +51,8 @@ $NumPadRight::Send, {Media_Next}
 $NumPad7::return
 $NumPadHome::return
 
-;Turns the volume up according to the "Num2And8Step" variable.
-$NumPad8::SoundSet, +%Num2And8Step%
-$NumPadUp::SoundSet, +%Num2And8Step%
+$NumPad8::return
+$NumPadUp::return
 
 $NumPad9::return
 $NumPadPgUp::return
@@ -183,9 +178,8 @@ $NumPadDel::Send, ^#{Right}
 $NumPad1::Send, m
 $NumPadEnd::Send, m
 
-;Turns the volume down according to the "Num2And8Step" variable.
-$NumPad2::SoundSet, -%Num2And8Step%
-$NumPadDown::SoundSet, -%Num2And8Step%
+$NumPad2::return
+$NumPadDown::return
 
 ;Send f to make the video full screen
 $NumPad3::Send, f
@@ -210,9 +204,8 @@ $NumPadRight::Send, {Right}
 $NumPad7::Send, {Left 2}
 $NumPadHome::Send, {Left 2}
 
-;Turns the volume up according to the "Num2And8Step" variable.
-$NumPad8::SoundSet, +%Num2And8Step%
-$NumPadUp::SoundSet, +%Num2And8Step%
+$NumPad8::return
+$NumPadUp::return
 
 ;Forwards ten seconds.
 $NumPad9::Send, {Right 2}
