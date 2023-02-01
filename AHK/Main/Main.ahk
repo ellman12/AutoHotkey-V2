@@ -30,7 +30,9 @@ global activeWindowTitle, activeWindowID, FrontTopMouseBtnBehavior, BackTopMouse
 global F11F12Toggled ;Override F11 & F12 to be Home and End (for Asus Laptop).
 
 global sleepDuration := 100 ;ms
-global autoNumPadModeToggle := true ;If true, switch NumPad modes automatically. Manual control if false.
+
+;NumPad Vars
+global numPadMode
 global savedNumMinusVol
 
 ;---------------------FUNCTIONS---------------------
@@ -53,7 +55,9 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.h.ahk
 
 ;-----------------------MISC-----------------------
+SetNumLockState, AlwaysOff
 SetCapsLockState, AlwaysOff
+SetScrollLockState, AlwaysOff
 
 OnExit, RunOnExit
 
@@ -71,15 +75,15 @@ Loop {
 	WinGetActiveTitle, activeWindowTitle
 	WinGet, activeWindowID, ID, A
 	
-	if (autoNumPadModeToggle = true) {
-		if InStr(activeWindowTitle, "- YouTube") {
-			SetNumLockState, AlwaysOn
-			SetScrollLockState, AlwaysOn
-		} else { ;Set it to MusicBee mode: the default (and also most commonly used) mode.
-			SetNumLockState, AlwaysOff
-			SetScrollLockState, AlwaysOff
-		}
-	}
+	if (InStr(activeWindowTitle, " - YouTube") || InStr(activeWindowTitle, "Disney+ | Video Player"))
+		numPadMode := "Streaming"
+	else if (WinActive("ahk_exe rider64.exe") || WinActive("ahk_exe Code.exe"))
+		numPadMode := "Code"
+	else
+		numPadMode := "Music"
+	
+	; ToolTip, %numPadMode%
+	
 	Sleep sleepDuration ;Reduce CPU usage.
 }
 
