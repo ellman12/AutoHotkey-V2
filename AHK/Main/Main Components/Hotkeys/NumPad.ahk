@@ -65,7 +65,12 @@ NumPadSub::saveAndRestoreVolumeLevel()
 ;Rider and VSCode
 #If numPadMode = "Code"
 
-NumLock::Send, ^z
+;Show and focus terminal, or if focused, hide terminal.
+NumLock::
+Suspend, On
+Send, ^{sc029}
+Suspend, Off
+return
 
 $NumPad0::Send, ^d
 $NumPadIns::Send, ^d
@@ -90,9 +95,9 @@ $NumPadEnter::changeVolume(-1)
 $NumPad4::Send, ^{Left}
 $NumPadLeft::Send, ^{Left}
 
-;Next error
-$NumPad5::Send, !{F2}
-$NumPadClear::Send, !{F2}
+;Show context actions.
+$NumPad5::Send, ^.
+$NumPadClear::Send, ^.
 
 ;Next word
 $NumPad6::Send, ^{Right}
@@ -109,11 +114,11 @@ $NumPadUp::Send, {Up}
 $NumPad9::Send, ^+{Right}
 $NumPadPgUp::Send, ^+{Right}
 
-;Change volume by 1
-$NumPadDiv::SoundSet, -1
-$NumPadMult::SoundSet, +1
+$NumPadDiv::Send, ^z
+$NumPadMult::Send, ^y
 
-NumPadSub::return
+;Delete line
+NumPadSub::Send, ^+k
 
 
 #If numPadMode = "Music"
