@@ -120,6 +120,40 @@ $NumPadMult::Send, ^y
 ;Delete line
 NumPadSub::Send, ^+k
 
+;A mix of Code and Music mode, meant more for doing text-based work in a program like Firefox.
+#If GetKeyState("ScrollLock", "T")
+
+$NumPad2::Send, {Down}
+$NumPadDown::Send, {Down}
+
+$NumPadAdd::changeVolume(1)
+$NumPadEnter::changeVolume(-1)
+
+;Previous word
+$NumPad4::Send, ^{Left}
+$NumPadLeft::Send, ^{Left}
+
+;Next word
+$NumPad6::Send, ^{Right}
+$NumPadRight::Send, ^{Right}
+
+;Select previous word
+$NumPad7::Send, ^+{Left}
+$NumPadHome::Send, ^+{Left}
+
+$NumPad8::Send, {Up}
+$NumPadUp::Send, {Up}
+
+;Select next word
+$NumPad9::Send, ^+{Right}
+$NumPadPgUp::Send, ^+{Right}
+
+;Change volume by 1
+$NumPadDiv::Send, ^z
+$NumPadMult::Send, ^y
+
+NumPadSub::saveAndRestoreVolumeLevel()
+
 
 #If numPadMode = "Music"
 

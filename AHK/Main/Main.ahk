@@ -57,7 +57,6 @@ global savedNumMinusVol
 ;-----------------------MISC-----------------------
 SetNumLockState, AlwaysOff
 SetCapsLockState, AlwaysOff
-SetScrollLockState, AlwaysOff
 
 OnExit, RunOnExit
 
