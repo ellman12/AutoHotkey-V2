@@ -4,6 +4,8 @@ startTime := A_TickCount
 elapsedTime := 0
 loopAmt := 0
 
+ToolTip, Running
+
 FormatTime, date,, yyyy-M-d
 
 filePath := A_MyDocuments . "\Stats\"
@@ -26,12 +28,14 @@ Loop {
 #s::
 if (enabled)
 {
+    ToolTip
     elapsedTime += A_TickCount - startTime
     FileDelete, %filePath%
     FileAppend, %loopAmt%`r`n%elapsedTime%, %filePath%
 }
 else
 {
+    ToolTip, Running
     startTime := A_TickCount
 }
 enabled := !enabled
