@@ -222,32 +222,17 @@ runCommand(cmd) {
             dest := """C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp . "/" . repoName . """"
             
             ;https://superuser.com/a/1004069
-            Run, robocopy %src% %dest% /e
+            Run, robocopy %src% %dest% /E
         return
         
         case "bkupUnityGH": ;Similar to bkupGH, but meant for a git repo for a Unity project. Backs up only the important files and folders, skipping the (usually enormous) temporary files/folders.
             InputBox, repoName, Which Unity Repo?, Enter a single Unity git repo to back up.,, 250, 150,,,,, %repoName%
             
             FormatTime, timestamp,, M-d-yyyy h;mm;ss tt
-            srcRootFolder := """C:/Users/Elliott/Documents/GitHub/" . repoName . "/" . repoName . "/"
-            destRootFolder := """C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp . "/" . repoName . "/"
-            
-            ;Copies any top-level files in the project.
-            src := srcRootFolder . """"
-            dest := destRootFolder . """"
-            Run, robocopy %src% %dest%
-            
-            src := srcRootFolder . "Assets"""
-            dest := destRootFolder . "Assets"""
-            Run, robocopy %src% %dest% /e
-            
-            src := srcRootFolder . "Packages"""
-            dest := destRootFolder . "Packages"""
-            Run, robocopy %src% %dest% /e
-            
-            src := srcRootFolder . "ProjectSettings"""
-            dest := destRootFolder . "ProjectSettings"""
-            Run, robocopy %src% %dest% /e
+            src := """C:/Users/Elliott/Documents/GitHub/" . repoName . """"
+            dest := """C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp . "/" . repoName . "/"""
+
+            Run, robocopy %src% %dest% /E /XD ".idea" "Library" "Logs" "obj"
         return
         
         case "Rename": ;Sets the active window title to whatever you want.
