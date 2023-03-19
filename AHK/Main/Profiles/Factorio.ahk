@@ -12,20 +12,20 @@ return
 F15::
 return
 
-;Mouse G4: pipette
-F16::Send, q
+;Mouse G4
+F16::Send, !d
 
-;Mouse G5: rotate
-F17::Send, r
+;Mouse G5
+F17::Send, q
 
-;Mouse G6: inventory
+;Mouse G6
 F18::Send, e
 
-;Mouse G7: toggle exoskeleton
-F19::Send, !{Enter}
+;Mouse G7
+F19::Send, !d
 
-;Mouse G8: rotate other direction
-F20::Send, y
+;Mouse G8
+F20::Send, !d
 
 ;Mouse G9
 F21::

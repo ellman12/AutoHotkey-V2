@@ -102,6 +102,7 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
 
+#Include, %A_ScriptDir%/Profiles/Factorio.ahk
 #Include, %A_ScriptDir%/Profiles/Unity.ahk
 
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Stream Deck XL/Stream Deck XL Hotkeys.ahk

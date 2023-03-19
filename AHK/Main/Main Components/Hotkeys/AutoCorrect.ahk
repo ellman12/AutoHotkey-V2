@@ -5488,3 +5488,4 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::msg::message
 :*:havbe::have
 ::diff::difference
+::keeb::keyboard
