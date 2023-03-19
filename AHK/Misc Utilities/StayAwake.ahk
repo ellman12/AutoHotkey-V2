@@ -17,10 +17,8 @@ Loop {
         continue
     }
     
-    MouseMove, 50, 0, 0, R
-    Sleep 3000
-    MouseMove, -50, 0, 0, R
-    Sleep 3000
+    randomMouseMove(300, 2400, 150, 1000)
+    Sleep 4000
     
     loopAmt++
 }
@@ -38,3 +36,10 @@ else
 }
 enabled := !enabled
 return
+
+randomMouseMove(xMin, xMax, yMin, yMax)
+{
+    Random, newMouseX, xMin, xMax
+    Random, newMouseY, yMin, yMax
+    MouseMove, newMouseX, newMouseY, 5
+}
