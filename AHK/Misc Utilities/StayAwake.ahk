@@ -4,6 +4,8 @@ startTime := A_TickCount
 elapsedTime := 0
 loopAmt := 0
 
+ToolTip, Running
+
 FormatTime, date,, yyyy-M-d
 
 filePath := A_MyDocuments . "\Stats\"
@@ -17,10 +19,8 @@ Loop {
         continue
     }
     
-    MouseMove, 50, 0, 0, R
-    Sleep 3000
-    MouseMove, -50, 0, 0, R
-    Sleep 3000
+    randomMouseMove(300, 2400, 150, 1000)
+    Sleep 4000
     
     loopAmt++
 }
@@ -28,13 +28,29 @@ Loop {
 #s::
 if (enabled)
 {
+    ToolTip
     elapsedTime += A_TickCount - startTime
     FileDelete, %filePath%
     FileAppend, %loopAmt%`r`n%elapsedTime%, %filePath%
 }
 else
 {
+    ToolTip, Running
     startTime := A_TickCount
 }
 enabled := !enabled
 return
+
+RShift::
+ToolTip
+elapsedTime += A_TickCount - startTime
+FileDelete, %filePath%
+FileAppend, %loopAmt%`r`n%elapsedTime%, %filePath%
+return
+
+randomMouseMove(xMin, xMax, yMin, yMax)
+{
+    Random, newMouseX, xMin, xMax
+    Random, newMouseY, yMin, yMax
+    MouseMove, newMouseX, newMouseY, 5
+}
