@@ -41,6 +41,13 @@ else
 enabled := !enabled
 return
 
+RShift::
+ToolTip
+elapsedTime += A_TickCount - startTime
+FileDelete, %filePath%
+FileAppend, %loopAmt%`r`n%elapsedTime%, %filePath%
+return
+
 randomMouseMove(xMin, xMax, yMin, yMax)
 {
     Random, newMouseX, xMin, xMax
