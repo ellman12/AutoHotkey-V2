@@ -10,6 +10,7 @@ global PROMPT_HISTORY_PATH := A_ScriptDir . "/../tmp/cmd_hist.tmp"
 ;Variables for commands
 global prevRoundCDec := 2
 global repoName := ""
+global unityRepoName := ""
 
 Gui, Prompt:+AlwaysOnTop
 Gui, Prompt:Color, Black
@@ -226,11 +227,11 @@ runCommand(cmd) {
         return
         
         case "bkupUnityGH": ;Similar to bkupGH, but meant for a git repo for a Unity project. Backs up only the important files and folders, skipping the (usually enormous) temporary files/folders.
-            InputBox, repoName, Which Unity Repo?, Enter a single Unity git repo to back up.,, 250, 150,,,,, %repoName%
+            InputBox, unityRepoName, Which Unity Repo?, Enter a single Unity git repo to back up.,, 250, 150,,,,, %unityRepoName%
             
             FormatTime, timestamp,, M-d-yyyy h;mm;ss tt
-            src := """C:/Users/Elliott/Documents/GitHub/" . repoName . """"
-            dest := """C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp . "/" . repoName . "/"""
+            src := """C:/Users/Elliott/Documents/GitHub/" . unityRepoName . """"
+            dest := """C:/Users/Elliott/Videos/tmp/GitHub Backup " . timestamp . "/" . unityRepoName . "/"""
 
             Run, robocopy %src% %dest% /E /XD ".idea" "Library" "Logs" "obj"
         return
