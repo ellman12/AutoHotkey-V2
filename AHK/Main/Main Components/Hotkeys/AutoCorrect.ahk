@@ -5493,3 +5493,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:V#::C#
 ::im::I'm
 :*:tabkle::table
+::anx::and
+::ferw::few
+::sher::she

@@ -1,34 +1,42 @@
 # AutoHotkey-V2
+AutoHotkey-V2 is my repo of AutoHotkey scripts, as well as iCUE and Stream Deck profiles.
 
-AutoHotkey-V2 is a significantly refined and improved version of my original AutoHotkey repo of Windows automation scripts.<br>
-AHK-V2 aims to be slimmer, more organized, and more modular. Modularity makes it easier to add/remove different files and also makes it easier for others to use these script(s) in their own scripts if desired.<br>
+My current desk setup consists of a Corsair K95 RGB and Scimitar Pro RGB, as well as an Elgato Stream Deck XL. This repo contains the scripts and profiles that power these devices, and transform me into a productivity beast.
 
-## Documentation
-### Conventions for Modules
-Initialization files contain code to be ran in the auto-execute section and thus must come before the hotkey files. By convention these files end in .h.ahk<br>
-Hotkey files include hotkeys, labels, and anything else that must come after auto-execute. By convention these files end in just .ahk.<br>
+## Major History
+**2015**—Acquired K95.<br>
+It all started around 2015 when I was getting into Minecraft modding in middle school, and wanted more keyboard buttons to assist with all the UIs and other stuff that mods added.  Ironically, I could never figure out how to use the software back in the day, so I just gave up and didn't use the macro buttons.<br>
 
-In AHK-V1's Main Script, all the initialization stuff was dumped at the top of the Main file which made it unnecessarily long and cluttered. But here, by just #Including the .h.ahk and/or .ahk file, Main in V2 is significantly shorter and more organized.
+**2016**—Acquired M65.<br>
+Still couldn't figure out how to use the buttons on both devices, nor could middle school me find the motivation to look into it.<br>
 
-### Steps for Adding an Item to Main Settings GUI
-&nbsp;1. Add control(s) with variables to the GUI in MainSettings.h.ahk. Also a good idea to define a (global?) variable in auto-execute with the same name (what I do anyways).<br>
-&nbsp;2. Add an IniWrite in writeConfigFile() in the same file. This allows the variable to be saved on exit and read on startup.<br>
-&nbsp;3. Add an IniRead in readConfigFile() in the same file, plus its default value. Default value is needed if user (me) ever decides to reset the settings to their default values.<br>
-&nbsp;4. Add a GuiControl in setMainGUIValues() in the same file. This allows the GUI control to have this value picked on startup.
+**2017–2018**—The macro and efficiency obsession begins<br>
+The macro and keyboard shortcut obsession started around 2017-2018. At that point, Corsair had released CUE 2, a new version of their software which was much simpler and easier to use. I started poking around in it out of curiosity and realized how insanely powerful keyboard shortcuts could be when used like this. I had never used the extra side buttons and figured I would give it a shot. After I discovered how easy it was to setup macros, it very quickly grew from there.
 
-## History + Why Do All of This?
-It's hard to remember all this stuff even though they weren't even that long ago.<br>
-I think it all started around 2015-2016 when I was getting into Minecraft modding (for some reason) and wanted more keyboard buttons to assist with all the UIs and other stuff that mods added. Don't remember how I came across the K95 and I can't remember if the keeb or the mouse came first. Ironically never figured out how to use the extra buttons though because I was an idiot and tried pressing the macro buttons in-game without having anything assigned to them thinking they would do anything. I'm sure I tried to use the software to do something but probably never figured it out and just gave up.<br>
-I'm not sure where, when, or why the macro and keyboard shortcut obsession started but it was probably around 2017-2018 once I started poking around in the Corsair software out of curiosity and realized how insanely powerful keyboard shortcuts could be when used like this. I had never used the extra side buttons and figured I would give it a shot. I think in 2015-2016 it was the original CUE (v1) which was infamously terrible. CUE 2 though was pretty good once you figured it out and it got the job done.
+I started analyzing, studying, and memorizing keyboard shortcuts for programs like Chrome, Firefox, Microsoft Office, VSCode, etc. I would write down the most useful ones, then assign them to my macro buttons, try them out, and adjust or remove them. I observed some common shortcuts that these programs seemed to share (Ctrl T, Ctrl W, Ctrl N, Ctrl Tab, Ctrl PgUp/PgDn etc.) and this observation would later form the basis of the actions I have assigned to my mouse.
 
-### Timeline
-2015/2016—acquire K95 RGB and M65 mouse.<br>
-2017/2018—Actually figure out how to use the terrible and unintuitive Corsair software. Start looking into how I can use the software.<br>
-October 8, 2019—My first GitHub repo created: AHK-V1. Also, AutoHotkey scripts existed a little bit before then I think, but they were extremely rough and terrible.<br>
-May 29, 2019—Replace M65 with Scimitar Pro RGB (bigger, more comfortable, 14 extra buttons instead of my M65 RGB's 5 extra buttons).<br>
-Setup 2nd keyboard sometime here I think. Eventually stopped using it because it didn't work very well (Stream Deck is replacing it and K95 macro buttons).
-December 25, 2021—finally acquired Elgato Stream Deck XL and began this repo. A good amount of stuff copied from old repo. Also moving away from using K95 buttons in favor of Stream Deck XL.
+**May 29, 2019**—Replace M65 with Scimitar Pro<br>
+This thing is actually unreal. It's so big and extremely comfortable. I use all 14 macro buttons on it every single day, and it has completely changed my life and daily computer workflow. I *fly* with this thing as soon as it enters my hand.<br>
 
-AutoHotkey has completely changed my workflow and way of going about doing tasks on a computer. In addition to making my work easier, it has also helped me to learn and practice many important programming conventions and skills, such as DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), planning before programming, and how to use git and GitHub professionally and smartly. Terrible language by design but amazing tool when it does work. I think this language has also helped me improve my muscle(?) memory tenfold. My macros and shortcuts are very deeply ingrained in my muscle memory.
+**August 2019**—The Discovery of AutoHotkey<br>
+Around this time I came across [this](https://youtu.be/Arn8ExQ2Gjg) video, which introduced me to not only AutoHotkey, but the concept of having a secondary keyboard for macros. After this, I started experimenting with and learning AutoHotkey. In those early days, it was just a few very basic and primitive scripts that, in hindsight, ~~probably~~ definitely took more time to make and use than they saved.
 
-This is my magnum opus.
+After messing around with AutoHotkey for a while, I got in contact with the legend himself, [Taran Van Hemert](https://github.com/TaranVH), asking if I should convert as much of the iCUE stuff as possible to AutoHotkey, which would greatly expand the things I can automate. He sent a massive email response back with a ton of helpful info on how to I should go about it. I feel like I owe him a lot, because I don't think this repo would exist without his help.<br>
+
+His videos gave me a ton of ideas and inspiration for my scripts, like [this](https://youtu.be/OqyQABySV8k) video, which would eventually form the basis of my `FnKeys` script. Also a shoutout to him and his excellent [video](https://youtu.be/vhPLhfP1b_s) on the Stream Deck, which eventually convinced me to get it.<br>
+
+Basically all of the ideas for the scripts came about organically, whether taking an idea from someone else, refining an idea from someone else, or just finding something annoying and/or repetitive that I want to automate away.
+
+**October 8, 2019**—Created my first GitHub repo: the original [AutoHotkey](https://github.com/ellman12/AutoHotkey) repo.<br> 
+Around this time I also tried out having a secondary keyboard dedicated just to macro buttons (like in the aforementioned video), but that didn't last more than a few months. It just wasn't a good fit for me.<br>
+
+**December 25, 2021**—Acquired Elgato Stream Deck XL and began this repo. A good amount of stuff was copied from the old repo. Also moved away from using the macro buttons on the K95 in favor of Stream Deck XL.
+
+## Present Day and Legacy
+AutoHotkey has completely changed my workflow and way of going about doing tasks on a computer. In addition to making my work easier, it has also helped me to learn and practice many important programming conventions and skills, such as DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), planning before programming, organizing code and making things modular, and how to use git and GitHub.
+
+New scripts are not created, nor are existing scripts updated, nearly as much as they used to back when I was still in high school and college. At this point, I don't really come up with any ideas for AutoHotkey stuff. I've automated basically every annoying and/or repetitive thing under the sun. On the one hand, it's nice because I can use that time to focus on other projects, but it does also make me miss the old days of when I was in school and was coming up with the craziest AutoHotkey ideas, most of which would become my most useful scripts. 
+
+It's certainly not the best language from a design standpoint, but AutoHotkey is an invaluable tool that I can no longer live without. My macros and shortcuts are so deeply ingrained in my muscle memory, it's not only frightening, but also painful if I ever have to go without them. I think I terrify people with this repo.
+
+This repo and [PSS](https://github.com/ellman12/Photos-Storage-Server) are my magnum opuses.
