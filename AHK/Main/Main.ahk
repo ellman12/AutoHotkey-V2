@@ -51,7 +51,7 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
 
-#Include, %A_ScriptDir%/../Modules/Initialization/Clipboard Edit.h.ahk
+#Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.h.ahk
 #Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.h.ahk
 
 ;-----------------------MISC-----------------------
@@ -105,7 +105,7 @@ Loop {
 #Include, %A_ScriptDir%/Profiles/Factorio.ahk
 #Include, %A_ScriptDir%/Profiles/Unity.ahk
 
-#Include, %A_ScriptDir%/../Modules/Hotkeys/Clipboard Edit.ahk
+#Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/GitKraken.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Text Modifier.ahk
