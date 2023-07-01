@@ -94,13 +94,14 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Hotkeys/CapsLock.ahk
 #Include, %A_ScriptDir%/Main Components/FnKeys/FnKeys.ahk
 #Include, %A_ScriptDir%/Main Components/FnKeys/FnKeysSettings.ahk
-#Include, %A_ScriptDir%/Main Components/Hotkeys/iCUE.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/MS To Do.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/Temp Hotstrings.ahk
 
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
+
+#Include, %A_ScriptDir%/Profiles/Default.ahk
 
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
@@ -219,69 +220,6 @@ F12::Send, {End}
 +F12::Send, +{End}
 ^+F12::Send, ^+{End}
 #If
-
-;-------------------DEFAULT MOUSE BUTTON BEHAVIOR-------------------
-;Most if not all of these hotkeys work in basically every app ever
-;These can be overridden in profiles if desired
-;G1
-;Horizontal scroll
-F13 & WheelUp::Send, {WheelLeft}
-F13 & WheelDown::Send, {WheelRight}
-
-;G2: Ctrl Tab
-F14::Send, ^{Tab}
-
-;G3: faster scrolling
-F15 & WheelUp::Send, {WheelUp 8}
-F15 & WheelDown::Send, {WheelDown 8}
-
-;A way to make the mouse move faster while Mouse G3 and the Right Button are held down.
-;It's basically the complete opposite of the sniper button.
-F15 & RButton::
-DllCall("SystemParametersInfo", Int,113, Int,0, UInt,17, Int,1)
-KeyWait, RButton
-DllCall("SystemParametersInfo", Int,113, Int,0, UInt,10, Int,1)
-return
-
-;G4
-F16::Send, ^t
-
-;G5: tab to the right
-F17::Send, ^{PGDN}
-
-;G6: forward in history
-F18::Send, !{Right}
-
-;G7: close tab
-F19::Send, ^{w}
-
-;G8: tab to the left
-F20::Send, ^{PGUP}
-
-;G9: backwards in history
-F21::Send, !{Left}
-
-;G10: Alt + Tab
-F22::Send, !{Tab}
-
-;G11: minimize the current active window
-F23::WinMinimize, A
-
-;G12: restore previously closed tab
-+F23::Send, ^+{t}
-
-;Ctrl tab tab
-^!F23::
-Send, {CtrlDown}{Tab 2}
-Send, {CtrlUp}
-return
-
-;Alt tab tab
-^+F23::
-Send, ^!{Tab}
-Sleep 100
-Send, {Right}{Enter}
-return
 
 ;----------------------MAIN LABELS AND FUNCS------------------------
 RunOnExit:
