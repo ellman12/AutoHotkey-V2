@@ -102,9 +102,6 @@ Loop {
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.ahk
 
-#Include, %A_ScriptDir%/Profiles/Factorio.ahk
-#Include, %A_ScriptDir%/Profiles/Unity.ahk
-
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/GitKraken.ahk
