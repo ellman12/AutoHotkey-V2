@@ -105,8 +105,6 @@ Loop {
 #Include, %A_ScriptDir%/Profiles/Factorio.ahk
 #Include, %A_ScriptDir%/Profiles/Unity.ahk
 
-#Include, %A_ScriptDir%/../Modules/Hotkeys/Stream Deck XL/Stream Deck XL Hotkeys.ahk
-
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Clipboard Edit.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/GitKraken.ahk
@@ -302,42 +300,5 @@ ExitApp
 return
 
 ;--------------------------EXPERIMENTAL-----------------------------
-!v::
-WinGetActiveTitle, title
-Send, ^c
-Sleep 100
-WinActivate, ahk_exe Excel.exe
-Sleep 100
-if (Instr(title, "Indeed"))
-{
-	Clipboard := StrReplace(Clipboard, " - job post")
-	split := StrSplit(Clipboard, "`r`n")
-	Clipboard := split[1]
-	Sleep 50
-	Send, ^v
-	Sleep 50
-	Send, {Tab}
-	Sleep 50
-	Clipboard := split[2]
-	Sleep 50
-	Send, ^v
-	Send, {Enter}
-}
-else if (Instr(title, "LinkedIn"))
-{
-	split := StrSplit(Clipboard, "`r`n")
-	Clipboard := split[2]
-	Sleep 50
-	Send, ^v
-	Sleep 50
-	Send, {Tab}
-	Sleep 50
-	Clipboard := split[3]
-	Sleep 50
-	Send, ^v
-	Send, {Enter}
-}
-Send, ^s
-return
 
 ;----------------------------TEMPORARY------------------------------

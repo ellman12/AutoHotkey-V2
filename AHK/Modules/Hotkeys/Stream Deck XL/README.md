@@ -1,1 +1,0 @@
-These are hotkeys called by the Stream Deck to do things the software can't do (or that it *can* do, but faster).
