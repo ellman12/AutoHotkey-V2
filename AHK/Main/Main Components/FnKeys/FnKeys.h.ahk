@@ -1,6 +1,6 @@
 ;Allows remapping of the mostly useless function keys (F1-F12) at runtime.
 ;A lot (most) of the ideas and inspiration behind this came from this video and the script(s?) in the description: https://youtu.be/OqyQABySV8k
-#Include, %A_ScriptDir%/Main Components/Initialization/Custom Window Groups.ahk
+#Include, %A_ScriptDir%/Main Components/FnKeys/Custom Window Groups.ahk
 
 global graveAccentMode
 

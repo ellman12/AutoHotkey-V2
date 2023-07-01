@@ -44,8 +44,8 @@ global savedNumMinusVol
 ;---------------INITIALIZATION FILES----------------
 ;Stuff to be ran in auto-execute before hotkeys
 #Include, %A_ScriptDir%/Main Components/Initialization/AutoCorrect.h.ahk
-#Include, %A_ScriptDir%/Main Components/Initialization/FnKeys.h.ahk
-#Include, %A_ScriptDir%/Main Components/Initialization/FnKeysSettings.h.ahk
+#Include, %A_ScriptDir%/Main Components/FnKeys/FnKeys.h.ahk
+#Include, %A_ScriptDir%/Main Components/FnKeys/FnKeysSettings.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/iCUE.h.ahk
 #Include, %A_ScriptDir%/MainSettings.h.ahk ;<-- Put after FnKeys stuff so it can access the Fn Modes constant for the ` key
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.h.ahk
@@ -92,8 +92,8 @@ Loop {
 
 #Include, %A_ScriptDir%/Main Components/Hotkeys/AutoCorrect.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/CapsLock.ahk
-#Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeys.ahk
-#Include, %A_ScriptDir%/Main Components/Hotkeys/FnKeysSettings.ahk
+#Include, %A_ScriptDir%/Main Components/FnKeys/FnKeys.ahk
+#Include, %A_ScriptDir%/Main Components/FnKeys/FnKeysSettings.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/iCUE.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/MS To Do.ahk
 #Include, %A_ScriptDir%/Main Components/Hotkeys/NumPad.ahk
