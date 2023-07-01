@@ -1,7 +1,7 @@
 ;Controlling Function keys at runtime
 global FN_WIDTH := 392
 global FN_HEIGHT := 314
-global FN_TITLE := "Fx Settings"
+global FN_TITLE := "FnKeys Settings"
 global FN_MODES := "Alt Tab|NewFFWin|NewPrivFFWin|FirefoxTabs|FirefoxTabsReverse|FirefoxWins|NewChrWin|NewPrivChrWin|ChromeTabs|ChromeTabsReverse|ChromeWins|RiderTabs|RiderTabsReverse|RiderWins|VSCodeTabs|VSCodeTabsReverse|VSCodeWins|VSTabs|VSTabsReverse|VSWins|ExplorerWins|WinAdder|WinRemover|WinSwitcher|WinHider|AddAndHide|Default"
 
 Gui, FnSettings:Default
@@ -173,7 +173,7 @@ Gui, Add, DropDownList, x+8 yp-2 w%ddlWidth% vctrlShiftF12Mode, %FN_MODES%
 ;Not in any tab group
 Gui, Tab
 Gui, Font, s10
-Gui, Add, Button, x6 y280 gFxOkClick, OK
+Gui, Add, Button, x6 y280 gFnOkClick, OK
 Gui, Add, Button, x+10 y280 gFnCancelClick, Cancel
-Gui, Add, Button, x+10 yp gFxApplyClick, Apply
-Gui, Add, Button, x+10 yp gFxResetClick, Reset
+Gui, Add, Button, x+10 yp gFnApplyClick, Apply
+Gui, Add, Button, x+10 yp gFnResetClick, Reset

@@ -8,7 +8,7 @@ Gui, Main:Default
 Gui, +AlwaysOnTop
 Gui, Color, Black
 Gui, Font, cWhite s11
-Gui, Add, Button, gShowFx, Fx Settings
+Gui, Add, Button, gShowFn, FnKeys Settings
 
 Gui, Font, cWhite s11
 Gui, Add, Text, xm y+13 w87, Grave Accent Mode

@@ -1,4 +1,4 @@
-ShowFx:
+ShowFn:
 Gui, FnSettings:Show, w%FN_WIDTH% h%FN_HEIGHT%, %FN_TITLE%
 return
 

@@ -1,4 +1,4 @@
-FxOkClick:
+FnOkClick:
 Gui, FnSettings:Submit
 writeConfigFile()
 return
@@ -10,11 +10,11 @@ FnCancelClick:
     setMainGUIValues()
 return
 
-FxApplyClick:
+FnApplyClick:
 Gui, FnSettings:Submit, NoHide
 writeConfigFile()
 return
 
-FxResetClick:
+FnResetClick:
 resetMainSettings()
 return
