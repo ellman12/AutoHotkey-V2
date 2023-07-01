@@ -29,8 +29,6 @@ global activeWindowTitle, activeWindowID
 
 global F11F12Toggled ;Override F11 & F12 to be Home and End (for Asus Laptop).
 
-global sleepDuration := 100 ;ms
-
 ;NumPad Vars
 global numPadMode
 global savedNumMinusVol
@@ -83,7 +81,7 @@ Loop {
 	
 	; ToolTip, %numPadMode%
 	
-	Sleep sleepDuration ;Reduce CPU usage.
+	Sleep 100 ;Reduce CPU usage.
 }
 
 ;-------------------HOTKEY FILES--------------------
