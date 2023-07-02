@@ -24,6 +24,8 @@ Menu, Tray, Icon, shell32.dll, 233 ;Changes the icon to a cute little computer.
 global TMP_FOLDER_PATH := A_ScriptDir . "/../tmp"
 global CONFIG_PATH := TMP_FOLDER_PATH . "/Main.ini"
 
+FileCreateDir, %TMP_FOLDER_PATH%
+
 ;---------------------MAIN VARS---------------------
 global activeWindowTitle, activeWindowID
 
