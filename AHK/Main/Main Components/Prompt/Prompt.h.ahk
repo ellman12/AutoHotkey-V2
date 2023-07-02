@@ -75,20 +75,7 @@ runCommand(cmd) {
         case "FAR": ;Find and Replace GUI.
             runFAR()
         return
-        
-        ;---------------------------------------NUMBER---------------------------------------
-        case "round":
-            InputBox, numToRound, Enter Number to Round, Enter Number to Round,, 200, 150,,,,, %Clipboard%
-            InputBox, prevRoundCDec, How Many Decimal Places?, How Many Decimal Places?,, 200, 150,,,,, %prevRoundCDec%
-            Clipboard := Round(numToRound, prevRoundCDec)
-        return
-        
-        ;Round number in Clipboard
-        case "roundc":
-            InputBox, prevRoundCDec, How Many Decimal Places, How Many Decimal Places?,, 200, 150,,,,, %prevRoundCDec%
-            Clipboard := Round(Clipboard, prevRoundCDec)
-        return
-    
+
         ;---------------------------------------INSERT---------------------------------------
         case "paste": SendRaw, %Clipboard% ;Send Clipboard contents
         
