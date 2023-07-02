@@ -11,16 +11,17 @@ Gui, Font, cWhite s11
 Gui, Add, Button, gShowFn, FnKeys Settings
 
 Gui, Font, cWhite s11
-Gui, Add, Text, xm y+13 w87, Grave Accent Mode
+Gui, Add, Text, xm y+13, Grave Accent Mode
 
 Gui, Font, cWhite s9
-Gui, Add, DropDownList, x+10 yp-2 w150 vgraveAccentMode, %FN_MODES%
+Gui, Add, DropDownList, x+5 yp-2 w130 vgraveAccentMode, %FN_MODES%
 
 Gui, Font, cWhite s11
-Gui, Add, Checkbox, xm y+13 vF11F12Toggled, F11 && F12 Toggled
+Gui, Add, Checkbox, xm y+13 vF11F12Toggled, F11 && F12 Remaps Toggled
 
 Gui, Font, cWhite s11
-Gui, Add, Radio, vM3Paste y+13, Paste Clipboard
+Gui, Add, Text, xm y+13, K95 M3 Mode
+Gui, Add, Radio, vM3Paste y+5, Paste Clipboard
 Gui, Add, Radio, vM3Send, Send Clipboard
 
 Gui, Font, s10
