@@ -155,47 +155,6 @@ runCommand(cmd) {
         case "x":Send, {U+2717} ;✗
 
         ;----------------------------------------MISC----------------------------------------
-        ;Enter points earned out of total points to figure out letter grade for an assignment
-        ;Enter just l in the first box to show just the letter-number chart.
-        case "Grade":
-            InputBox, firstNum, Grade Percent Utility, What is the first number?,, 200, 150
-            
-            if (firstNum = "l") {
-                MsgBox, 0, Letter/Number Grade Chart, A+`t97-100`nA`t94-96`nA-`t90-93`nB+`t87-89`nB`t84-86`nB-`t80-83`nC+`t77-79`nC`t74-76`nC-`t70-73`nD+`t67-69`nD`t64-66`nD-`t60-63`nF`t0-59
-                return
-            }
-            
-            InputBox, secondNum, Grade Percent Utility, What is the second number?,, 200, 150
-
-            result := round((firstNum/secondNum) * 100, 2)
-            MsgBox, 0, Grade, You got %result%`%.`n`nA+`t97-100`nA`t94-96`nA-`t90-93`nB+`t87-89`nB`t84-86`nB-`t80-83`nC+`t77-79`nC`t74-76`nC-`t70-73`nD+`t67-69`nD`t64-66`nD-`t60-63`nF`t0-59
-        return
-        
-        ;Figure out your grade in a class by entering all the scores on assignments, etc.
-        case "ClassGrade":
-            totalPointsEarned := 0 ;E.g., if you got 17/20, this would be 17
-            totalMaxPoints := 0 ;and this would be 20
-
-            while (ErrorLevel != 1)
-            {
-                InputBox, pointsEarned, Enter Points Earned, Enter points earned for assignment %A_Index%. Last entry: %pointsEarned%,, 200, 150,,,,
-                totalPointsEarned += pointsEarned
-            }
-
-            MsgBox, 262144, Total Points Earned, %totalPointsEarned%
-            ErrorLevel := 0 ;Reset for next loop
-
-            while (ErrorLevel != 1)
-            {
-                InputBox, maxPoints, Enter Max Points, Enter max points for assignment %A_Index%. Last entry: %maxPoints%,, 200, 150,,,,
-                totalMaxPoints += maxPoints
-            }
-            MsgBox, 262144, Max Points, %totalMaxPoints%
-
-            result := round((totalPointsEarned/totalMaxPoints) * 100, 2)
-            MsgBox, 0, Grade, You got %result%`%.`n`nA+`t97-100`nA`t94-96`nA-`t90-93`nB+`t87-89`nB`t84-86`nB-`t80-83`nC+`t77-79`nC`t74-76`nC-`t70-73`nD+`t67-69`nD`t64-66`nD-`t60-63`nF`t0-59
-        return
-        
         case "DelPrHist": ;Delete Prompt history
             FileDelete, %PROMPT_HISTORY_PATH%
             prevCmds := []
