@@ -16,10 +16,6 @@ Gui, Add, Text, xm y+13 w87, Grave Accent Mode
 Gui, Font, cWhite s9
 Gui, Add, DropDownList, x+10 yp-2 w150 vgraveAccentMode, %FN_MODES%
 
-modes := "Double Click|Triple Click|FirefoxTabs|FirefoxWins|ChromeTabs|ChromeWins|RiderTabs|RiderWins|VSCodeTabs|VSCodeWins|VSTabs|VSWins|ExplorerWins"
-Gui, Font, cWhite s11
-Gui, Add, Text, xm y+13 w87, Front Top Btn
-
 Gui, Font, cWhite s11
 Gui, Add, Checkbox, xm y+13 vF11F12Toggled, F11 && F12 Toggled
 
