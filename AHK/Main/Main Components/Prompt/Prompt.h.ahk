@@ -32,9 +32,7 @@ togglePrompt() {
 
 runCommand(cmd) {
     switch (cmd) {
-        case "?":Run, notepad.exe %A_ScriptDir%/Main Components/Prompt/Help.txt
         Default:
-
             if (InStr(cmd, "FAR"))
             {
                 cmd := StrReplace(cmd, "FAR")
@@ -128,6 +126,8 @@ runCommand(cmd) {
         case "sq":Send, {U+00B2} ;²
 
         ;----------------------------------------MISC----------------------------------------
+        case "?":Run, notepad.exe %A_ScriptDir%/Main Components/Prompt/Help.txt
+
         case "DelPrHist": ;Delete Prompt history
             FileDelete, %PROMPT_HISTORY_PATH%
             prevCmds := []
