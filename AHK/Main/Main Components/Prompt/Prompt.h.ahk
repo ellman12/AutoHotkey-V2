@@ -49,6 +49,15 @@ runCommand(cmd) {
                     SendInput, %cmd%
                 return
             }
+            else if (InStr(cmd, "Kill"))
+            {
+                cmd := StrReplace(cmd, "Kill")
+                cmd := StrReplace(cmd, ".exe")
+                cmd := Trim(cmd)
+                if (cmd != "")
+                    Run, taskkill /f /t /im `"%cmd%`".exe
+                return
+            }
             
             togglePrompt()
             return

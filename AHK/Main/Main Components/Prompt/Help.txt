@@ -61,6 +61,7 @@ bkupGH                  Backup GitHub folder (or a single repo) to tmp folder on
 bkupUnityGH             Similar to bkupGH, but meant for a git repo for a Unity project. Backs up only the important files and folders, skipping the (usually enormous) temporary files/folders.
 Rename                  Sets the active window title to whatever you want.
 Send		            Works exactly like SendInput in AHK. Also allows adding a ',' after the 'Send' like 'Send, '.
+Kill					Given the name of a process, immediately kill it and all child processes.
 
 RARELY USED BUT STILL USEFUL
 DownloadMusic           Used for downloading music from this website: https://downloads.khinsider.com/
