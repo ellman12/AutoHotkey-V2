@@ -10,9 +10,15 @@ AICheckClicked:
     Gui, AI:Submit, NoHide
 
     if (AIEnabled)
+    {
+        Tippy("AI Enabled", 1000)
         SetTimer, AILoopTimer, %AIDelay%
+    }
     else
+    {
+        Tippy("AI Disabled", 1000)
         SetTimer, AILoopTimer, Off
+    }
 return
 
 AILoopTimer:
