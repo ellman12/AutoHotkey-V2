@@ -82,38 +82,6 @@ runCommand(cmd) {
         case "ed":Send, Elliott DuCharme  ;My name
         
         ;---------------------------------------SYMBOLS--------------------------------------
-        ;(Discrete) Math Symbols. Source: https://www.compart.com/en/unicode/block/U+2200
-        case "maps to":Send, {U+21A6} ;↦
-        case "4a", "for all":Send, {U+2200} ;∀
-        case "ex", "there exists":Send, {U+2203} ;∃
-        case "empty set":Send, {U+2205} ;∅
-        case "elm of":Send, {U+2208} ;∈
-        case "!elm of":Send, {U+2209} ;∉
-        case "elm of r":Send, {U+220B} ;∋
-        case "!elm of r":Send, {U+220C} ;∌
-        case "and":Send, {U+2227} ;∧
-        case "or":Send, {U+2228} ;∨
-        case "intsec":Send, {U+2229} ;∩
-        case "union":Send, {U+222A} ;∪
-        case "===":Send, {U+2261} ;≡
-        case "!===":Send, {U+2262} ;≢
-        case "subset":Send, {U+2282} ;⊂
-        case "subset r":Send, {U+2283} ;⊃
-        case "!subset":Send, {U+2284} ;⊄
-        case "!subset r":Send, {U+2285} ;⊅
-        case "propsubset":Send, {U+2286} ;⊆
-        case "propsubset r":Send, {U+2287} ;⊇
-        case "!propsubset":Send, {U+2288} ;⊈
-        case "!propsubset r":Send, {U+2289} ;⊉
-        case "xor":Send, {U+2295} ;⊕
-        case "intsec2":Send, {U+22C2} ;⋂
-        case "union2":Send, {U+22C3} ;⋃
-        case "not":Send, {U+00AC} ;¬
-        case "therefore":Send, {U+2234} ;∴
-        case "m2":Send, {U+21A6} ;↦
-        case "reals":Send, {U+211D} ;ℝ
-        case "sq":Send, {U+00B2} ;²
-        
         ;Arrows
         case "u":Send, {U+2191} ;↑
         case "r":Send, {U+2192} ;→
@@ -153,6 +121,11 @@ runCommand(cmd) {
         case "check":Send, {U+2713} ;✓
         case "sec":Send, {U+00A7} ;§
         case "x":Send, {U+2717} ;✗
+        case "===":Send, {U+2261} ;≡
+        case "!===":Send, {U+2262} ;≢
+        case "xor":Send, {U+2295} ;⊕
+        case "therefore":Send, {U+2234} ;∴
+        case "sq":Send, {U+00B2} ;²
 
         ;----------------------------------------MISC----------------------------------------
         case "DelPrHist": ;Delete Prompt history

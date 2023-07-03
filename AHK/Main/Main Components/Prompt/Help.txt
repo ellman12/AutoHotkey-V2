@@ -10,36 +10,6 @@ paste                   Send Clipboard contents
 ed                      Send my name
 
 SYMBOLS
-4a OR for all           ∀
-ex OR there exists      ∃
-empty set               ∅
-elm of                  ∈
-!elm of                 ∉
-elm of r                ∋
-!elm of r               ∌
-and                     ∧
-or                      ∨
-intsec                  ∩
-union                   ∪
-===                     ≡
-!===                    ≢
-subset                  ⊂
-subset r                ⊃
-!subset                 ⊄
-!subset r               ⊅
-propsubset              ⊆
-propsubset r            ⊇
-!propsubset             ⊈
-!propsubset r           ⊉
-xor                     ⊕
-intsec2                 ⋂
-union2                  ⋃
-not                     ¬
-therefore               ∴
-m2                      ↦
-reals                   ℝ
-sq                      ²
-
 u                       ↑
 r                       →
 d                       ↓
@@ -78,6 +48,11 @@ cent2                   ￠
 check                   ✓
 sec                     §
 x                       ✗
+===                     ≡
+!===                    ≢
+xor                     ⊕
+therefore               ∴
+sq                      ²
 
 MISC
 ?                       Shows this
@@ -85,7 +60,7 @@ DelPrHist               Delete Prompt history
 bkupGH                  Backup GitHub folder (or a single repo) to tmp folder on PC and put in a timestamp folder. Useful to do before doing a destructive git operation like force push, merge, etc.
 bkupUnityGH             Similar to bkupGH, but meant for a git repo for a Unity project. Backs up only the important files and folders, skipping the (usually enormous) temporary files/folders.
 Rename                  Sets the active window title to whatever you want.
-Send		        	Works exactly like SendInput in AHK. Also allows adding a ',' after the 'Send' like 'Send, '.
+Send		            Works exactly like SendInput in AHK. Also allows adding a ',' after the 'Send' like 'Send, '.
 
 RARELY USED BUT STILL USEFUL
 DownloadMusic           Used for downloading music from this website: https://downloads.khinsider.com/
