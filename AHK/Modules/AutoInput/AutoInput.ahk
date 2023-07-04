@@ -12,7 +12,7 @@ AICheckClicked:
     if (AIEnabled)
     {
         Tippy("AI Enabled", 1000)
-        SetTimer, AILoopTimer, %AIDelay%
+        SetTimer, AILoopTimer, On
     }
     else
     {
@@ -23,5 +23,9 @@ return
 
 AILoopTimer:
     Send, %AIHotkey%
-    Sleep, %AIDelay%
+    Random, delay, % -delayRandomness, delayRandomness
+    delay += AIDelay
+    delay := Abs(delay)
+    MsgBox, % delay
+    Sleep, %delay%
 return
