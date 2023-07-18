@@ -39,4 +39,9 @@ searchForSelection(url) {
     Clipboard := oldClipboard
 }
 
+Up::Send, {U+2191} ;↑
+Right::Send, {U+2192} ;→
+Down::Send, {U+2193} ;↓
+Left::Send, {U+2190} ;←
+
 #If
