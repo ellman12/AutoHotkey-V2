@@ -44,4 +44,7 @@ Right::Send, {U+2192} ;→
 Down::Send, {U+2193} ;↓
 Left::Send, {U+2190} ;←
 
+SC00C::Send, {U+2014} ;—
++SC00C::Send, {U+2013} ;–
+
 #If
