@@ -26,6 +26,5 @@ AILoopTimer:
     Random, delay, % -delayRandomness, delayRandomness
     delay += AIDelay
     delay := Abs(delay)
-    MsgBox, % delay
     Sleep, %delay%
 return
