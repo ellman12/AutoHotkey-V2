@@ -1,5 +1,6 @@
 ;----------------------------------------SCIMITAR RGB ACTIONS---------------------------------------
 #If currentProfile == ""
+
 ;Mouse G1
 F13::return
 
@@ -36,7 +37,13 @@ F23::return
 ;Mouse G12
 +F23::return
 
-;----------------------------------------K95 RGB ACTIONS---------------------------------------
+;Profile Switch (Top Front Button)
+^!F23::return
+
+;DPI Toggle (Top Back Button)
+^+F23::return
+
+;-------------------------------------------K95 RGB ACTIONS-----------------------------------------
 ;Keeb G1
 ^F13::return
 
