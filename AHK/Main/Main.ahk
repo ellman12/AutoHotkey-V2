@@ -51,6 +51,7 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
 
+#Include, %A_ScriptDir%/../Modules/AutoAltTab/AutoAltTab.h.ahk
 #Include, %A_ScriptDir%/../Modules/AutoInput/AutoInput.h.ahk
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.h.ahk
 #Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.h.ahk
@@ -104,6 +105,7 @@ Loop {
 
 #Include, %A_ScriptDir%/Profiles/Default.ahk
 
+#Include, %A_ScriptDir%/../Modules/AutoAltTab/AutoAltTab.ahk
 #Include, %A_ScriptDir%/../Modules/AutoInput/AutoInput.ahk
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk

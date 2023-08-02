@@ -1,10 +1,10 @@
-!a::
+!+a::
     AIEnabled := !AIEnabled
     GuiControl, AI:, AIEnabled, %AIEnabled%
     Gosub, AICheckClicked
 return
 
-!+a::toggleGUI(autoInputVis, "AI", AI_WIDTH, AI_HEIGHT, AI_TITLE)
+!#+a::toggleGUI(autoInputVis, "AI", AI_WIDTH, AI_HEIGHT, AI_TITLE)
 
 AICheckClicked:
     Gui, AI:Submit, NoHide
