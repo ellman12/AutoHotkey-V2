@@ -65,17 +65,12 @@ NumPadSub::saveAndRestoreVolumeLevel()
 ;Rider and VSCode
 #If numPadMode = "Code"
 
-;Show and focus terminal, or if focused, hide terminal.
-NumLock::
-Suspend, On
-Send, ^{sc029}
-Suspend, Off
-return
+NumLock::Send, ^d
 
-$NumPad0::Send, ^d
-$NumPadIns::Send, ^d
-$NumPadDot::Send, ^u
-$NumPadDel::Send, ^u
+$NumPad0::Send, ^!{Left}
+$NumPadIns::Send, ^!{Left}
+$NumPadDot::Send, ^!{Right}
+$NumPadDel::Send, ^!{Right}
 
 ;CamelCase select to the left.
 $NumPad1::Send, ^!+{Left}
