@@ -58,7 +58,6 @@ removeWindowFx(ByRef windowGroupArray) {
 }
 
 addAndHideWindowFx(ByRef windowGroupArray) {
-    WinGet, activeWindowID, ID, A
     addWindowFx(windowGroupArray)
     WinHide, % "ahk_id" activeWindowID
 }
@@ -92,8 +91,6 @@ nextWindowFx(ByRef windowGroupArray, ByRef currentWin) {
         return
 
     removeNonexistentWindows(windowGroupArray)
-    
-    WinGet, activeWindowID, ID, A
 
     ;Checks if there's 2 windows in the array. If so, acts like !Tab.
     if (windowGroupArray.MaxIndex() = 2)
