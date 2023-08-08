@@ -25,18 +25,33 @@ if (AATEnabled) {
 } else {
     ToolTip
     SetTimer, AutoAltTabLoop, Off
+    SetTimer, AutoAltTabLoop, Delete
 }
 
 return
 
 AutoAltTabLoop:
+    if (!AATEnabled)
+        return
+    
     WinActivate, ahk_id %window1%
     Sleep % getRandomDelay()
+    
+    if (!AATEnabled)
+        return
+    
     WinActivate, ahk_id %window2%
     Sleep % getRandomDelay()
     
+    if (!AATEnabled)
+        return
+    
     Send, !{Tab}
     Sleep % getRandomDelay()
+    
+    if (!AATEnabled)
+        return
+    
     Send, !{Tab}
     Sleep % getRandomDelay()
 return
