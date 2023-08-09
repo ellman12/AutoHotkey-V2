@@ -194,11 +194,6 @@ $SC01B::Send, +{SC01B}
 $+SC01A::Send, {SC01A}
 $+SC01B::Send, {SC01B}
 
-;Opens Snip and Sketch.
-PrintScreen::
-Send, #+s
-return
-
 ;Kills and restarts explorer.exe
 ^PrintScreen::
 RunWait, taskkill /f /im explorer.exe
