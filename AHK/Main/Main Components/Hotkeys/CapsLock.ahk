@@ -47,4 +47,8 @@ Left::Send, {U+2190} ;←
 SC00C::Send, {U+2014} ;—
 +SC00C::Send, {U+2013} ;–
 
+SC00D::Send, {U+2260} ;≠
+!SC033::Send, {U+2264} ;≤
+!SC034::Send, {U+2265} ;≥
+
 #If
