@@ -5497,3 +5497,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ferw::few
 ::sher::she
 ::ios::is
+:*:tgho::though
+::probs::probably
+:*:github::GitHub

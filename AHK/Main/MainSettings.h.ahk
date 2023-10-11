@@ -147,10 +147,10 @@ readConfigFile() { ;Reads values from the ini file for #o (really only for the s
 global
     section := "FnKeys"
     ;Last parameter is the default value if it isn't found in the .ini file.
-    IniRead, F1Mode, %CONFIG_PATH%, %section%, F1Mode, FirefoxTabs
-    IniRead, F2Mode, %CONFIG_PATH%, %section%, F2Mode, FirefoxWins
-    IniRead, F3Mode, %CONFIG_PATH%, %section%, F3Mode, VSCodeTabs
-    IniRead, F4Mode, %CONFIG_PATH%, %section%, F4Mode, VSCodeWins
+    IniRead, F1Mode, %CONFIG_PATH%, %section%, F1Mode, ChromeWins
+    IniRead, F2Mode, %CONFIG_PATH%, %section%, F2Mode, Default
+    IniRead, F3Mode, %CONFIG_PATH%, %section%, F3Mode, ChromeTabsReverse
+    IniRead, F4Mode, %CONFIG_PATH%, %section%, F4Mode, ChromeTabs
     IniRead, F5Mode, %CONFIG_PATH%, %section%, F5Mode, Default
     IniRead, F6Mode, %CONFIG_PATH%, %section%, F6Mode, WinSwitcher
     IniRead, F7Mode, %CONFIG_PATH%, %section%, F7Mode, WinSwitcher
@@ -160,10 +160,10 @@ global
     IniRead, F11Mode, %CONFIG_PATH%, %section%, F11Mode, Default
     IniRead, F12Mode, %CONFIG_PATH%, %section%, F12Mode, Default
     
-    IniRead, ctrlF1Mode, %CONFIG_PATH%, %section%, ctrlF1Mode, NewFFWin
-    IniRead, ctrlF2Mode, %CONFIG_PATH%, %section%, ctrlF2Mode, NewFFWin
-    IniRead, ctrlF3Mode, %CONFIG_PATH%, %section%, ctrlF3Mode, NewChrWin
-    IniRead, ctrlF4Mode, %CONFIG_PATH%, %section%, ctrlF4Mode, NewChrWin
+    IniRead, ctrlF1Mode, %CONFIG_PATH%, %section%, ctrlF1Mode, NewChrWin
+    IniRead, ctrlF2Mode, %CONFIG_PATH%, %section%, ctrlF2Mode, Default
+    IniRead, ctrlF3Mode, %CONFIG_PATH%, %section%, ctrlF3Mode, Default
+    IniRead, ctrlF4Mode, %CONFIG_PATH%, %section%, ctrlF4Mode, Default
     IniRead, ctrlF5Mode, %CONFIG_PATH%, %section%, ctrlF5Mode, Default
     IniRead, ctrlF6Mode, %CONFIG_PATH%, %section%, ctrlF6Mode, WinAdder
     IniRead, ctrlF7Mode, %CONFIG_PATH%, %section%, ctrlF7Mode, WinAdder
@@ -173,9 +173,9 @@ global
     IniRead, ctrlF11Mode, %CONFIG_PATH%, %section%, ctrlF11Mode, Default
     IniRead, ctrlF12Mode, %CONFIG_PATH%, %section%, ctrlF12Mode, Default
     
-    IniRead, shiftF1Mode, %CONFIG_PATH%, %section%, shiftF1Mode, FirefoxTabsReverse
+    IniRead, shiftF1Mode, %CONFIG_PATH%, %section%, shiftF1Mode, ChromeTabsReverse
     IniRead, shiftF2Mode, %CONFIG_PATH%, %section%, shiftF2Mode, Default
-    IniRead, shiftF3Mode, %CONFIG_PATH%, %section%, shiftF3Mode, VSCodeTabsReverse
+    IniRead, shiftF3Mode, %CONFIG_PATH%, %section%, shiftF3Mode, RiderTabsReverse
     IniRead, shiftF4Mode, %CONFIG_PATH%, %section%, shiftF4Mode, Default
     IniRead, shiftF5Mode, %CONFIG_PATH%, %section%, shiftF5Mode, Default
     IniRead, shiftF6Mode, %CONFIG_PATH%, %section%, shiftF6Mode, Default
@@ -186,9 +186,9 @@ global
     IniRead, shiftF11Mode, %CONFIG_PATH%, %section%, shiftF11Mode, Default
     IniRead, shiftF12Mode, %CONFIG_PATH%, %section%, shiftF12Mode, Default
     
-    IniRead, altF1Mode, %CONFIG_PATH%, %section%, altF1Mode, NewPrivFFWin
-    IniRead, altF2Mode, %CONFIG_PATH%, %section%, altF2Mode, NewPrivFFWin
-    IniRead, altF3Mode, %CONFIG_PATH%, %section%, altF3Mode, NewPrivChrWin
+    IniRead, altF1Mode, %CONFIG_PATH%, %section%, altF1Mode, NewPrivChrWin
+    IniRead, altF2Mode, %CONFIG_PATH%, %section%, altF2Mode, Default
+    IniRead, altF3Mode, %CONFIG_PATH%, %section%, altF3Mode, Default
     IniRead, altF4Mode, %CONFIG_PATH%, %section%, altF4Mode, Default
     IniRead, altF5Mode, %CONFIG_PATH%, %section%, altF5Mode, Default
     IniRead, altF6Mode, %CONFIG_PATH%, %section%, altF6Mode, AddAndHide

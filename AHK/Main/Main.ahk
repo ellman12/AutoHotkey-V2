@@ -118,8 +118,6 @@ Loop {
 ;These are completely global and will work no matter the context
 ^#r::Reload ;Saves custom window groups on reload (exit).
 
-#+r::resetMainSettings()
-
 ^!r:: ;Restart script without restoring window groups.
 clearGroups := true
 Loop 12 {
