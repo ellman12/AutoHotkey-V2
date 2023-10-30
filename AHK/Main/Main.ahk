@@ -54,6 +54,7 @@ global savedNumMinusVol
 #Include, %A_ScriptDir%/../Modules/AutoAltTab/AutoAltTab.h.ahk
 #Include, %A_ScriptDir%/../Modules/AutoInput/AutoInput.h.ahk
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.h.ahk
+#Include, %A_ScriptDir%/../Modules/HideVolumeOSD/HideVolumeOSD.ahk
 #Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.h.ahk
 
 ;-----------------------MISC-----------------------
@@ -220,6 +221,8 @@ F12::Send, {End}
 
 ;----------------------MAIN LABELS AND FUNCS------------------------
 RunOnExit:
+#Include, %A_ScriptDir%/../Modules/HideVolumeOSD/ShowVolumeOSD.ahk
+
 if (!clearGroups)
 {
 	Loop 12 { ;Write all 12 win group files
