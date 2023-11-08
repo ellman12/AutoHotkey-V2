@@ -121,6 +121,9 @@ runFnAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 		case "Ctrl Shift Tab":Send, ^+{Tab}
 		case "Ctrl PgUp":Send, ^{PgUp}
 		case "Ctrl PgDn":Send, ^{PgDn}
+		case "Ctrl T":Send, ^t
+		case "Ctrl W":Send, ^w
+		case "Minimize":WinMinimize, A
 		
 		case "NewFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe
 		case "NewPrivFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window
