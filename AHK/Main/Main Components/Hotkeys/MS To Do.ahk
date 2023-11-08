@@ -1,19 +1,19 @@
 ;Hotkeys for MS To Do
-;Open MS To Do
+
 #t::
-Sleep 200
-if WinActive("Microsoft To Do") { ;In the Tasks menu, add a task and mark it due today.
+if WinActive("Microsoft To Do") ;In the Tasks menu, add a task and mark it due today.
     createMSToDoTask(1, 0)
-} else if WinExist("Microsoft To Do") ;Activate it.
+else if WinExist("Microsoft To Do")
     WinActivate
-else {
-    Run, C:\Users\%A_UserName%\Documents\Microsoft To Do ;Shortcut in Documents.
-}
+else
+    Run, C:\Users\%A_UserName%\Documents\Microsoft To Do
 return
 
 #IfWinActive, Microsoft To Do
+
 ;In tasks menu, add a task and mark it due tomorrow.
-!#t::createMSToDoTask(1, 1)
+!t::createMSToDoTask(1, 1)
+
 #If
 
 createMSToDoTask(numberOfTabs, numberOfDowns) {
