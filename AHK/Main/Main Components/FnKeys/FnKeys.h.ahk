@@ -132,7 +132,11 @@ runFnAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 
 		case "RiderTabs":activateOrSwitchTabs("rider64.exe", "rider64.exe", false)
 		case "RiderTabsReverse":activateOrSwitchTabs("rider64.exe", "rider64.exe", true)
-		case "RiderWins":switchBetweenWindows("rider64.exe", "rider64.exe", "vsWins")
+		case "RiderWins":switchBetweenWindows("rider64.exe", "rider64.exe", "riderWins")
+
+		case "WebStormTabs":activateOrSwitchTabs("webstorm64.exe", "webstorm64.exe", false)
+		case "WebStormTabsReverse":activateOrSwitchTabs("webstorm64.exe", "webstorm64.exe", true)
+		case "WebStormWins":switchBetweenWindows("webstorm64.exe", "webstorm64.exe", "webStormWins")
 
 		case "VSCodeTabs":activateOrSwitchTabs("Code.exe", "Code.exe", false)
 		case "VSCodeTabsReverse":activateOrSwitchTabs("Code.exe", "Code.exe", true)
@@ -177,21 +181,18 @@ bool reverse = False for forward (--> / PgDn). True for reverse (<-- / PgUp).
 */
 activateOrSwitchTabs(exeName, exePath, reverse) {
 	fullExe := "ahk_exe " . exeName
+	
 	if !WinExist(fullExe)
 		Run, %exePath%
 	else if WinActive(fullExe)
+	{
 		if (reverse)
-		Send ^{PgUp}
-	else
-		Send ^{PgDn}
-	else {
-		WinActivate %fullExe%
-		; WinActivatebottom ahk_exe firefox.exe
-		;sometimes winactivate is not enough. the window is brought to the foreground, but not put into FOCUS.
-		;the below code should fix that.
-		; WinGet, hWnd, ID, ahk_exe firefox.exe
-		; DllCall("SetForegroundWindow", UInt, hWnd)
+			Send ^{PgUp}
+		else
+			Send ^{PgDn}
 	}
+	else
+		WinActivate %fullExe%
 }
 
 /*

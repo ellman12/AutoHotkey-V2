@@ -5477,7 +5477,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:c3::C#
 :*:veryt::very
 :*:hows::how's
-:*:on e::one
 ::tho::though
 ::thr::the
 ::dsuu::Dakota State University
@@ -5500,3 +5499,5 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:tgho::though
 ::probs::probably
 :*:github::GitHub
+::postgres::PostgreSQL
+:*:CV#::C#
