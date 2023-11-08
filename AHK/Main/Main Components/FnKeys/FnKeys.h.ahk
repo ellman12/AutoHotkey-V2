@@ -161,7 +161,9 @@ runFnAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 		case "WinHider":showOrHideWindowsFx(windowGroupArray, fxShowHideToggle)
 		case "AddAndHide":addAndHideWindowFx(windowGroupArray)
 
-		Default: ;Need to move modifiers outside the {} or else Send won't work :/
+		;Send the hotkey that triggered this action.
+		;Need to move modifiers outside the {} or else Send won't work :/
+		Default:
 			ogHotkey := A_ThisHotkey
 			modifiersList := ["#", "!", "^", "+"]
 			for k, v in modifiersList {

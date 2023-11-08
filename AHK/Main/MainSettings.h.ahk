@@ -153,7 +153,7 @@ global
     IniRead, F4Mode, %CONFIG_PATH%, %section%, F4Mode, Ctrl PgDn
     IniRead, F5Mode, %CONFIG_PATH%, %section%, F5Mode, Default
     IniRead, F6Mode, %CONFIG_PATH%, %section%, F6Mode, WinSwitcher
-    IniRead, F7Mode, %CONFIG_PATH%, %section%, F7Mode, WinSwitcher
+    IniRead, F7Mode, %CONFIG_PATH%, %section%, F7Mode, Minimize
     IniRead, F8Mode, %CONFIG_PATH%, %section%, F8Mode, WinHider
     IniRead, F9Mode, %CONFIG_PATH%, %section%, F9Mode, ExplorerWins
     IniRead, F10Mode, %CONFIG_PATH%, %section%, F10Mode, WinHider
