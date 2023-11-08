@@ -148,9 +148,9 @@ global
     section := "FnKeys"
     ;Last parameter is the default value if it isn't found in the .ini file.
     IniRead, F1Mode, %CONFIG_PATH%, %section%, F1Mode, ChromeWins
-    IniRead, F2Mode, %CONFIG_PATH%, %section%, F2Mode, Default
-    IniRead, F3Mode, %CONFIG_PATH%, %section%, F3Mode, ChromeTabsReverse
-    IniRead, F4Mode, %CONFIG_PATH%, %section%, F4Mode, ChromeTabs
+    IniRead, F2Mode, %CONFIG_PATH%, %section%, F2Mode, RiderWins
+    IniRead, F3Mode, %CONFIG_PATH%, %section%, F3Mode, Ctrl PgUp
+    IniRead, F4Mode, %CONFIG_PATH%, %section%, F4Mode, Ctrl PgDn
     IniRead, F5Mode, %CONFIG_PATH%, %section%, F5Mode, Default
     IniRead, F6Mode, %CONFIG_PATH%, %section%, F6Mode, WinSwitcher
     IniRead, F7Mode, %CONFIG_PATH%, %section%, F7Mode, WinSwitcher
