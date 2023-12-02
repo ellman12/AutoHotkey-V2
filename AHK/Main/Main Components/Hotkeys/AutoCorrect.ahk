@@ -5501,3 +5501,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:github::GitHub
 ::postgres::PostgreSQL
 :*:CV#::C#
+::rnn::right now
+::typescript::TypeScript
+::thios::this
+::sire::site
+::appt::appointment
+::ablke::able
+::abkle::able
