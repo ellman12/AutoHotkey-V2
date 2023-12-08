@@ -62,32 +62,34 @@ return
 
 ;----------------------------------------K95 RGB ACTIONS---------------------------------------
 ;G1
-^F13::activateOrSwitchTabs("chrome.exe", "chrome.exe", true)
+^F13::Send, ^{PgUp}
 
 ;G2
-^F14::activateOrSwitchTabs("chrome.exe", "chrome.exe", false)
+^F14::Send, ^{PgDn}
 
 ;G3
-^F15::switchBetweenWindows("chrome.exe", "chrome.exe", "chromeWins")
+#IfWinActive, ahk_exe chrome.exe
+^F15::Send, !w
+#If
+
+^F15::Send, ^{Tab}
 
 ;G4
-^F16::activateOrSwitchTabs("rider64.exe", "rider64.exe", true)
+^F16::
+if !WinExist("ahk_exe gitkraken.exe")
+	Run, "C:/Users/%A_UserName%/AppData/Local/gitkraken/gitkraken.exe"
+else
+	WinActivate, ahk_exe gitkraken.exe
+return
 
 ;G5
-^F17::activateOrSwitchTabs("rider64.exe", "rider64.exe", false)
+^F17::switchBetweenWindows("chrome.exe", "chrome.exe", "chromeWins")
 
 ;G6
-^F18::switchBetweenWindows("rider64.exe", "rider64.exe", "rider64Wins")
+^F18::switchBetweenWindows("rider64.exe", "C:/ProgramData/Microsoft/Windows/Start Menu/Programs/JetBrains/JetBrains Rider 2022.2.2.lnk", "riderWins")
 
 ;G7
-^F19::
-	if WinActive("Microsoft To Do") ;In the Tasks menu, add a task and mark it due today.
-		createMSToDoTask(1, 0)
-	else if WinExist("Microsoft To Do")
-		WinActivate
-	else
-		Run, C:\Users\%A_UserName%\Documents\Microsoft To Do
-return
+^F19::switchBetweenWindows("mintty.exe", "C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Git/Git Bash.lnk", "bashWin")
 
 ;G8
 ^F20::
@@ -102,21 +104,23 @@ if (WorkComputer) {
 return
 
 ;G9
-^F21::
-if !WinExist("ahk_exe gitkraken.exe")
-	Run, "C:/Users/%A_UserName%/AppData/Local/gitkraken/gitkraken.exe"
-else
-	WinActivate, ahk_exe gitkraken.exe
-return
+^F21::switchBetweenWindows("firefox.exe", "C:/Program Files/Mozilla Firefox/firefox.exe", "firefoxWins")
 
 ;G10
-^F22::Send, ^t
+^F22::
+if WinActive("Microsoft To Do") ;In the Tasks menu, add a task and mark it due today.
+	createMSToDoTask(1, 0)
+else if WinExist("Microsoft To Do")
+	WinActivate
+else
+	Run, C:\Users\%A_UserName%\Documents\Microsoft To Do
+return
 
 ;G11
-^F23::Send, ^w
+^F23::switchBetweenWindows("nvim.exe", "C:/Program Files/Neovim/bin/nvim.exe", "neovimWins")
 
 ;G12
-!F23::WinMinimize, A
+!F23::Send, !{F4}
 
 ;G13
 !F13::Send, ^#{F4}
@@ -125,7 +129,7 @@ return
 !F14::Send, ^#d
 
 ;G15
-!F15::Send, !{F4}
+!F15::switchBetweenWindows("MusicBee.exe", "C:/Program Files (x86)/MusicBee/MusicBee.exe", "musicBee")
 
 ;G16
 !F16::Send, #{Tab}
