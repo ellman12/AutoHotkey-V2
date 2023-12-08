@@ -155,7 +155,7 @@ global
     IniRead, F6Mode, %CONFIG_PATH%, %section%, F6Mode, WinSwitcher
     IniRead, F7Mode, %CONFIG_PATH%, %section%, F7Mode, Minimize
     IniRead, F8Mode, %CONFIG_PATH%, %section%, F8Mode, WinHider
-    IniRead, F9Mode, %CONFIG_PATH%, %section%, F9Mode, ExplorerWins
+    IniRead, F9Mode, %CONFIG_PATH%, %section%, F9Mode, F2
     IniRead, F10Mode, %CONFIG_PATH%, %section%, F10Mode, WinHider
     IniRead, F11Mode, %CONFIG_PATH%, %section%, F11Mode, Default
     IniRead, F12Mode, %CONFIG_PATH%, %section%, F12Mode, Default
@@ -168,7 +168,7 @@ global
     IniRead, ctrlF6Mode, %CONFIG_PATH%, %section%, ctrlF6Mode, WinAdder
     IniRead, ctrlF7Mode, %CONFIG_PATH%, %section%, ctrlF7Mode, WinAdder
     IniRead, ctrlF8Mode, %CONFIG_PATH%, %section%, ctrlF8Mode, WinAdder
-    IniRead, ctrlF9Mode, %CONFIG_PATH%, %section%, ctrlF9Mode, Default
+    IniRead, ctrlF9Mode, %CONFIG_PATH%, %section%, ctrlF9Mode, ExplorerWins
     IniRead, ctrlF10Mode, %CONFIG_PATH%, %section%, ctrlF10Mode, WinAdder
     IniRead, ctrlF11Mode, %CONFIG_PATH%, %section%, ctrlF11Mode, Default
     IniRead, ctrlF12Mode, %CONFIG_PATH%, %section%, ctrlF12Mode, Default
