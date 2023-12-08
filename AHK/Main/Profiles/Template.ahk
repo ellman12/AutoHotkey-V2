@@ -44,58 +44,58 @@ F23::return
 ^+F23::return
 
 ;-------------------------------------------K95 RGB ACTIONS-----------------------------------------
-;Keeb G1
+;G1
 ^F13::return
 
-;Keeb G2
+;G2
 ^F14::return
 
-;Keeb G3
+;G3
 ^F15::return
 
-;Keeb G4
+;G4
 ^F16::return
 
-;Keeb G5
+;G5
 ^F17::return
 
-;Keeb G6
+;G6
 ^F18::return
 
-;Keeb G7
+;G7
 ^F19::return
 
-;Keeb G8
+;G8
 ^F20::return
 
-;Keeb G9
+;G9
 ^F21::return
 
-;Keeb G10
+;G10
 ^F22::return
 
-;Keeb G11
+;G11
 ^F23::return
 
-;Keeb G12
+;G12
 !F23::return
 
-;Keeb G13
+;G13
 !F13::return
 
-;Keeb G14
+;G14
 !F14::return
 
-;Keeb G15
+;G15
 !F15::return
 
-;Keeb G16
+;G16
 !F16::return
 
-;Keeb G17
+;G17
 !F17::return
 
-;Keeb G18
+;G18
 !F18::return
 
 #If
