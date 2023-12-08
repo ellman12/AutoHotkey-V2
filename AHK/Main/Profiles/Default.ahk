@@ -92,8 +92,13 @@ return
 ;Keeb G8
 ^F20::
 F8VisToggle := 1
-WinShow, ahk_exe Discord.exe
-switchBetweenWindows("discord.exe", "C:/Users/" . A_UserName . "/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Discord Inc/Discord.lnk", "discord")
+if (WorkComputer) {
+	WinShow, ahk_exe Teams.exe
+	switchBetweenWindows("teams.exe", "C:/Users/" . A_UserName . "/AppData/Local/Microsoft/Teams/Update.exe", "teams")
+} else {
+	WinShow, ahk_exe Discord.exe
+	switchBetweenWindows("discord.exe", "C:/Users/" . A_UserName . "/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Discord Inc/Discord.lnk", "discord")
+}
 return
 
 ;Keeb G9
