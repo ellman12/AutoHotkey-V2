@@ -35,6 +35,8 @@ global F11F12Toggled ;Override F11 & F12 to be Home and End (for Asus Laptop).
 global numPadMode
 global savedNumMinusVol
 
+global WorkComputer := false
+
 ;---------------------FUNCTIONS---------------------
 #Include, %A_ScriptDir%/../Functions/BooleanToggle.ahk
 #Include, %A_ScriptDir%/../Functions/InArray.ahk
