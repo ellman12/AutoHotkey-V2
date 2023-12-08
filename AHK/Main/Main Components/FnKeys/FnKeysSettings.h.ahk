@@ -2,7 +2,7 @@
 global FN_WIDTH := 392
 global FN_HEIGHT := 314
 global FN_TITLE := "FnKeys Settings"
-global FN_MODES := "F2|Alt Tab|Ctrl Tab|Ctrl Shift Tab|Ctrl PgUp|Ctrl PgDn|Ctrl T|Ctrl W|Minimize|Maximize|NewFFWin|NewPrivFFWin|FirefoxTabs|FirefoxTabsReverse|FirefoxWins|NewChrWin|NewPrivChrWin|ChromeTabs|ChromeTabsReverse|ChromeWins|RiderTabs|RiderTabsReverse|RiderWins|WebStormTabs|WebStormTabsReverse|WebStormWins|VSCodeTabs|VSCodeTabsReverse|VSCodeWins|VSTabs|VSTabsReverse|VSWins|ExplorerWins|WinAdder|WinRemover|WinSwitcher|WinHider|AddAndHide|Default"
+global FN_MODES := "F2|Alt Tab|Ctrl Tab|Ctrl Shift Tab|Ctrl PgUp|Ctrl PgDn|Ctrl T|Ctrl W|Minimize|Maximize|NewFFWin|NewPrivFFWin|FirefoxWins|NewChrWin|NewPrivChrWin|ChromeWins|RiderWins|WebStormWins|VSCodeWins|ExplorerWins|WinAdder|WinRemover|WinSwitcher|WinHider|AddAndHide|Default"
 
 Gui, FnSettings:Default
 Gui, +AlwaysOnTop

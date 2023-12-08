@@ -129,32 +129,18 @@ runFnAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 		
 		case "NewFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe
 		case "NewPrivFFWin":Run, C:\Program Files\Mozilla Firefox\firefox.exe -private-window
-		case "FirefoxTabs":activateOrSwitchTabs("firefox.exe", "C:/Program Files/Mozilla Firefox/firefox.exe", false)
-		case "FirefoxTabsReverse":activateOrSwitchTabs("firefox.exe", "C:/Program Files/Mozilla Firefox/firefox.exe", true)
 		case "FirefoxWins":switchBetweenWindows("firefox.exe", "C:/Program Files/Mozilla Firefox/firefox.exe", "firefoxWins")
 
 		case "NewChrWin":Run, chrome.exe
 		case "NewPrivChrWin":Run, chrome.exe -incognito
-		case "ChromeTabs":activateOrSwitchTabs("chrome.exe", "chrome.exe", false)
-		case "ChromeTabsReverse":activateOrSwitchTabs("chrome.exe", "chrome.exe", true)
 		case "ChromeWins":switchBetweenWindows("chrome.exe", "chrome.exe", "chromeWins")
 
-		case "RiderTabs":activateOrSwitchTabs("rider64.exe", "rider64.exe", false)
-		case "RiderTabsReverse":activateOrSwitchTabs("rider64.exe", "rider64.exe", true)
 		case "RiderWins":switchBetweenWindows("rider64.exe", "rider64.exe", "riderWins")
 
-		case "WebStormTabs":activateOrSwitchTabs("webstorm64.exe", "webstorm64.exe", false)
-		case "WebStormTabsReverse":activateOrSwitchTabs("webstorm64.exe", "webstorm64.exe", true)
 		case "WebStormWins":switchBetweenWindows("webstorm64.exe", "webstorm64.exe", "webStormWins")
 
-		case "VSCodeTabs":activateOrSwitchTabs("Code.exe", "Code.exe", false)
-		case "VSCodeTabsReverse":activateOrSwitchTabs("Code.exe", "Code.exe", true)
 		case "VSCodeWins":switchBetweenWindows("Code.exe", "Code.exe", "vscodeWins")
 
-		case "VSTabs":activateOrSwitchTabs("devenv.exe", "devenv.exe", false)
-		case "VSTabsReverse":activateOrSwitchTabs("devenv.exe", "devenv.exe", true)
-		case "VSWins":switchBetweenWindows("devenv.exe", "devenv.exe", "vsWins")
-		
 		case "ExplorerWins":switchToExplorer()
 
 		case "WinAdder":addWindowFx(windowGroupArray)
@@ -179,31 +165,6 @@ runFnAction(action, windowGroupArray, ByRef currentWin, ByRef fxShowHideToggle)
 			Send, %newHotkey%
 		return
 	}
-}
-
-/*
-Either run a program if 0 windows exist of that .exe, or switch to a window if one exists.
-If a window is active, switch between tabs.
-
-Parameter Examples:
-string exeName = 'firefox.exe'
-string exePath = 'C:\Program Files\Mozilla Firefox\firefox.exe'
-bool reverse = False for forward (--> / PgDn). True for reverse (<-- / PgUp).
-*/
-activateOrSwitchTabs(exeName, exePath, reverse) {
-	fullExe := "ahk_exe " . exeName
-	
-	if !WinExist(fullExe)
-		Run, %exePath%
-	else if WinActive(fullExe)
-	{
-		if (reverse)
-			Send ^{PgUp}
-		else
-			Send ^{PgDn}
-	}
-	else
-		WinActivate %fullExe%
 }
 
 /*
