@@ -99,7 +99,7 @@ return
 ;Keeb G9
 ^F21::
 if !WinExist("ahk_exe gitkraken.exe")
-	Run, "C:/Users/Elliott/AppData/Local/gitkraken/gitkraken.exe"
+	Run, "C:/Users/%A_UserName%/AppData/Local/gitkraken/gitkraken.exe"
 else
 	WinActivate, ahk_exe gitkraken.exe
 return
