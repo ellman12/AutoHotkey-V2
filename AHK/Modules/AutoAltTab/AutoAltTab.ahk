@@ -3,8 +3,8 @@
 
 !a::
 if (WorkComputer) {
-	WinGet, window1, ID, "ahk_exe webstorm64.exe"
-	WinGet, window2, ID, "ahk_exe gitkraken.exe"
+	WinGet, window1, ID, ahk_exe webstorm64.exe
+	WinGet, window2, ID, ahk_exe gitkraken.exe
 }
 
 if (window1 == "" || !WinExist("ahk_id" window1)) {
