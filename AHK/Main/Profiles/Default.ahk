@@ -117,7 +117,7 @@ else
 return
 
 ;G11
-^F23::switchBetweenWindows("nvim.exe", "C:/Program Files/Neovim/bin/nvim.exe", "neovimWins")
+^F23::switchBetweenWindows("nvim-qt.exe", "C:/Program Files/Neovim/bin/nvim-qt.exe", "neovimWins")
 
 ;G12
 !F23::Send, !{F4}

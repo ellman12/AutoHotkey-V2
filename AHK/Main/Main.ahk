@@ -154,7 +154,7 @@ return
 ^\::Send, \ ;This key normally deletes a word. This hotkey allows you to insert a \ without having to suspend hotkeys.
 
 #n::Run, Notepad
-#!n::Run, C:/Program Files/Neovim/bin/nvim.exe
+#!n::Run, "C:/Program Files/Neovim/bin/nvim-qt.exe"
 
 sc029::runFnAction(graveAccentMode, windowGroupGraveAccent, currentWinGraveAccent, graveAccentVisToggle) ;The grave accent key (that weird thing under the Tilde ~ symbol) can be remapped just like F1-F12.
 ^sc029::Send, `` ;Holding Ctrl and pushing the grave accent key inserts the grave accent symbol: `.

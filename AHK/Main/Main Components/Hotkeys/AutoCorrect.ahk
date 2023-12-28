@@ -5508,3 +5508,4 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::appt::appointment
 ::ablke::able
 ::abkle::able
+::omn::on
