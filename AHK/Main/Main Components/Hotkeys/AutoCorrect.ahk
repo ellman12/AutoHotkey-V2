@@ -5448,7 +5448,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::simple::simple
 ::curret::current
 ::gonna::going to
-:*:c3::C#
+::c3::C#
 :*:veryt::very
 :*:hows::how's
 ::tho::though
@@ -5483,3 +5483,4 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ablke::able
 ::abkle::able
 ::omn::on
+::lmkk::let me know
