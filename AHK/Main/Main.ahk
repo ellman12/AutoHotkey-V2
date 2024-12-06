@@ -50,6 +50,7 @@ global WorkComputer := false
 #Include, %A_ScriptDir%/Main Components/FnKeys/FnKeysSettings.h.ahk
 #Include, %A_ScriptDir%/Main Components/Initialization/iCUE.h.ahk
 #Include, %A_ScriptDir%/MainSettings.h.ahk ;<-- Put after FnKeys stuff so it can access the Fn Modes constant for the ` key
+#Include, %A_ScriptDir%/Main Components/InactiveAlert/InactiveAlert.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/FAR GUI.h.ahk
 #Include, %A_ScriptDir%/Main Components/Prompt/Prompt.h.ahk
 
@@ -86,7 +87,14 @@ Loop {
 	else
 		numPadMode := "Music"
 	
-	; ToolTip, %numPadMode%
+	if (IdleAlertDelay != -1 && A_TimeIdle > IdleAlertDelay)
+		alertActive := true
+	else
+		alertActive := false
+	
+	if (alertActive) {
+		MsgBox % "Hey! You have been inactive for " . A_TimeIdle // 60 // 1000 . " minutes!"
+	}
 	
 	Sleep 100 ;Reduce CPU usage.
 }
@@ -239,3 +247,4 @@ return
 ;--------------------------EXPERIMENTAL-----------------------------
 
 ;----------------------------TEMPORARY------------------------------
+
