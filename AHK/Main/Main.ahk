@@ -75,6 +75,10 @@ Loop 12 { ;Read in all 12 win group files
 readConfigFile()
 setMainGUIValues()
 
+
+;This has auto-execute stuff in addition to hotkeys so it's getting shoved here because I hate this language and also don't really care anymore.
+#Include, %A_ScriptDir%/../Modules/HideCursor/HideCursor.ahk
+
 ;---------------------MAIN LOOP---------------------
 ;Only works if put here
 Loop {
@@ -120,7 +124,6 @@ Loop {
 #Include, %A_ScriptDir%/../Modules/AutoAltTab/AutoAltTab.ahk
 #Include, %A_ScriptDir%/../Modules/AutoInput/AutoInput.ahk
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.ahk
-#Include, %A_ScriptDir%/../Modules/HideCursor/HideCursor.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Text Modifier.ahk
 
