@@ -122,7 +122,6 @@ Loop {
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.ahk
 #Include, %A_ScriptDir%/../Modules/HideCursor/HideCursor.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
-#Include, %A_ScriptDir%/../Modules/Hotkeys/GitKraken.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Text Modifier.ahk
 
 #Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.ahk
