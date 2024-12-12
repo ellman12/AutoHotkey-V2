@@ -57,6 +57,7 @@ global WorkComputer := false
 #Include, %A_ScriptDir%/../Modules/AutoAltTab/AutoAltTab.h.ahk
 #Include, %A_ScriptDir%/../Modules/AutoInput/AutoInput.h.ahk
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.h.ahk
+#Include, %A_ScriptDir%/../Modules/HideCursor/HideCursor.h.ahk
 #Include, %A_ScriptDir%/../Modules/HideVolumeOSD/HideVolumeOSD.ahk
 #Include, %A_ScriptDir%/../Modules/Quick Code/Quick Code.h.ahk
 
@@ -119,6 +120,7 @@ Loop {
 #Include, %A_ScriptDir%/../Modules/AutoAltTab/AutoAltTab.ahk
 #Include, %A_ScriptDir%/../Modules/AutoInput/AutoInput.ahk
 #Include, %A_ScriptDir%/../Modules/Clipboard Edit/Clipboard Edit.ahk
+#Include, %A_ScriptDir%/../Modules/HideCursor/HideCursor.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Easy Window Dragging.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/GitKraken.ahk
 #Include, %A_ScriptDir%/../Modules/Hotkeys/Text Modifier.ahk
@@ -241,6 +243,10 @@ if (!clearGroups)
 		writeGroupToFile("F" . A_Index, %group%)
 	}
 }
+
+;From HideCursor
+SystemCursor("On")
+
 ExitApp
 return
 
