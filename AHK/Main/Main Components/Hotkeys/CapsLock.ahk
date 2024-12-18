@@ -1,5 +1,9 @@
 ;Turning this useless and annoying key into useful custom hotkeys.
 
+#If WinActive("Git Bash") or WinActive("Vim") or WinActive("Neovim") or WinActive("ahk_exe rider64.exe") or WinActive("ahk_exe webstorm64.exe")  
+CapsLock::Send, {Escape}
+
+
 #If (GetKeyState("CapsLock", "P"))
 Enter::Send, Kind regards`,{Enter 2}Elliott DuCharme
 
