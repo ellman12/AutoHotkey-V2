@@ -87,8 +87,6 @@ Loop {
 	
 	if (InStr(activeWindowTitle, " - YouTube") || InStr(activeWindowTitle, "Disney+ | Video Player"))
 		numPadMode := "Streaming"
-	else if (WinActive("ahk_exe rider64.exe") || WinActive("ahk_exe Code.exe"))
-		numPadMode := "Code"
 	else
 		numPadMode := "Music"
 	
