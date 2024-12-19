@@ -1,10 +1,12 @@
-;Register the keys you want to listen on
-keys = 1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./
+initializeHideCursorHotkeys() {
+	;Register the keys you want to listen on
+	keys = 1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./
 
-;For every defined key, register a call to hide the mouse cursor
-Loop Parse, keys
-   HotKey ~*%A_LoopField%, HideCursor
-return
+	;For every defined key, register a call to hide the mouse cursor
+	Loop Parse, keys
+	   HotKey ~*%A_LoopField%, HideCursor
+	return
+}
 
 ;Checks if the mouse has moved, and if so, shows it and records the new position
 CheckIdle:
